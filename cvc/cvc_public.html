@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="Keywords" content=""/>
+        <meta name="Description" content=""/>
+        <title>CVC+公示</title>
+        <link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css"/>   
+        <!--<script src="static/jquery-3.0.0.min.js"></script>-->
+    </head>
+	<body class="cvcPage">
+        <div class="dialog_init_mask" style="display: none;"></div>
+        <div class="mask" style="display: none;"></div>
+        <!--通用提示弹窗-->
+        <div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+            <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+            <p id="alert_info">项目公示中，还未开启ICO</p>
+        </div>
+        <!--ICO正式开始时间提示弹窗-->
+        <div class="dialog time_tip_dialog" style="display: none; width: 646px;height: 255px;">
+            <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+            <dl>
+                <dd>ICO正式开始时间为北京时间<strong>2017</strong>年<strong>6</strong>月<strong>9</strong>日 <strong>18：00</strong></dd>
+                <dd><strong>敬请期待！</strong></dd>
+            </dl>
+        </div>
+        <div class="dialog dialog_log" style="display: none;">
+            <h5 class="clearfix dialog_tit">
+                <span>登录</span>
+                <img src="img/close_icon.png" class="login_close_icon"/>
+            </h5>
+            <div class="pad30">
+                <div class="inputGrp">
+                    <input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+                    <input type="password" class="input_paw" id="password" placeholder="密码"/>
+                    <span class="btn" id="login">登录</span>
+                    <p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+                </div>
+            </div>
+        </div>
+        <!--ICO地址弹框-->
+        <div class="dialog address_dialog" style="display: none;">
+            <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+            <div class="code" id="address_code">
+                <!--<img src="img/contact_code.png" alt="" />-->
+            </div>
+            <ul>
+                <li class="tit">请向如下地址转入<sapn id="currency"></sapn>参与ICO</li>
+                <li class="tip_txt">本次 ICO 众筹1枚SRT起投，低于1枚视为无效</li>
+                <li><input type="text" disabled="disabled" id="address_input"/></li>
+            </ul>
+            <a class="btn" href="javascript:void(0);" id="go_ico_user">进入您的ICO专属页面</a>
+        </div>
+		<header>
+		    <div class="margin clearfix">
+		        <a href="javascript:void(0);" class="logo fl" style="margin-top: 100px;margin-left:-18px;"><img src="img/cvc_logo.png" alt="Logo" class="fl"></a>
+		        <!--<div class="fr menu">
+		            <div class="language_choose" style="right: 30px;">
+		                <div class="language_box">
+		                    <p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+		                    <ul id="language_gather" style="display: none;">
+		                        <li class="language_option"><a href="/en/ecc_public.html"><img src="img/flag_usa.png" alt="" /></a></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div> -->
+		    </div>
+		</header>
+		<section class="ecc_section1 cvc_section1">
+		    <div class="margin clearfix">
+                <dl class="fl">
+                    <dt class="font51">文德链CVC+藏茶数字资产</dt>
+                    <dd class="ban2_txt">构建文化艺术产业的场景应用</dd>
+                </dl>
+                <a href="#" class="fr cvc_white"><img src="img/cvc_white.png"/></a>
+		    </div>
+		</section> 
+        <div class="sec2_sec3">
+        	<section class="ecc_section2 cvc_section2">                           
+			    <div class="margin">
+	                <h3 class="npc_title cvc_title"><p class="relative">cvc+是什么</p></h3>
+	                <ol>
+	                    <li>文德链(Culture Virtue Chain+)数字资产，简称“CVC+”。是基于NPC(中国区超级节点)智能合约采用ACChain底层技术，将深圳市华之德企业发展有限公司价值10亿人民币的收藏级普洱茶进行资产数字化，并依托文化艺术品场景应用的项目类数字资产。通过公开、透明、流动性强的区块链技术，持有者可灵活参与其二级市场投资、一级市场行权与线上艺术的服务兑换。</li>
+	                    <li>作为实物锚定的数字资产，CVC+以实物资产收藏级普洱茶作为价值基础，以数字资产为流通手段，最终通过丰富的文化市场场景应用，实现了资本市场与文化市场之间的价值流通，促进了资本经济与文化市场经济发展的良性循环。</li>
+	                </ol>                                
+			    </div>
+	        </section>
+	        <section class="ecc_section3 cvc_section3">                           
+	            <div class="margin clearfix">
+	                <h3 class="npc_title cvc_title"><p class="relative stock_tit">信任机制</p></h3>
+	                    <ol class="fl">
+	                        <li>信任机制是区块链底层技术的重要部分。CVC+进行商品资产数字化的过程以此为基石，构建出整个区块链文化艺术产业链。</li>
+	                        <li>权益托管（链托管），采用合格资质第三方机构对权益资产进行托管并且所有数据写入区块链 。</li>
+	                        <li>权益结算（链结算），采用合格资质第三方机构对权益资产进行结算并且所以数据写入区块链。</li>
+	                        <li>采用NPC智能合约在ACChain进行数字资产发行，其标准结构与所有NPC(中国区超级节点）统一且记录了全部信任前置数据。</li>
+	                        <li>ACChain底层技术确保平台交易明细透明且可追溯，CVC+将每隔一段时间打包所有交易数据，并对数据包进行哈希运算，并把生成的哈希值上载到ACChain中，从而保证交易数据真实且不可篡改。每位用户都能够自由下载原始交易记录，查询并追溯任何一笔交易。</li>
+	                    </ol>
+	                    <img src="img/cvc_img.png" class="fr sec3_img"/>
+	            </div>
+	        </section>
+        </div>            
+        <section class="ecc_section4 cvc_section4">
+           <div class="margin">
+               <h3 class="npc_title"><p class="relative">应用场景</p></h3>
+                <div class="clearfix">
+                    <dl>
+                        <dd><img src="img/zhifu.png" alt=""></dd>
+                        <dt>兑换</dt>
+                        <dd>依托华之德企业所构建的文化产业生态领域，CVC+可在华彩影视文化、白酒行业以及畅捷付和信合付商城等完成对应的产品兑换。作为实物锚定的数字资产，CVC+以实物资产藏茶作为价值基础，以数字资产为流通手段，最终通过丰富的文化市场场景应用，实现了资本市场与文化市场之间的价值流通，促进了资本经济与文化市场经济发展的良性循环。</dd>                    
+                    </dl>
+                    <dl>
+                        <dd><img src="img/liutong.png" alt=""></dd>
+                        <dt>流通</dt>
+                        <dd>用户从任何渠道获取的ECC(消费终端、交易所等）从发行或消费中获得ECC，均可在数字资产交易所以及ACChain公开集市（去中心化）进行自由交易，并且公开集市与交易所之间也可以实现自由的流通。</dd>                    
+                    </dl>
+                    <dl>
+                        <dd><img src="img/xingquan.png" alt=""></dd>
+                        <dt>行权</dt>
+                        <dd>用户从任何渠道(包括预售、消费终端、交易平台等）获取的CVC+均可在ACChain.org行权中心行权。相关资产的结算由CVC+资产数字化过程中第三方结算机构进行登记结算，结算后该份额CVC+在链上核销，数据记录在ACChain中。用户在行权时，可以根据所在地选择物流提取实物收藏级普洱茶。</dd>                    
+                    </dl>
+                </div>
+           </div>
+       </section> 
+        <section class="npc_sec2 ecc_section5 cvc_section5">
+            <div class="margin relative">
+                <div class="sec2_bot">
+                    <h3 class="sec5_title">发行方案</h3>
+                    <div class="bot_text">
+                    		<p class="font-size16">发行方华之德企业将价值10亿人民币收藏级普洱茶资产完成信任前置与资产锚定后方可依据NPC(中国区超级节点)智能合约写入ACChain生成CVC+。</p>
+                    		<p class="font-size16">CVC+以定向发行的方式面向合格资质的投资机构深圳市华之德企业发展有限公司释放10亿枚价值10亿人民币的数字资产。且首次发行1亿枚。</p>
+                            <dl>
+                                <dt>发行方介绍</dt>
+                                <dd class="lineH27">深圳市华之德企业发展有限公司成立于2016年深圳市，主营业务为文化艺术品投资。公司秉承“华彩人生，德行天下”的华之德精神，依托专业的文化艺术品投资团队并整合相关战略资源，致力于文化艺术产业投资与咨询、文化艺术品电子盘交易信息技术开发、文化艺术培训教育等领域，打造全方位的中国文化领域生态。</dd>
+                            </dl>
+                            <dl>
+                                <dt>相关机构</dt>
+                                <dd>保荐单位：北京智链数字科技有限公司</dd>
+                                <dd>承销单位：深圳市文博汇区块链投资有限公司</dd>
+                            </dl>
+                    </div>
+                </div>
+            </div>
+        </section> 
+	</body>
+	<!--<script src="js/language_select.js"></script>-->
+</html>
