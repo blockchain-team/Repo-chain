@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>NPC-ACChain（资产链)-改变世界的资产数字化工具</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script src="static/qrcode.min.js"></script>
+		<script src="static/store.min.js"></script>
+		<script type="text/javascript" src="static/jQuery.md5.js"></script>
+		<script type="text/javascript" src="static/common.js"></script>
+		<script src="js/npc_ico.js"></script>
+		<style>
+			.involve_rightnow{ display: block; width: 92px; height: 35px; line-height:35px; text-align: center; color: #f9be40; border: 1px solid  #f9be40; margin: 10px auto; border-radius: 3px;}
+			.involve_style h3{ position: relative; width: 560px; border-bottom: 1px solid #e2e3ea; margin:100px auto 63px;}
+            .theory .rule_card h2,.involve_style p{ padding: 0 20px; background: #ffffff; position: absolute; left:348px; top: -22px;}
+            .involve_style p{ top: -10px; left:210px;color: #8e939f;font-size: 18px;}
+            .theory .intro_ret_house dl dt{ font-size: 30px;}
+            .involve_grp dl{ width: 25%;}
+            .involve_grp dl{ height: 238px; margin-left: 0;}
+            .involve_grp dd img{ display: block; width: 64px; height: 64px; margin: 0px auto;}
+            .involve_grp dl dd.involve_subtit{ color: #4b3506; font-size: 16px; margin-bottom: 8px;}
+            .involve_grp dl{ float: left;}.involve_grp dl dt{ color: #4b3506; margin: 12px 0 8px;font-size: 18px;font-weight: 700;}
+            .involve_grp dl dt,.involve_grp dd{ text-align: center;}
+            .theory dl dd{color: #777777; }
+            .inform{color:#c41e1e;line-height: 32px;padding: 0 92px;margin-top: 52px;}
+            .remark{text-align: center;color: #614407;}
+            .involve_grp dd.font14{color: #7c7057;font-size: 14px;}
+		</style>
+	</head>
+	<body class="npc_ico">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<!--鼠标经过PEB logo需弹窗提示弹框-->
+		<!--<div class="dialog time_tip_dialog" style="display: ; width: 732px;height: 230px;">
+		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+		    <dl>
+		        <dd>NPC在首次ICO结束后将登陆交易平台，同时PEB将陆续与NPC完成置换，后续将根据市场汇率进行置换。升级完成后，PEB将退出交易平台。</dd>
+		    </dl>
+		</div>-->
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>登录</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+					<input type="password" class="input_paw" id="password" placeholder="密码"/>
+					<span class="btn" id="login">登录</span>
+					<p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+				</div>				
+			</div>
+		</div>
+		<!--ICO地址弹框-->
+		<div class="dialog address_dialog" style="display: none;">
+			 <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			 <div class="code" id="address_code">
+			 	<!--<img src="img/contact_code.png" alt="" />-->
+			 </div>
+			 <ul>
+			 	<li class="tit">请向如下地址转入<sapn id="currency"></sapn>参与ICO</li>
+			 	<li class="tip_txt">本次 ICO 众筹1枚NPC起投，低于1枚视为无效</li>
+			 	<li><input type="text" readonly="readonly" id="address_input" /></li>
+			 </ul>
+			 <a class="btn" id="go_ico_user" href="ico_acc_record.html">进入您的ICO专属页面</a>
+		</div>
+		<header>
+			<div class="header_margin clearfix pnc_pad54">
+				<a href="#" class="logo fl" style="margin-top: 27px;"><img src="img/npc_logo.png" alt="Logo" class="fl"></a>
+				<div class="fr menu">
+					<div class="language_choose">
+						<div class="language_box">
+							<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+							<ul id="language_gather" style="display: none;">
+								<li class="language_option"><a href="/en/npc_ico.html"><img src="img/flag_usa.png" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="npc_sec1">
+			<div class="margin clearfix pnc_pad54">
+				<dl class="npc_sec1_left">
+					<h3 class="npc_title"><p class="relative"><img src="img/npc_top_word.png" alt=""/></p></h3>
+					<div class="nsl_content">
+						<p>中国区数字本币</p>
+						<p>所有资产数字化过程完全公开透明</p>
+						<p>基于ACChain开拓全新的资产流通商业模式，实现价值流通</p>
+						<p>建立基于区块链的数字资产生态圈</p>
+					</div>
+				</dl>
+				<div class="fr sec1_right">
+					<img src="img/npc_book.png" alt="" />
+					<p><a href="https://download.acchain.org/whitePaper/NPC_whitepaper_new1.pdf?auth_key=1508987696-0-0-b37f36d0aab9170876880d9b10bb8821" target="_blank">下载白皮书</a></p>
+				</div>
+			</div>
+		</section>
+		<section class="ni_sec2 raise_det">
+			<div class="margin">
+				<ul class="fl rd_l">
+					<li>当前筹集数量：</li>
+					<li><span class="rd_lcion" id="totleAmount">0</span><span class="lcion_type"></span></li>
+				</ul>
+				<ul class="fl rd_l">
+					<li>参与人数：</li>
+					<li><span class="rd_lcion" id="totleCount">0</span><span class="lcion_type"></span></li>
+				</ul>
+				<ul class="fl rd_l">
+					<li>目标总量：</li>
+					<li><span class="rd_lcion">200,000,000</span><span class="lcion_type">NPC</span></li>
+				</ul>
+				<div class="clear"></div>
+				<div class="nis2_text">
+					<p>ICO时间：2017年7月18日18：00-7月23日18：00</p>
+					<p>本次ICO总量<span><em>2</em>亿枚</span></p>
+					<p>众筹方式：支持BTC、ETH、ACC、PEB</p>
+				</div>
+				<div class="involve_style margin">
+			        <h3><p>参与方式</p></h3>
+			        <div class="involve_grp clearfix">
+			            <dl>
+			                <dd><img src="img/btc_npc.png" alt="" /></dd>
+			                <dt id="btcJoinCount">0</dt>
+			                <dd class="involve_subtit">BITCOIN</dd>
+			                <dd class="font14">15000NPC/1BTC</dd>
+			                <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="btc_join">立即参与</a></dd>
+			            </dl>
+			            <dl>
+			                <dd><img src="img/eth_npc.png" alt="" /></dd>
+			                <dt id="ethJoinCount">0</dt>
+			                <dd class="involve_subtit">ETHEREUM</dd>
+			                <dd class="font14">1300NPC/1ETH</dd>
+			                <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="eth_join">立即参与</a></dd>
+			            </dl>
+			            <dl>
+			                <dd><img src="img/acc_npc.png" alt="" /></dd>
+			                <dt id="accJoinCount">0</dt>
+			                <dd class="involve_subtit">ACC</dd>
+			                <dd class="font14">3.5NPC/1ACC</dd>
+			                <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="acc_join">立即参与</a></dd>
+			            </dl>
+			            <dl >
+			                <dd><img src="img/peb_npc.png" alt="" class="pebCoin"/></dd>
+			                <dt id="pebJoinCount">0</dt>
+			                <dd class="involve_subtit">PEB</dd>
+			                <dd class="font14">1NPC/1PEB</dd>
+			                <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="peb_join">立即参与</a></dd>
+			            </dl>
+			        </div>
+			        <div class="remark">如ICO期间BTC、ETH币价有大幅波动，兑换比例将作出对应调整</div>
+			        <div class="inform"><strong>特别说明：</strong><br>
+						PEB是全球首个本位数字资产代币，通过锚定藏茶资产包所发行。PEB通过藏茶资产包，分拆成多支藏茶代币，与目前PEB形成 1元人民币：1枚PEB的行权对价，因而NPC本次选择向PEB发起ICO，以充实未来资本账本项下的代币资产，NPC将通过与各种代币建立互换联系，成为中国区数字资产代币的结算本币。</div>
+			    </div>
+			</div>
+		</section>
+		<section class="npc_sec2">
+			<div class="margin">
+				<div class="sec2_rect">
+					<div class="sec2_top">
+						<h3 class="npc_title"><p class="relative">NPC是什么？</p></h3>
+						<p class="top_text">NPC（Node Primary Coin）是基于资产链社区（ACChain）发行的本位制数字货币，通过与三方仓储、鉴定、评估、确权的中国区域优质资产包进行锚定，在区块链底层技术基础上结合数字加密生成的数字资产代币。</p>
+					</div>
+					<div class="sec2_bot">
+						<h3 class="npc_title mt58"><p class="relative">NPC发行原理及退出机制</p></h3>
+						<div class="bot_text">
+							<h4>发行规则</h4>
+							<dl>
+								<dt>1.发行总价值：</dt>
+								<dd>首期ICO总量为2亿枚。</dd>
+								<dd>本次ICO不设下限；上限为2亿枚NPC置换完成，如发生因确认延期造成未能及时参与的，则以ICO平台下单时间为准，超过众筹部分的资金将原路退回。</dd>
+							</dl>
+							<dl>
+								<dt>2.退出机制：</dt>
+								<dd>1）. NPC持有者，可根据需求支付对应价格的NPC行权。在全球NPC可使用的范围内使用。</dd>
+								<dd>2）. 数字资产生态圈建立后，丰富的消费场景可以让NPC持有者有更多的消费选择。</dd>
+								<dd>3）. NPC持有者可以在交易平台上进行NPC交易（置换其它代币或在数字资产交易平台售出NPC完成提现）。</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="ni_sec4">
+			<div class="margin">
+				<div class="ni_sec4_text">
+					<h3 class="npc_title mt58"><p class="relative">NPC流通路线图</p></h3>
+					<img src="img/lctu.png" alt="NPC流通路线图"/>
+				</div>
+			</div>
+		</section>
+		<section class="ni_sec5">
+			<div class="margin">
+				<div class="ni_sec5_text">
+					<h3 class="npc_title mt58"><p class="relative">中国区域代币发行计划</p></h3>
+					<p class="nis_text">NPC作为中国区数字本币，通过与ACC互换，实现中国区资产以NPC为媒介在全球流通。NPC为资产链带来了中国区域的优质资产，也同时带来诸多全球优秀商品代币与NPC互换。随着资产互换需求的增加，NPC的价值将不断攀升。</p>
+					<table>
+						<tr><th>发行商</th><th>发行商品种类</th><th>发行商品名称</th><th>发行总价值（元）</th><th>公示日期</th></tr>
+						<tr><td>深圳丰汇国际彩宝有限公司</td><td>茶叶</td><td>大观千雪2008</td><td>249369000</td><td>2017.7.24</td></tr>
+						<tr><td>深圳丰汇国际彩宝有限公司</td><td>茶叶</td><td>大观乔木2010</td><td>183526200</td><td>2017.7.25</td></tr>
+						<tr><td>深圳丰汇国际彩宝有限公司</td><td>茶叶</td><td>大观金贡2009</td><td>2721600</td><td>待定</td></tr>
+						<tr><td>江西省宁红集团有限公司</td><td>茶叶</td><td>柑红茶</td><td>待定</td><td>2017.7.27</td></tr>
+						<tr><td>深圳华洋资本有限公司</td><td>酒类</td><td>酱香茅台酒</td><td>待定</td><td>待定</td></tr>
+					</table>
+				</div>
+			</div>
+		</section>
+	</body>	
+	<script type="text/javascript">
+        $(".close_icon").click(function(){
+			$(".address_dialog").hide();
+			$(".dialog_init").hide();
+			$('.time_tip_dialog').hide();
+			$(".mask").hide();
+		});
+		$('.pebCoin').mouseenter(function(){
+			$('.time_tip_dialog').show();
+			$(".mask").show();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});
+	</script>
+	<script src="js/language_select.js"></script>
+	<script type="text/javascript" src="static/statics.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

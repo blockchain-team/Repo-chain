@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>PEB-ACChain（资产链)-改变世界的资产数字化工具</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+	</head>
+	<body class="npcPage">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>登录</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+					<input type="password" class="input_paw" id="password" placeholder="密码"/>
+					<span class="btn" id="login">登录</span>
+					<p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+				</div>				
+			</div>
+		</div>
+		<!--ICO地址弹框-->
+		<div class="dialog address_dialog" style="display: none;">
+			 <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			 <div class="code" id="address_code">
+			 	<!--<img src="img/contact_code.png" alt="" />-->
+			 </div>
+			 <ul>
+			 	<li class="tit">请向如下地址转入<sapn id="currency"></sapn>参与ICO</li>
+			 	<li class="tip_txt">本次 ICO 众筹1枚PEB起投，低于1枚视为无效</li>
+			 	<li><input type="text" disabled="disabled" id="address_input"/></li>
+			 </ul>
+			 <a class="btn" href="ret_record_detail.html">进入您的ICO专属页面</a>
+		</div>
+		<header>
+			<div class="header_margin clearfix pnc_pad54">
+				<a href="#" class="logo fl" style="margin-top: 27px;"><img src="img/peb_logo.png" alt="Logo" class="fl"></a>
+				<div class="fr menu">
+					<div class="language_choose">
+						<div class="language_box">
+							<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+							<ul id="language_gather" style="display: none;">
+								<li class="language_option"><a href="/en/peb_public.html"><img src="img/flag_usa.png" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="npc_sec1 peb_sec1">
+			<div class="margin clearfix pnc_pad54">
+				<dl class="fl">
+					<img src="img/sec1_info.png"/>
+				</dl>
+				<div class="fr sec1_right">
+					<img src="img/peb_book.png" alt="" />
+					<p><a href="https://download.acchain.org/whitePaper/PEB_white_paper.pdf?auth_key=1510553876-0-0-ada050e474af6595c753eb458620bcce" target="_blank">下载白皮书</a></p>
+				</div>
+			</div>
+		</section>
+		<section class="peb_sec2">
+			<div class="margin">
+				<div class="sec2_top">
+					<img src="img/peb_title01.png" alt="普银是什么"/>
+					<p class="subtitle">普银——中国首个锚定实物资产的本位制数字货币</p>
+					<p class="particulars">普银的发行理念在于，把原来由货币为核心的传统金融体系溯源到以物易物时代，数字资产在不借助法币的媒介作用下，通过互换完成资产的流动。自发行以来，关于普银（PEB）的运营发展，各方一直给予高度关注，按照之前既定全新发展方向，普银将运用ACChain底层技术全新规划新链功能，新升级链保持原有PEB名称、交易所上市等情况不变，实现功能和价值上的提升，从而促进区块链应用场景下的数字资产流动生态体系的构建。</p>
+				</div>
+				<div class="sec2_bot">
+					<img src="img/peb_title02.png" alt="普银运营规划"/>
+					<ol>
+						<li>PEB原有资产平移到ACChain链上进行公示，同时补充10亿资产，确定最大发行量为10亿枚，PEB价值回归至一元人民币之前，市场不再增加流通数量。</li>
+						<li>链层技术完成后，PEB将逐步完成钱包的更换，并且可以按照1元人民币/枚标准行权藏茶。</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<section class="peb_sec3">
+			<div class="margin">
+				<p class="sec3_title">公示信息</p>
+				<table>
+					<tr><th>序号</th><th>藏茶名称</th><th>生产日期</th><th>库存数量（饼） </th><th>每饼克数</th><th>鉴定价格（饼）</th><th>行权单位（克/饼）</th><th> 普银行权（枚/饼）</th><th>总价值</th></tr>
+					<tr><td>1</td><td>大观百古2005</td><td>2010年4月</td><td>1848</td><td>400</td><td>20000</td><td>400</td><td>20000</td><td>36960000</td></tr>
+					<tr><td>2</td><td>大观原树2007</td><td>2007年</td><td>1932</td><td>400</td><td>22000</td><td>400</td><td>22000</td><td>42504000</td></tr>
+					<tr><td>3</td><td>大观千年2008</td><td>2008年4月20日</td><td>670</td><td>1000</td><td>85000</td><td>1000</td><td>85000</td><td>56950000</td></tr>
+					<tr><td>4</td><td>大观首生2010</td><td>2010年8月8日</td><td>162</td><td>100</td><td>11700</td><td>100</td><td>11700</td><td>1895400</td></tr>
+					<tr><td>5</td><td>大观1974生饼</td><td>2007年10月9日</td><td>7264</td><td>500</td><td>26000</td><td>500</td><td>26000</td><td>188864000</td></tr>
+					<tr><td>6</td><td>大观母树2007</td><td>2007年8月18日</td><td>6550</td><td>500</td><td>34560</td><td>500</td><td>34560</td><td>226368000</td></tr>
+					<tr><td>7</td><td>大观勐茶2009</td><td>2009年</td><td>4206</td><td>400</td><td>25760</td><td>400</td><td>25760</td><td>108346560</td></tr>
+					<tr><td>8</td><td>大观七子2006</td><td>2006年</td><td>3190</td><td>357</td><td>42510</td><td>357</td><td>42510</td><td>135606900</td></tr>
+					<tr><td>9</td><td>大观勐乔2007</td><td>2007年9月30日</td><td>2014</td><td>500</td><td>37100</td><td>500</td><td>37100</td><td>74719400</td></tr>
+					<tr><td>10</td><td>大观清沱2008</td><td>2010年4月20日</td><td>17760</td><td>100</td><td>5000</td><td>100</td><td>5000</td><td>88800000</td></tr>
+					<tr><td>11</td><td>大观金瓜2008</td><td>2008年</td><td>770</td><td>1000</td><td>41800</td><td>1000</td><td>41800</td><td>32186000</td></tr>
+					<tr><td>12</td><td>大观首熟2010</td><td>2010年8月8日</td><td>824</td><td>100</td><td>9360</td><td>100</td><td>9360</td><td>7712640</td></tr>
+					<tr><td>13</td><td>大观女贡2010</td><td>2010年1月8日</td><td>568</td><td>300</td><td>28000</td><td>300</td><td>28000</td><td>15904000</td></tr>
+					<tr class="add_br"><td class="no_br" colspan="7"></td><td class="no_br">茶叶价值合计：</td><td class="no_br add_br">1016816900</td></tr>
+				</table>
+				<p class="sec3_bot">
+					<a href="https://eyun.baidu.com/s/3eSkWAYY" target="_blank">A.公司资质报告 </a>
+					<a href="https://eyun.baidu.com/s/3bBmZlc" target="_blank">B.主要资产情况 </a>
+					<a href="https://eyun.baidu.com/s/3cvUgzk" target="_blank">C.鉴定报告 </a>
+					<a href="https://eyun.baidu.com/s/3i5Ia5nf" target="_blank">D.保险详情 </a>
+				</p>
+			</div>
+		</section>
+	</body>	
+	<script type="text/javascript">
+        $(".close_icon").click(function(){
+			$(".address_dialog").hide();
+			$(".dialog_init").hide();
+			$(".mask").hide();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});
+		
+	</script>
+	<script src="js/language_select.js"></script>
+	<script type="text/javascript" src="static/statics.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

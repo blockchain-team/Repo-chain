@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>ICO records-ACChain-The tool of asset digitization for changing the world</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/blocks_data.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script src="static/common.js"></script>
+		<script src="static/store.min.js"></script>
+		<script src="static/jquery.page.js"></script>
+		<script src="js/ico_record.js"></script>
+	</head>
+	<body >
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none;width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<header class="header">
+			
+		</header>
+		<div class="full">
+			<div class="margin title_link">
+				<p>Current location : <a href="index.html">Home</a>&nbsp;>&nbsp;<a href="javascript:void(0);">Account</a>&nbsp;>&nbsp;<a href="ico_record.html">ICO records</a></p>
+			</div>
+		</div>
+		<div class="personal">
+			<section class="margin">
+				<ul class="fl verMenu_lev2">
+			
+				</ul>
+				<div class="fr content bD_text ico_record">  
+					<div class="icor_top">
+		            	<div class="transfer_box">
+							<p class="transfer_text" data-value="">ICO name</p>
+							<em class="transfer_down_icon"></em>
+							<ul class="transfer_gather" style="display: none;">
+								<li class="transfer_option" data-value="">ALL</li>
+								<li class="transfer_option" data-value="ACC">ACC</li>
+								<li class="transfer_option" data-value="RET">RET</li>
+							</ul>
+						</div>
+						<div class="attend_box">
+							<p class="attend_text" data-value="">Participate type</p>
+							<em class="attend_down_icon"></em>
+							<ul class="attend_gather" style="display: none;">
+								<li class="attend_option" data-value="">ALL</li>
+								<li class="attend_option" data-value="BTC">BTC</li>
+								<li class="attend_option" data-value="ETH">ETH</li>
+								<li class="attend_option" data-value="ACC">ACC</li>
+							</ul>
+						</div>
+						<span class="icor_btn" id="search">Search</span>
+		            </div>
+					<table id="ico_record">
+						<tr><th>Time</th><th>ICO name</th><th>Address</th><th>Amount</th><th>AmountObtained</th><th>ICOStatus</th></tr>
+						<!--<tr><td>2017-02-20</td><td>RET众筹 ICO</td><td>1BQLNJtMDKmMZ4PyqVFfRuBNvoGhjigBKF</td><td>345678,09 BTC</td><td class="blue_warn">进行中</td></tr>
+						<tr><td>2017-02-20</td><td>RET众筹 ICO</td><td>1BQLNJtMDKmMZ4PyqVFfRuBNvoGhjigBKF</td><td>345678,09 BTC</td><td>已结束</td></tr>
+						<tr><td>2017-02-20</td><td>RET众筹 ICO</td><td>1BQLNJtMDKmMZ4PyqVFfRuBNvoGhjigBKF</td><td>345678,09 BTC</td><td>已结束</td></tr>-->
+					</table>
+					<!--分页-->
+					<div class="order_pages">
+					    <div class="tcdPageCode">
+							
+	                    </div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</section>
+		</div>
+		<footer>
+			
+		</footer>
+	</body>
+	<script src="js/add_classification.js"></script>
+	<script src="js/head_footer.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="static/statics.js"></script>
+	<script>
+		$("header a").removeClass("active").eq(7).addClass("active");
+		$(".close_icon").click(function(){
+			$(".mask").hide();
+			$(".dialog_init").hide();
+    	});
+    	//  	下拉框
+    	function hideSel(selector){
+			if($(selector).css("display")){
+				$(window).click(function(){
+					$(selector).hide();
+				});
+			}
+		};
+		function dropDown(str){
+			$("."+str+"_text,."+str+"_down_icon").click(function(){
+				event.stopPropagation();
+				$("."+str+"_gather").show();
+				$("."+str+"_gather ."+str+"_option").click(function(){
+					$("."+str+"_text").html($(this).html());
+					$("."+str+"_text").attr("data-value",$(this).attr("data-value"));
+					$("."+str+"_gather").hide();
+					
+				})
+				hideSel("."+str+"_gather");
+			});
+		}
+    	dropDown("transfer");
+    	dropDown("attend");  	
+	</script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

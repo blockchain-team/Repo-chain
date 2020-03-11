@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/personal_center.css" />
+		<link rel="stylesheet" href="css/style.css"/>	
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script type="text/javascript" src="static/store.min.js"></script>
+		<script type="text/javascript" src="static/common.js"></script>
+		<script src="static/jquery.page.js"></script>
+		<script src="js/ico_record.js"></script>
+		<title>ICO records-ACChain-The tool of asset digitization for changing the world</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+	</head>
+	<body>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none;width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<header class="header">
+
+		</header>
+		<div class="full nav_title">
+		    <div class="margin title_link">
+		        <p>Current location : <a href="index.html">Home</a>&nbsp;>&nbsp;<a href="javascript:void(0);">Account</a>&nbsp;>&nbsp;<a href="ico_acc_record.html">ICO records</a></p>
+		    </div>
+		</div>
+		<div class="main_level2 overview">
+			<section class="margin clearfix">
+				<ul class="fl verMenu">
+					
+				</ul>
+				<div class="fl content member_center ico_record">
+					<p class="clearfix current_subtit top_ico_title"><span class="link_menu fl">ICO records</span><!--<span class="hor_line fl"></span><span class="fr">上次登录时间：<em>2016-11-22 19:13 </em></span>--></p>
+					<div class="icor_top">
+		            	<div class="transfer_box">
+							<p class="transfer_text" data-value="">Participate asset</p>
+							<em class="transfer_down_icon"></em>
+							<ul class="transfer_gather gather" style="display: none;">
+								<li class="transfer_option" data-value="">ALL</li>
+								<li class="transfer_option" data-value="ACC">ACC</li>
+								<li class="transfer_option" data-value="RET">RET</li>
+								<li class="transfer_option" data-value="NPC">NPC</li>
+								<li class="transfer_option" data-value="SRT">SRT</li>
+							</ul>
+						</div>
+						<div class="attend_box">
+							<p class="attend_text" data-value="">Income asset</p>
+							<em class="attend_down_icon"></em>
+							<ul class="attend_gather gather" style="display: none;">
+								<li class="attend_option"  data-value="">ALL</li>
+								<li class="attend_option"  data-value="BTC">BTC</li>
+								<li class="attend_option"  data-value="ETH">ETH</li>
+								<li class="attend_option"  data-value="ACC">ACC</li>
+								<li class="attend_option"  data-value="PEB">PEB</li>
+								<li class="attend_option"  data-value="RET">RET</li>
+							</ul>
+						</div>
+						<span class="icor_btn" id="search">Search</span>
+		            </div>
+		            <div class="acc_bottom">
+		            	<table id="ico_record">
+							<tr><th>Participate time</th><th>ICO name</th><th>Address</th><th>Amount</th><th>Amountobtained</th><th>ICO status</th></tr>
+							<!--<tr><td>2017-02-20 18:12</td><td>RET ICO</td><td>1BQLNJtMDKmMZ4PyqVFfRuBNvoGhjigBKF</td><td>345678,09 BTC</td><td>217,09 RET</td><td class="blue_warn">Ongoing</td></tr>
+							<tr><td>2017-02-20 18:12</td><td>RET ICO</td><td>1BQLNJtMDKmMZ4PyqVFfRuBNvoGhjigBKF</td><td>345678,09 BTC</td><td>217,09 RET</td><td>Close</td></tr>
+							<tr><td>2017-02-20 18:12</td><td>RET ICO</td><td>1BQLNJtMDKmMZ4PyqVFfRuBNvoGhjigBKF</td><td>345678,09 BTC</td><td>217,09 RET</td><td>Close</td></tr>-->
+						</table>
+						<!--分页-->
+						<div class="order_pages">
+						    <div class="tcdPageCode">
+								
+		                    </div>
+						</div>
+		            </div>
+				</div>
+			</section>			
+		</div>		
+		<footer class="footer"></footer>
+		<div class="sidebar"></div>
+	</body>	
+	<script src="js/sidebar.js"></script>
+	<script src="js/head_footer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/add_verMenu.js"></script>
+	<script>
+		$(".close_icon").click(function(){
+			$(".mask").hide();
+			$(".dialog_init").hide();
+    	});
+//  	下拉框
+    	function hideSel(selector){
+			if($(selector).css("display")){
+				$(window).click(function(){
+					$(selector).hide();
+				});
+			}
+		};
+		function dropDown(str){
+			$("."+str+"_text,."+str+"_down_icon").click(function(){
+				event.stopPropagation();
+				$('.gather').hide();
+				$("."+str+"_gather").show();
+				$("."+str+"_gather ."+str+"_option").click(function(){
+					$("."+str+"_text").html($(this).html());
+					$("."+str+"_text").attr("data-value",$(this).attr("data-value"));
+					$("."+str+"_gather").hide();
+					
+				})
+				hideSel("."+str+"_gather");
+			});
+		}
+    	dropDown("transfer");
+    	dropDown("attend");
+	</script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

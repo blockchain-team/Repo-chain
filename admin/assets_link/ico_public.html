@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content=""/>
+    <meta name="Description" content=""/>
+    <title>ICO-ACChain（资产链)-改变世界的资产数字化工具</title>
+    <link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/blocks_data.css"/>
+    <script src="static/jquery-3.0.0.min.js"></script>
+    <script src="js/ico_public.js"></script>
+</head>
+<body >
+<header>
+    <div class="header_margin clearfix">
+        <a href="index.html" class="logo fl"><img src="img/logo.png" alt="logo" style="display: block;" class="b_logo"/><img src="img/white_logo.png" alt="logo" style="display: none;" class="w_logo"/></a>
+        <div class="fr menu">
+           <a href="index.html" class="index_page">首页</a>
+			<a href="ico_public.html" class="ico_public active">数字资产</a>
+			<a href="assets_link.html" class="asset_link">资产链</a>
+			<a href="/forum/index.html" target="_blank" class="block_datas">社区</a>
+			<a href="newspaper.html" class="news">资讯</a>
+			<a href="https://market.acchain.org" class="market_page"  target="_blank">集市</a>
+			<a href="account_view.html" class="mine">我的</a>
+			<!-- <div class="language_choose">
+				<div class="language_box">
+					<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+					<ul id="language_gather" style="display: none;">
+						<li class="language_option"><a href="/en/index.html"><img src="img/flag_usa.png" alt="" /></a></li>
+					</ul>
+				</div>
+			</div> -->
+		</div>
+        </div>
+    </div>
+</header>
+<div class="ico_banners full"></div>
+<section class="ico">
+	<div class="margin">
+	    <ul class="clearfix">
+	        <li class="active">公示</li>
+	        <!-- <li>开启</li> -->
+	        <li>结束</li>
+	    </ul>
+	    <section class="ico_tab clearfix" style="display: block;" id="public">
+	        <!--<div class="icobox">
+	            <a href="ret.html" target="_blank"><img src="img/RET.png" alt="RET"></a>
+	            <dl>
+	                <dt>RET-SCHSR<span class="fr blue_warn">公示中</span></dt>
+	                <dd>ICO启动倒计时</dd>
+	                <dd class="downCount1">
+	                	<span><em class="days">00</em><em>天</em></span><span><em class="hours">00</em><em>时</em></span>
+	                	<span><em class="minutes">00</em><em>分</em></span><span><em class="seconds">00</em><em>秒</em></span>
+	                </dd>
+	            </dl>
+	        </div>
+	        
+	        <div class="icobox">
+	            <a href=""><img src="img/PEB.png" alt="PEB"></a>
+	            <dl>
+	                <dt>PEB<span class="fr blue_warn">待定</span></dt>
+	                <dd>ICO启动倒计<em>时</em></dd>
+	                <dd class="downCount2">
+	                	<span><em class="days">00</em><em>天</em></span><span><em class="hours">00</em><em>时</em></span>
+	                	<span><em class="minutes">00</em><em>分</em></span><span><em class="seconds">00</em><em>秒</em></span>
+	                </dd>
+	            </dl>
+	        </div>
+	        <div class="clear"></div>-->
+	    </section>
+	    <!-- <section class="ico_tab clearfix" style="display: none;" id="process">
+	        <div class="icobox">
+	            <a href="ico.html" target="_blank"><img src="img/ico_start.png" alt="ico_start"></a>
+	            <dl>
+	                <dt>ACChain<span class="fr blue_warn">进行中</span></dt>
+	                &lt;!&ndash;<dd>ICO剩余<em>时</em>间</dd>
+	                <dd class="downCount3">
+	                	<span><em class="days">00</em><em>天</em></span><span><em class="hours">00</em><em>时</em></span>
+	                	<span><em class="minutes">00</em><em>分</em></span><span><em class="seconds">00</em><em>秒</em></span>
+	                </dd>&ndash;&gt;
+	            </dl>
+	        </div>
+	    </section> -->
+	    <section class="ico_tab clearfix" style="display: none;" id="over">
+	    </section>
+	</div>
+</section>
+
+<footer>
+	<div class="margin">
+	    <p class="clearfix"><img src="img/bot_logo.png" alt="" class="fl"><span class="fl">Copyright © 2017-2019 ｜ACChain<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">.黔ICP备17004079号-1</a>.all rights reserved.</span></p>
+	</div>
+</footer>
+<div class="sidebar"></div> 
+</body>
+<script src="js/sidebar.js"></script>
+<script type="text/javascript" src="static/statics.js"></script>
+<script type="text/javascript" src="js/time_count.js"></script>
+<script>
+    //时间
+//	$(".downCount1").downCount({
+//		startTime:"2017/06/2 17:59:00",
+//		endTime:"2017/06/2 18:00:00"
+//	});
+    $('.ico li').click(function () {
+        var index=$(this).index();
+        $('.ico_tab').eq(index).show().siblings('.ico_tab').hide();
+        $(this).addClass('active').siblings().removeClass('active');
+    });
+    
+</script>
+<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+<!--<script src="js/language_select.js"></script>-->
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>RET-ACChain（资产链)-改变世界的资产数字化工具</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script src="static/qrcode.min.js"></script>
+		<script src="static/store.min.js"></script>
+		<script type="text/javascript" src="static/jQuery.md5.js"></script>
+		<script type="text/javascript" src="static/common.js"></script>
+		<script src="js/ret_ico.js"></script>
+		<style type="text/css">
+			.house_developer h2,.theory h2,.guaranteer h2,.news_part h2{ color: #252c5b; padding: 40px 0;}
+			.house_developer h2,.theory h2,.ret_team_intro h2,.guaranteer h2,.ico_detail_part h2,.ret_process h2,.news_part h2{ font-size: 30px;  font-weight: 700; text-align: center;}
+			.ico_detail_part h2{ color: #ffffff; margin-bottom: 94px;}
+			.guaranteer h2{ padding: 80px 0;}
+			.ret_team_intro h2{ padding: 86px 0 82px;}
+			.news_part h2{ padding: 100px 0 74px;}
+			.news_part{ padding-bottom: 164px;}
+			.theory{ margin-bottom:94px;}
+			.theory dl dt{ font-size: 18px;}
+			.theory dl dd{ color: #777777;}
+			.theory dl dd,.top_intro li,.notice_part .margin dd{ line-height: 45px; font-size: 14px;}
+			.top_intro{ margin-top: 60px;}
+			.top_intro li{ color: #ffffff; list-style: inside;}
+			.companyInfor dl dt{ font-size: 18px;}
+			.ret_team_intro dl img{ display: block; width: 145px; height: 145px; margin: 0 auto; border: 2px solid #ffffff; border-radius: 50%;} 
+			.jump_btns{ display: block; margin: 70px auto;}
+			.rule_card{ padding: 53px 67px; border: 1px solid #e2e3ea; position: relative;}
+			.involve_style h3{ position: relative; width: 560px; border-bottom: 1px solid #e2e3ea; margin:84px auto 63px;}
+			.theory .rule_card h2,.involve_style p{ padding: 0 20px; background: #ffffff; position: absolute; left:348px; top: -22px;}
+			.involve_style p{ top: -10px; left:210px;}
+			.theory .intro_ret_house dl dt{ font-size: 30px;}
+			.intro_ret_house{ background: #e5e5e5; padding: 65px 0 70px; margin-bottom:114px;}
+			.ico_detail_part{ height: 550px; background: url(img/ico_detail_bg.png) no-repeat center center; background-size: cover;}
+			.ico_detail_part .margin{ padding: 72px 44px 61px; color: #ffffff;}
+			.ico_detail_part .margin  p,.ico_detail_part .margin li{ line-height: 49px;}
+			.ico_detail_part .margin  p,.ico_detail_part .margin li,.organ_grp dl dt,.seedetail_btn a{ font-size: 16px;}
+			.ico_detail_part .margin  p{ margin-bottom: 40px;}
+			.involve_grp dl{ width: 20%;}
+			.organ_grp dl{ height: 270px;}
+			.involve_grp dl{ height: 170px; margin-left: 0;}
+			.involve_grp dd img{ display: block; width: 64px; height: 64px; margin: 0px auto;}
+			.theory dl dd.involve_subtit{ color: #303543; font-size: 16px; margin-bottom: 8px;}
+			.organ_grp dl,.involve_grp dl{ float: left;}
+			.organ_grp dl{ width: 25%;}			
+			.organ_grp dl dd{ color: #8e939f;}
+			.organ_grp dl dt,.involve_grp dl dt{ color: #2c3249; margin: 12px 0 8px;}
+			.organ_grp dl dt,.organ_grp dl dd,.involve_grp dl dt,.involve_grp dd{ text-align: center;}
+			.organ_grp dd img{ display: block; width: 200px; height: 158px; margin: 0px auto;}
+			.theory .involve_grp dd{ line-height: 14px;}			
+			.involve_rightnow{ display: block; width: 92px; height: 35px; line-height:35px; text-align: center; color: #252c5b; border: 1px solid  #252c5b; margin: 10px auto; border-radius: 3px;}
+			.newr_bg{ height: 694px; background: url(img/ret_banner.png); background-size: cover; background-repeat: no-repeat; background-position: center center;padding-top: 230px;}
+			.newr_bg dl,.newr_bg .fr{color: white;}
+			.newr_bg dl dt{font-size: 36px;font-weight: 600;}
+			.newr_bg dl dd{ line-height: 28px;margin-top: 28px;font-size: 16px;}
+			.newr_bg dl dd:last-child{margin: 178px 0 0 80px;}
+			.newr_bg dl dd a{ display: inline-block; font-size: 16px; width: 140px; height: 52px; line-height: 52px; text-align: center; color: white; float: left;} 
+			.newr_bg dl dd a:first-child{background: #2d3670;}
+			.newr_bg dl dd a:last-child{background: #282c39;margin-left: 60px;width: 148px;}
+			.newr_bg dl dd a img{position: relative;top: 7px;left: -8px;}
+			.newr_bg .fr p{text-align: center;margin-top:28px;}
+			.newr_bg .fr p a{color: white;}
+			.project{height: 594px;position: relative;}
+			.pro_int{height: 654px;background: url(img/pro_int_bg.png);width: 1171px;background-size: cover; background-repeat: no-repeat; background-position: center center;border-radius: 9px;padding: 30px 85px 156px;color: white;position: absolute;top: -62px;left: 50%;margin-left: -585.5px;}
+			.pro_int h2{font-size:28px;font-weight: 600;margin: 60px 0;}
+			.pro_int p{line-height: 46px;font-size: 16px;}
+			.raise_det{padding: 76px 0 12px;}
+			.raise_det ul{ width: 33.333%;color: #3e4558;}
+			.raise_det ul li{ text-align: center;}
+			.raise_det div.raise_detbg{width: 600px; height: 276px; background: url(img/rd_l.png) no-repeat; position: absolute; top: -25px;}
+			.raise_det ul.rd_l li:nth-child(1){font-size: 16px;}
+			.raise_det ul.rd_l:nth-child(2) li:nth-child(2){border-right: 1px solid #dde6ec; border-left: 1px solid #dde6ec;}
+			.raise_det ul.rd_r{ width: 550px;}
+			.raise_det ul.rd_r li{ text-align: left;}
+			.raise_det ul.rd_r li:nth-child(1){margin-left:50px;}
+			.raise_det ul li:nth-child(2){margin-top: 24px;}
+			.raise_det ul .rd_lcion{font-size: 32px;}
+			.raise_det ul .lcion_type{font-size: 16px;color: #8e939f;margin-left: 14px;}
+			.raise_det ul .rdr_txt{margin-top: 129px;}
+			.raise_det ul .rdr_txt p:first-child{font-size: 18px;font-weight: 600;}
+			.raise_det ul .rdr_txt p:last-child{font-size: 16px;line-height: 32px;margin-top: 42px;}
+			.ret_process{ background: #ffffff; padding: 80px 0 160px;}
+			.ret_process h2{ margin-bottom: 118px;}
+			.ret_team_intro dl{ width: 317px;}
+			.ret_team_intro dl:nth-child(2), .ret_team_intro dl:nth-child(5){ margin: 0 110px;}
+			.notice_part .margin{ padding: 67px 63px;}
+			.notice_part .margin dt{ font-weight: 700; font-size: 16px; margin-bottom: 5px; margin-bottom: 22px;}
+			.notice_part .margin{ border: 1px solid #a6abbb; border-radius: 2px; background: #f8f9fa;}
+			.news_part dl{ float: left; width: 227px; margin-right: 9px;}
+			.news_part dl:last-child{ margin-right: 0px;}
+			.news_part dl dd img{ display: block; width: 220px; height: 148px;}
+			.news_part dl dt{ font-size: 14px; margin: 16px 0 10px; width: 227px; /*overflow: hidden; text-overflow: ellipsis; white-space: nowrap;*/}
+			.news_part dl dd{ color: #8e939f;}
+			.jump_btns a:first-child { width: 230px; background: #252c5b; font-size: 16px;}
+			.news_part dl a{color: #2c3249;}
+			.news_part dl a:hover{color: #2c3249;}
+			.news_part dl a dt:hover{color: #2c3249;text-decoration: underline;}
+			.news_part dl a dt{line-height: 24px;}
+			.seedetail_btn a{ display: inline-block; width: 160px; height: 53px; line-height: 53px; text-align: center;color: #ffffff; background: #252c5b;}
+			.seedetail_btn .instruction_btn{float: right; display: inline-block; width: 160px; height: 53px; line-height: 53px; text-align: center;color: #252c5b; background: #ffffff; border: 1px solid #252c5b;}
+			.seedetail_btn{width: 390px;margin: 90px auto 50px;}
+			.remark{ margin-bottom: 70px; text-align: center; font-size: 16px;}
+			.inform{ font-size: 15px; margin-bottom: 70px; line-height: 24px; color: #fd1e1e;}
+			.ret_team_intro dl dd{text-align: left;}
+			.ret_team_intro dl dd.team_tit{text-align: center;}
+		</style>
+	</head>
+	<body class="retPage">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<!--ICO正式开始时间提示弹窗-->
+		<div class="dialog time_tip_dialog" style="display: none; width: 646px;height: 255px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<dl>
+				<dd>ICO正式开始时间为北京时间<strong>2017</strong>年<strong>6</strong>月<strong>9</strong>日 <strong>18：00</strong></dd>
+				<dd><strong>敬请期待！</strong></dd>
+			</dl>
+		</div>
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>登录</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+					<input type="password" class="input_paw" id="password" placeholder="密码"/>
+					<span class="btn" id="login">登录</span>
+					<p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+				</div>				
+			</div>
+		</div>
+		<!--ICO地址弹框-->
+		<div class="dialog address_dialog" style="display: none;">
+			 <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			 <div class="code" id="address_code">
+			 	<!--<img src="img/contact_code.png" alt="" />-->
+			 </div>
+			 <ul>
+			 	<li class="tit">请向如下地址转入 <sapn id="currency"> </sapn>参与ICO</li>
+			 	<li class="tip_txt">本次 ICO 众筹1枚RET起投，低于1枚视为无效</li>
+			 	<li><input type="text" disabled="disabled" id="address_input"/></li>
+			 </ul>
+			 <a class="btn" href="ret_record_detail.html">进入您的ICO专属页面</a>
+		</div>
+		<!--通用提示弹窗-->
+		<!--<div class="dialog dialog_init ret_dialog" style="display:none;width:645px;height: 332px;">
+		    <h5 class="clearfix dialog_tit">&lt;!&ndash;<img src="img/close_icon.png" class="close_icon"/>&ndash;&gt;</h5>
+		    <p class="ret_txt">
+                &nbsp; &nbsp;The investment offerings listed on this trading platform are being offered exclusively to persons outside of the United States, and may not be purchased by any US citizen or resident of the US.  Any person desiring to invest in the offerings on this site must verify that they are not a US citizen or resident and must provide documentation of nationality and residence. Nationality and residence of all investors will be independently verified and if it is determined that an investor is a US citizen or resident, the investment will be revoked and all money will be refunded to the Investor.
+		    </p>
+		    <div class="btns">
+		    	<span class="button" id="agree">I have been notified</span>
+		    	&lt;!&ndash;<span class="button" id="noagree">No,  I don't agree</span>&ndash;&gt;
+		    </div>
+		</div-->
+		<header>
+			<div class="header_margin clearfix">
+				<a href="#" class="logo fl" style="margin-top: 27px;"><img src="img/nret_logo.png" alt="Logo" class="fl"></a>
+				<div class="fr menu">
+					<div class="language_choose">
+						<div class="language_box">
+							<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+							<ul id="language_gather" style="display: none;">
+								<li class="language_option"><a href="/en/ret_ico.html"><img src="img/flag_usa.png" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="newr_bg">
+			<div class="margin clearfix">
+				<dl class="fl">
+					<dt>全球第一个由房地产项目做锚定的数字资产</dt>		
+					<div class="clearfix">
+						<ul class="top_intro fl">
+							<li>基于真实不动产资产完成资产数字化</li>
+							<li>所有资产数字化过程完全公开透明</li>
+							<li>独特、稳定和创新的区块链产品</li>
+							<li>基于区块链数字资产生态圈</li>
+						</ul>
+						<dd class="fl">
+							<a href="https://down.acchain.org/whitePaper/Serene_Sendera_Ranch_LP_Zh.pdf?auth_key=1504774079-0-0-e8ba25e84185d25c661a03503591a3b8" target="_blank">商业计划</a>
+							<a href="https://v.qq.com/x/page/n05122sfwfj.html" target="_blank"><img src="img/ret_video.png" alt=""/>视频观看</a>							
+						</dd>
+					</div>
+				</dl>
+				<div class="fr relative">
+					<img src="img/ret_book.png" alt="" />
+					<p><a href="https://down.acchain.org/whitePaper/RET__whitepaper_Chinese.pdf?auth_key=1504773743-0-0-a0cbf81dfbe37510f86d51f0c1cad5f1" target="_blank">下载白皮书</a></p>
+				</div>
+			</div>
+		</section>
+		<section class="project">
+			<div class="pro_int">
+			    <h2>项目介绍</h2>
+			    <p>RET（Real Estate Token 房地产代币）是一款基于ACChain区块链开源技术工具，代表数字化房产的加密数字货币。通过RET，地产拥有者以及房产开发商开可迅速扩大销售渠道。同时，全球投资人亦能得到轻松便捷的投资体验。</p>
+				<p>于开发者而言， RET的使用能够显著地降低开发成本和营造时间，帮助公司实现更快的发展与扩张。</p>
+				<p>于买家而言，RET使得参与者可获取更为公开透明的相关项目信息。例如：性价比、真实资料以及资产状态等。这也会帮助买家更快速、便捷的做出决定。此外， RET还为不动产提供更好的流动性。</p>
+				<p>RET是基于实体房地产资产与ACChain而发行的代币. Sendera Ranch社区正是这个实体资产，它位于繁荣的达拉斯沃斯堡（DFW）地区，共占地889.53英亩，共建筑2385套独栋住房。开发周期为10期。目前市场平均房屋销售价格为：275,000美元每栋，总价值估计为6.55亿美金。</p>
+			</div>
+		</section>
+		<section class="raise_det">
+			<div class="margin">
+				<ul class="fl rd_l">
+					<li>筹集总额：</li>
+					<li><span class="rd_lcion" id="totleAmount">0</span><span class="lcion_type">USD</span></li>
+				</ul>
+				<ul class="fl rd_l">
+					<li>参与人数：</li>
+					<li><span class="rd_lcion" id="totleCount">0</span><span class="lcion_type"></span></li>
+				</ul>
+				<ul class="fl rd_l">
+					<li>目标总量：</li>
+					<li><span class="rd_lcion">50,000,000</span><span class="lcion_type">RET</span></li>
+				</ul>
+				<div class="clear"></div>
+				<div class="clearfix relative">
+					<div class="raise_detbg"></div>
+					<ul class="fr rd_r">
+						<li class="rdr_txt">
+							<p>本期开发ICO计划</p>
+							<p>本期ICO共发行USD$50,000,000.0等值的RET，每枚代币等值于1美元。发售方式包括但不限于：一级市场、数字资产基金及ICO。</p>
+						</li>
+					</ul>	
+				</div>
+			</div>
+		</section>
+		<section class="theory">							
+			<div class="involve_style margin">				
+				<h3><p>参与方式</p></h3>				
+				<div class="involve_grp clearfix">
+					<dl>						
+						<dd><img src="img/involve_type0.png" alt="" /></dd>
+						<dt id="btcJoinCount">0</dt>
+						<dd class="involve_subtit">BITCOIN</dd>
+						<dd>2800RET/1BTC</dd>
+						<!-- <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="btc_join">立即参与</a></dd> -->
+					</dl>
+					<dl>						
+						<dd><img src="img/involve_type1.png" alt="" /></dd>
+						<dt id="ethJoinCount">0</dt>
+						<dd class="involve_subtit">ETHEREUM</dd>
+						<dd>330RET/1ETH</dd>
+						<!-- <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="eth_join">立即参与</a></dd> -->
+					</dl>
+					<dl>						
+						<dd><img src="img/involve_type2.png" alt="" /></dd>
+						<dt id="accJoinCount">0</dt>
+						<dd class="involve_subtit">ACC</dd>
+						<dd>0.5RET/1ACC</dd>
+						<!-- <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="acc_join">立即参与</a></dd> -->
+					</dl>
+					<dl>						
+						<dd><img src="img/involve_type3.jpg" alt="" /></dd>
+						<dt>super nodes</dt>
+						<dd class="involve_subtit">超级节点USD</dd>
+						<dd>1RET/1USD</dd>
+						<!-- <dd><a href="http://www.pencilblockchain.com/" target="_blank" class="involve_rightnow">立即参与</a></dd> -->
+					</dl>
+					<dl>						
+						<dd><img src="img/involve_type4.jpg" alt="" /></dd>
+						<dt style="margin-bottom: 6px;">COLLINS</dt>
+						<dt style="margin: 0;">BARROW</dt>
+						<dd>基金认购</dd>
+						<!-- <dd><a href="http://www.collinsbarrow.com/en/toronto-ontario/professionals/ben-gibbons" target="_blank" class="involve_rightnow" style="width: 114px;">数字资产基金</a></dd> -->
+					</dl>
+				</div>
+				<div class="seedetail_btn"><a href="ico_record.html" target="_blank">查看记录</a><a href="ret_operation.html" target="_blank" class="instruction_btn">参与指南</a></div>
+				<div class="remark">RET在ICO期间价值锚定为1USD，与BTC和ETH的互换比例每3~5天加权平均动态调整.</div>
+				<!--<div class="inform"><strong>RET ICO计划调整公告：</strong>根据发行方要求，RET—SCHSR所锚定资产不动产项目属于稳定型固定增值型资产，RET作为房产商品代表符号，因商品房可持续销售，所以ICO将持续进行，参与方式为数字资产置换、超级节点认购、基金参与，每一期不设发售期限，在前一期全部售完后两个自然日进入下一期发售。RET市场价格将参考当地房地产价格指数进行浮动。</div>-->
+			</div>
+			<div class="intro_ret_house">
+				<div class="margin">
+					<dl>
+						<dt>RET是什么</dt>
+						<dd>RET - SCHSR是不动产代币的简称，是基于资产链社区（ACChain）将不动产资产数字化，在区块链底层技术基础上，结合数字加密生成的数字资产代币。</dd>
+					</dl>
+					<dl>
+						<dt>房产开发商</dt>
+						<dd>Serene Country Homes 是一家位于达拉斯的房产开发公司，拥有多年的土地管理及开发经验， 旗下房产项目遍布北美，业内享有极高的声誉。管理项目之一的Sendera Ranch是本次资产数字化项目的本位资产，位于德克萨斯州达拉斯沃思堡西北方, 开发周期共10期，占地面积达889.53英亩，拥有2385地块用于住宅房的建筑，总价值USD$655,875,000.0。</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="rule_card margin">
+				<h2>RET发行原理及退出机制</h2>
+				<dl>
+					<dt>发行规则</dt>
+					<dd>1. 项目总价值：</dd>
+					<dd>2385套均价为275,000的房产总价值为USD$655,875,000.0 </dd>
+					<dd>2. ICO计划：</dd>
+					<dd>根据整个房产项目的价值, 655,875,000枚代币将于2017年发行，每枚代币等值于1美元。发行共13期，其中前十二期，每期发行USD$50,000,000.0等值的RET，第十三期发行USD$55,875,000.0等值的RET。</dd>
+					<dd>3. 每一期RET发售完成两个自然日后，开启下一期RET发售。发售方式包括但不限于：一级市场、数字资产基金及ICO。</dd>
+				</dl>
+				<dl>
+					<dt>退出机制</dt>
+					<dd>每一栋土地建成的房屋所对应产生的RET是恒量的。</dd>
+					<dd>1. RET持有者，可根据自己入住需求（入住地点、时间）支付对应价格的RET来进行房屋使用。在全球Token（RET）可使用的范围内使用。</dd>
+					<dd>2. 数字资产生态圈建立后，丰富的消费场景可以让RET持有者有更多的消费选择。</dd>
+					<dd>3. RET持有者可以在交易平台上进行RET交易置换其它TOKENS或在数字资产交易平台售出RET完成提现。</dd>
+					<dd>4. 当RET持有者的持有总量等于土地和房屋RET总量时，可将所选的房屋完成过户，拥有产权。</dd>
+				</dl>
+			</div>			
+		</section>
+		<section class="ico_detail_part">
+			<div class="margin">
+				<h2>ICO细则</h2>
+				<p>因RET锚定资产以美元计价，本次ICO目标以美元作为参考数值。所参与ICO数字资产将根据参与者参与时间、参与数字资产种类以及参与数额，使用JUBI交易平台数据作为参考指数，在数据上进行数字资产与法币汇兑，锁定对应等值的RET。当RET ICO截止时，释放对应数量的RET至参与者ACChain数字钱包。最低ICO参与为1RET，低于1RET视为无效ICO行为。</p>
+				<ol>
+					<li>ICO众筹标的：BTC、ETH、ACC</li>
+					<li>第一期（北京时间）2017.6.9 18:00 - 2017.6.24 18:00（应发行商要求，已延期）</li>
+				</ol>
+			</div>
+		</section>
+		<section class="ret_process">				
+			<div class="margin">
+				<h2>项目时间线</h2>
+				<div class="relative clearfix">
+					<dl>
+						<dd>完成项目资产尽职调查以及第三方权证托管</dd>
+						<dt>2017年4月3日—28日</dt>
+					</dl>
+					<dl>
+						<dd>开始进行RET预售</dd>
+						<dt>2017年5月16日</dt>
+					</dl>
+					<dl>
+						<dd>首批房屋建完，可开始行权</dd>
+						<dt> 2019年 </dt>
+					</dl>
+					<div class="clear"></div>
+					<img src="img/hor_processbar.jpg" alt="进度条" class="hor_processbar"/>					
+					<dl>
+						<dt>2017年3月</dt>
+						<dd>基于区块链的不动产商业应用</dd>
+					</dl>
+					<dl>
+						<dt>2017年5月12日</dt>
+						<dd>开始进行RET公示</dd>
+					</dl>
+					<dl>
+						<dt>2017年7月</dt>
+						<dd>房地产开发商开始项目建设</dd>
+					</dl>
+				</div>
+				<!--<img src="img/redDown_icon.png" alt="" class="redDown_icon"/>-->
+				<!--
+				<div class="process_content clearfix">
+					<ol class="fl">
+						<li class="clearfix"><em class="process_tit fl">投资进程:</em><div id="invest_process" class="fl"></div></li>
+						<li><em>募集总量:</em><span class="collect_amount">99999999</span></li>
+						<li><em>总参与者:</em><span class="participator_amount">15455</span>人</li>						
+					</ol>
+					<ul class="fr">
+						<a href="javascript:void(0);">
+							<li>参与</li>
+							<li>RET ICO</li>
+						</a>
+					</ul>
+				</div>
+				-->
+			</div>
+		</section>
+		<section class="ret_team_intro">
+			<div class="margin">
+				<h2>管理团队</h2>
+				<div class="clearfix">
+					<dl>
+						<img src="img/drik.png" alt="" />
+						<dt>Dirk Foo</dt>
+						<dd class="team_tit">總裁兼首席執行官</dd>
+						<dd class="team_tit"></dd>
+						<dd>集團公司的總裁兼首席執行官。同時，他負責監管亞洲銷售網絡，擔任執行副總裁。於劍橋大學畢業后，開始在新加坡从事他所知道的唯一一個領域-房地產領域開發事業。 1999年，他收購了一家房地產公司Multi-Match Pte Ltd，專注於新加坡的房地產市場。 2000年，他獲得了當地一家知名的國際公司Walton對加拿大未開發土地市場的銷售分配權。</dd>
+					</dl>
+					<dl>
+						<img src="img/joe2.png" alt="" />
+						<dt>Joe F. Attrux</dt>
+						<dd class="team_tit">首席運營官兼首席財務官</dd>
+						<!--<dd class="team_tit">CPA CA （Ontario）CPA ( HongKong), MBA</dd>-->
+						<dd>集團公司的首席運營官兼首席財務官，於2014年加入該公司。Joe擁有加拿大西安大略省立大學Richard Ivey商學院工商管理碩士學位。 是加拿大安大略特許專業會計師的特許專業會計師，香港會計師公會註冊會計師。</dd>
+					</dl>
+					<dl>
+						<img src="img/allan.png" alt="" />
+						<dt>Allan Lind</dt>
+						<dd class="team_tit">企業事務及服務執行副總裁</dd>
+						<dd>資產管理私募公司企業事務及服務執行副總裁同時兼任集團內所有公司運營總監。埃迪斯科文大學商業營銷專業學士畢業，在世界 最大的礦業運營商BHP Billiton，歐洲吉列工業公司（Gillette Industries of Europe）等全球性機構擁有30多年的企業財務規劃和政策，會計， 審計和營銷實踐經驗。</dd>
+					</dl>
+					
+					<dl>
+						<img src="img/ron.png" alt="" />
+						<dt>Ron Ramirez, P.E.</dt>
+						<dd class="team_tit">工程建築執行副總裁</dd>
+						<dd>Ron還將幫助Serene Homes管理層和所有權團隊評估潛在的土地徵地。從Wier＆Associates，Inc.來到Serene Homes公司，任職十八年，擔 任過十年的副總裁兼總監。他的職責包括工程總監，司庫，他是公司的風險經理。監督設計團隊，制定私人發展和公共部門項目的計劃 和規範。他負責設計，計劃生產，預算，客戶聯繫，計費和施工監理。</dd>
+					</dl>
+					<dl>
+						<img src="img/rob.png" alt="" />
+						<dt>Rob Snelus</dt>
+						<dd class="team_tit">運營-銷售和建築執行副總裁</dd>
+						<dd>畢業於德州大學阿靈頓分校，擁有通訊專業學士學位。 Rob擁有超過25年的運營管理經驗，在建築行業擁有豐富的知識。在加入Serene Homes集團之前，他是Progress Residential的區域性實地運營經理。他還擔任區域經理和V.P. 德州的Choice Home和KB Home的業務前5名 國家建築師。 Rob總共在過去25年裡一直參與德州4000多所房屋的建設和銷售。 Rob還監督Serene Homes的房屋的設計和成本核算，以 確保它們都按規定建造，並根據特定房屋模型和地塊制定預算。</dd>
+					</dl>
+					<!--<dl>
+						<img src="img/rob.jpg" alt="" />
+						<dt>Rob Snelus</dt>
+						<dd class="team_tit">運營-銷售和建築執行副總裁</dd>
+						<dd>畢業於德州大學阿靈頓分校，擁有通訊專業學士學位。 Rob擁有超過25年的運營管理經驗，在建築行業擁有豐富的知識。在加入Serene Homes集團之前，他是Progress Residential的區域性實地運營經理。他還擔任區域經理和V.P. 德州的Choice Home和KB Home的業務前5名 國家建築師。 Rob總共在過去25年裡一直參與德州4000多所房屋的建設和銷售。 Rob還監督Serene Homes的房屋的設計和成本核算，以 確保它們都按規定建造，並根據特定房屋模型和地塊制定預算。</dd>
+					</dl>-->
+				</div>
+			</div>
+		</section>
+		<section class="guaranteer">
+			<div class="margin">
+				<h2>第三方机构</h2>
+				<div class="organ_grp clearfix">
+					<dl>
+						<a href="http://www.us.jll.com/united-states/en-us" target="_blank">
+							<dd><img src="img/organ_grp_pic1.jpg" alt="" /></dd>
+							<dt>JLL</dt>
+							<dd>价值评估</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://www.metrostudy.com/" target="_blank">
+							<dd><img src="img/organ_grp_pic2.jpg" alt="" /></dd>
+							<dt>Metrostudy</dt>
+							<dd>市场数据调研</dd>
+							<dd>市场预期报告</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="https://www.weaver.com/" target="_blank">
+							<dd><img src="img/organ_grp_pic3.jpg" alt="" /></dd>
+							<dt>Weaver LLP</dt>
+							<dd>财务审计</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://www.pelotonland.com" target="_blank">
+							<dd><img src="img/organ_grp_pic4.jpg" alt="" /></dd>
+							<dt>Peloton</dt>
+							<dd>建设规划与设计</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="https://www.planfactory.com" target="_blank">
+							<dd><img src="img/organ_grp_pic5.jpg" alt="" /></dd>
+							<dt>The Plan Factory</dt>
+							<dd>项目建设规划与设计</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://www.collinsbarrow.com/en/cbn/news/collins-barrow-toronto-partner-interviewed-by-tmx-tsx-private-markets" target="_blank">
+							<dd><img src="img/organ_grp_pic6.jpg" alt="" /></dd>
+							<dt>Collins Barrow</dt>
+							<dd>财务顾问</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://www.johnworleyattorney.com/" target="_blank">
+							<dd><img src="img/organ_grp_pic7.jpg" alt="" /></dd>
+							<dt>John Worley</dt>
+							<dd>法律顾问</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="https://www.bankofamerica.com/" target="_blank">
+							<dd><img src="img/organ_grp_pic8.jpg" alt="" /></dd>
+							<dt>Bank of American</dt>
+							<dd>权证托管</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="https://www.stewart.com/en.html" target="_blank">
+							<dd><img src="img/organ_grp_pic9.jpg" alt="" /></dd>
+							<dt>Stewart Title</dt>
+							<dd>权证托管</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="javascript:void(0);" target="_blank">
+							<dd><img src="img/organ_grp_pic10.jpg" alt="" /></dd>
+							<dt>MGI [Meiyingju Group</dt>
+							<dd>资产上链</dd>
+							<dd>数字资产代币发行</dd>		
+						</a>
+					</dl>
+					<dl>
+						<a href="http://pencilblockchain.com" target="_blank">
+							<dd><img src="img/organ_grp_pic11.jpg" alt="" /></dd>
+							<dt>Pencil Blockchain Company Inc</dt>
+							<dd>资产数字化服务提供方</dd>
+						</a>
+					</dl>
+				</div>					
+				<div class="jump_btns"><!--<a href="javascript:void(0);" disabled="disabled" target="_blank">相关新闻</a>--><a href="https://eyun.baidu.com/s/3hrS93P6" target="_blank">了解更多</a></div>				
+			</div>
+		</section>
+		<section class="notice_part">
+			<dl class="margin">
+				<dt>I Notice : </dt>
+				<dd>The RET offering listed on this trading platform is being offered exclusively to persons outside of the United States, and may not be purchased by any US citizen or resident of the US.  Any person desiring to invest in the RET offering must verify that they are not a US citizen or resident and must provide documentation of nationality and residence. Nationality and residence of all investors will be independently verified and if it is determined that an investor is a US citizen or resident, the investment will be revoked and all money will be refunded to the Investor.</dd>
+			</dl>
+		</section>
+		<section>
+			<div class="margin news_part clearfix">
+				<h2>相关新闻</h2>
+				<dl>
+					<a href="http://www.prnewswire.com/news-releases/655-million-worth-of-homes-to-be-built-using-the-first-real-estate-token-on-blockchain-300463865.html?tc=eml_cleartime" target="_blank">
+						<dd><img src="img/news_pic1.png" alt="" /></dd>
+						<dt>总为值6.55亿美元的地产项目在区块链上发行第一个RET区块代币</dt>
+					</a>
+				</dl>
+				<dl>	
+					<a href="http://www.reuters.com/brandfeatures/venture-capital/article?id=6210" target="_blank">
+						<dd><img src="img/news_pic2.png" alt="" /></dd>
+						<dt>数字资产SDR体系：区块链，建立金融新次序</dt>
+					</a>
+				</dl>
+				<dl>	
+					<a href="https://www.dallasnews.com/business/real-estate/2017/05/23/fort-worth-builder-using-digital-fund-platform-finance-community" target="_blank">
+						<dd><img src="img/news_pic3.png" alt="" /></dd>
+						<dt>沃斯堡开发商将社区进行资产数字化</dt>
+					</a>
+				</dl>
+				<dl>	
+					<a href="https://www.dallasinnovates.com/blockchain-to-fund-655m-residential-community-in-dfw/" target="_blank">
+						<dd><img src="img/news_pic4.png" alt="" /></dd>
+						<dt>达拉斯沃斯堡地区价值6.55亿美金项目使用区块链技术完成资产数字化</dt>
+					</a>
+				</dl>
+				<dl>	
+					<a href="http://www.reuters.com/brandfeatures/venture-capital/article?id=10715" target="_blank">
+						<dd><img src="img/news_pic5.png" alt="" /></dd>
+						<dt>Collins Barrow使用ACChain区块链科技工具创建数字资产基金</dt>
+						<!--<dd>2017-06-06 12:00:00</dd>-->	
+					</a>
+				</dl>
+			</div>
+		</section>
+	</body>	
+	<script src="static/goalProgress.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('#invest_process').goalProgress({
+            goalAmount: 100000000,
+            currentAmount: 5000,
+        });
+        $(".progressBar").text(" ");
+        $(".close_icon").click(function(){
+			$(".address_dialog").hide();
+			$(".dialog_init").hide();
+			$(".mask").hide();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});
+	</script>
+	<script src="js/language_select.js"></script>
+	<script type="text/javascript" src="static/statics.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

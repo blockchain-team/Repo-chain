@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="Keywords" content=""/>
+        <meta name="Description" content=""/>
+        <title>RET-ACChain（资产链)-改变世界的资产数字化工具</title>
+        <link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ret_style.css">
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+        <script src="static/jquery-3.0.0.min.js"></script>
+        <script src="static/qrcode.min.js"></script>
+        <script src="static/store.min.js"></script>
+        <script type="text/javascript" src="static/jQuery.md5.js"></script>
+        <script type="text/javascript" src="static/common.js"></script>
+		<script src="js/ret_ico_new.js" async="async"></script>
+    </head>
+	<body class="retPage">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+		    <p id="alert_info">项目公示中，还未开启ICO</p>
+		</div>
+		<!--ICO正式开始时间提示弹窗-->
+		<div class="dialog time_tip_dialog" style="display: none; width: 646px;height: 255px;">
+		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+		    <dl>
+		        <dd>ICO正式开始时间为北京时间<strong>2017</strong>年<strong>6</strong>月<strong>9</strong>日 <strong>18：00</strong></dd>
+		        <dd><strong>敬请期待！</strong></dd>
+		    </dl>
+		</div>
+		<div class="dialog dialog_log" style="display: none;">
+		    <h5 class="clearfix dialog_tit">
+		        <span>登录</span>
+		        <img src="img/close_icon.png" class="login_close_icon"/>
+		    </h5>
+		    <div class="pad30">
+		        <div class="inputGrp">
+		            <input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+		            <input type="password" class="input_paw" id="password" placeholder="密码"/>
+		            <span class="btn" id="login">登录</span>
+		            <p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+		        </div>
+		    </div>
+		</div>
+		<!--ICO地址弹框-->
+		<div class="dialog address_dialog" style="display: none;">
+		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+		    <div class="code" id="address_code">
+		        <!--<img src="img/contact_code.png" alt="" />-->
+		    </div>
+		    <ul>
+		        <li class="tit">请向如下地址转入<sapn id="currency"></sapn>参与ICO</li>
+		        <li class="tip_txt">本次 ICO 众筹1枚RET起投，低于1枚视为无效</li>
+		        <li><input type="text" disabled="disabled" id="address_input"/></li>
+		    </ul>
+		    <a class="btn" href="javascript:void(0);" id="go_ico_user">进入您的ICO专属页面</a>
+		</div>
+		<!--通用提示弹窗-->
+		<!--<div class="dialog dialog_init ret_dialog" style="display:none;width:645px;height: 332px;">
+		    <h5 class="clearfix dialog_tit">&lt;!&ndash;<img src="img/close_icon.png" class="close_icon"/>&ndash;&gt;</h5>
+		    <p class="ret_txt">
+		        &nbsp; &nbsp;The investment offerings listed on this trading platform are being offered exclusively to persons outside of the United States, and may not be purchased by any US citizen or resident of the US.  Any person desiring to invest in the offerings on this site must verify that they are not a US citizen or resident and must provide documentation of nationality and residence. Nationality and residence of all investors will be independently verified and if it is determined that an investor is a US citizen or resident, the investment will be revoked and all money will be refunded to the Investor.
+		    </p>
+		    <div class="btns">
+		        <span class="button" id="agree">I have been notified</span>
+		        &lt;!&ndash;<span class="button" id="noagree">No,  I don't agree</span>&ndash;&gt;
+		    </div>
+		</div-->
+		<header>
+		    <div class="header_margin clearfix">
+		        <a href="#" class="logo fl" style="margin-top: 27px;"><img src="img/nret_logo.png" alt="Logo" class="fl"></a>
+		        <div class="fr menu">
+		            <div class="language_choose">
+		                <div class="language_box">
+		                    <p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+		                    <ul id="language_gather" style="display: none;">
+		                        <li class="language_option"><a href="/en/ret_newico.html"><img src="img/flag_usa.png" alt="" /></a></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</header>
+		<section class="newr_bg">
+		    <div class="margin clearfix newr_pad">
+		        <dl class="fl">
+		            <dt>项目介绍</dt>
+		            <div class="clearfix">
+		                <ul class="top_intro">
+		                    <li>Real Estate Token简称“RET”或“不动产代币”是房地产行业代币。</li>
+		                    <li>RET是基于ACChain资产数字化工具生成的数字资产代币，主要作用于地产行业资产数字化后，交易汇兑以及结算。</li>
+		                    <li>RET具有行权全球房产与相关联产品的属性，实现资产等价值流通，持有者在RET的增值的同时也可以置换为全球目的地房产完成资产配置。</li>
+		                </ul>
+		                <dd class="btn">
+		                    <a href="https://download.acchain.org/whitePaper/SRT_EN.pdf?auth_key=1508988704-0-0-619bec454728356658bb6b16b6afee12" target="_blank">商业计划书</a>
+		                    <!--<a href="https://v.qq.com/x/page/n05122sfwfj.html" target="_blank"><img src="img/ret_video.png" alt=""/>视频观看</a>-->
+		                </dd>
+		            </div>
+		        </dl>
+		        <div class="fr relative book">
+		            <img src="img/ret_book.png" alt="" />
+		            <p><a href="https://download.acchain.org/whitePaper/RET__whitepaper_Chinese.pdf?auth_key=1508987786-0-0-048009e947e87369f09341d2e6bbda48" target="_blank">下载白皮书</a></p>
+		        </div>
+		    </div>
+		</section>
+		<section class="ret_acc">
+			<div class="margin clearfix">
+				<h2>RET与ACC</h2>
+				<dl>
+			        <dd><img src="img/ret_acc01.png" alt="" /></dd>
+			        <dt>与国际总账代币ACC互换</dt>
+			    </dl>
+			    <dl>
+			        <dd><img src="img/ret_acc02.png" alt="" /></dd>
+			        <dt>建立全新行业规则 </br> 规范产业良性发展</dt>
+			    </dl>
+			    <dl>
+			        <dd><img src="img/ret_acc03.png" alt="" /></dd>
+			        <dt>为地产行业增加</br>新型商业模式</dt>
+			    </dl>
+			    <dl>
+			        <dd><img src="img/ret_acc04.png" alt="" /></dd>
+			        <dt>加速资产流通 </br>促进经济发展</dt>
+			    </dl>
+			</div>
+		</section>
+		<!-- <section class="processico">
+		    <div class="margin ico">
+		        <div class="process_part">
+		            <p class="cion_type">参与币种：<span>BTC、ETH、ACC</span></p>
+		            <div class="gather_amount">ICO进度<span>0.0%</span></div>
+		            <div id="sample_goal"></div>
+		            <div class="clearfix">
+		                <dl class="fl">
+		                    <dt><span>50,000,000</span>&nbsp;&nbsp;枚RET</dt>
+		                    <dd>目标数量</dd>
+		                </dl>
+		                <dl class="fr">
+		                    <dt><span id="remaining">0</span></dt>
+		                    <dd>剩余天数</dd>
+		                </dl>
+		            </div>
+		            <p class="pro_btn"><span>参与ICO</span></p>
+		        </div>
+		    </div>
+		</section> -->
+        <section class="raise_det">
+            <div class="margin">
+                <h2>ICO最新数据</h2>
+                <ul class="fl rd_l">
+                    <li>当前筹集数量：</li>
+                    <li><span class="rd_lcion" id="totleAmount">0</span><span class="lcion_type"></span></li>
+                </ul>
+                <ul class="fl rd_l">
+                    <li>参与人数：</li>
+                    <li class="border_lr"><span class="rd_lcion" id="totleCount">0</span><span class="lcion_type"></span></li>
+                </ul>
+                <ul class="fl rd_l">
+                    <li>目标总量：</li>
+                    <li><span class="rd_lcion">50,000,000</span><span class="lcion_type">RET</span></li>
+                </ul>
+                <div class="clear"></div>
+                <!-- <div class="clearfix relative">
+                    <div class="raise_detbg"></div>
+                    <ul class="fr rd_r">
+                        <li class="rdr_txt">
+                            <p>本期开发ICO计划</p>
+                            <p>本期ICO共发行USD$50,000,000.0等值的RET，每枚代币等值于1美元。发售方式包括但不限于：一级市场、数字资产基金及ICO。</p>
+                        </li>
+                    </ul>   
+                </div> -->
+            </div>
+        </section>               
+		<section class="theory">
+		    <div class="involve_style margin">		        
+		        <div class="involve_grp clearfix">
+		            <dl>
+		                <dd><img src="img/involve_type0.png" alt="" /></dd>
+		                <dt id="btcJoinCount">0</dt>
+		                <dd class="involve_subtit">BITCOIN</dd>
+		                <dd>2600RET/1BTC</dd>
+		                <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="btc_join">立即参与</a></dd>
+		            </dl>
+		            <dl>
+		                <dd><img src="img/involve_type1.png" alt="" /></dd>
+		                <dt id="ethJoinCount">0</dt>
+		                <dd class="involve_subtit">ETHEREUM</dd>
+		                <dd>210RET/1ETH</dd>
+		                <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="eth_join">立即参与</a></dd>
+		            </dl>
+		            <dl>
+		                <dd><img src="img/involve_type2.png" alt="" /></dd>
+		                <dt id="accJoinCount">0</dt>
+		                <dd class="involve_subtit">ACC</dd>
+		                <dd>0.3RET/1ACC</dd>
+		                <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="acc_join">立即参与</a></dd>
+		            </dl>
+		            <!-- <dl>
+		                <dd><img src="img/involve_type04.png" alt="" /></dd>
+		                <dt id="accJoinCount">0</dt>
+		                <dd class="involve_subtit">NPC</dd>
+		                <dd>???RET/1NPC</dd>
+		                <dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="pnc_join">立即参与</a></dd>
+		            </dl> -->
+		        </div>
+		        <!--<div class="seedetail_btn"><a href="ico_record.html" target="_blank">查看记录</a><a href="ret_operation.html" target="_blank" class="instruction_btn">参与指南</a></div>-->
+		        <!--<div class="remark">RET在ICO期间价值锚定为1USD，与BTC和ETH的互换比例每3~5天加权平均动态调整.</div>-->
+		        <!--<div class="inform"><strong>RET ICO计划调整公告：</strong>根据发行方要求，RET—SCHSR所锚定资产不动产项目属于稳定型固定增值型资产，RET作为房产商品代表符号，因商品房可持续销售，所以ICO将持续进行，参与方式为数字资产置换、超级节点认购、基金参与，每一期不设发售期限，在前一期全部售完后两个自然日进入下一期发售。RET市场价格将参考当地房地产价格指数进行浮动。</div>-->
+		    </div>
+       </section>
+        <section class="ret_rank">
+            <div class="margin">
+                <h3 class="npc_title"><p class="relative">RET排行榜</p></h3>
+                <div class="data_box1">
+                    <ol class="find_style coin_type clearfix" >
+                        <li class="active" id="bit_coin">BTC</li>
+                        <li class="fl" id="yitai_coin">ETH</li>
+                        <li class="fl" id="acc_coin">ACC</li>
+                    </ol>                                           
+                    <div class="data_table" id="bit_table" style="display: block;">
+                        <ul class="data_top">
+                            <li><img src="img/ret_ranking.jpg"/></li>
+                            <li><img src="img/ret_link.jpg"/></li>
+                            <li><img src="img/ret_cash.jpg"/></li>
+                        </ul>
+                        <ul class="color81 data_top clearfix">
+                            <li>当前排名</li>
+                            <li>参与地址</li>
+                            <li>金额</li>
+                        </ul>
+                        <div class="data_lists" id="btc_ranking">
+                            <!--动态添加数据ul-->
+                             <!-- <ul>
+                                <li>1</li>
+                                <li>17rFuvxx9WYuCR9eKn4qh3TwH1uWvrSmd5</li>
+                                <li>52.05333868</li>
+                            </ul> -->
+                        </div>
+                    </div>                                           
+                    <div class="data_table" id="yitai_table" style="display: none;">
+                        <ul class="data_top">
+                            <li><img src="img/ret_ranking.jpg"/></li>
+                            <li><img src="img/ret_link.jpg"/></li>
+                            <li><img src="img/ret_cash.jpg"/></li>
+                        </ul>
+                        <ul class="color81 data_top">
+                            <li>当前排名</li>
+                            <li>参与地址</li>
+                            <li>金额</li>
+                        </ul>
+                        <div class="data_lists" id="etc_ranking">
+                            <!--动态添加数据ul-->
+                            <!-- <ul>
+                                <li>1</li>
+                                <li>17rFuvxx9WYuCR9eKn4qh3TwH1uWvrSmd5</li>
+                                <li>52.05333868</li>
+                            </ul> -->
+                        </div>
+                    </div>                                          
+                    <div class="data_table" id="acc_table" style="display: none;">
+                        <ul class="data_top">
+                            <li><img src="img/ret_ranking.jpg"/></li>
+                            <li><img src="img/ret_link.jpg"/></li>
+                            <li><img src="img/ret_cash.jpg"/></li>
+                        </ul>
+                        <ul class="color81 data_top">
+                            <li>当前排名</li>
+                            <li>参与地址</li>
+                            <li>金额</li>
+                        </ul>
+                        <div class="data_lists" id="acc_ranking">
+                            <!--动态添加数据ul-->
+                            <!-- <ul>
+                                <li>1</li>
+                                <li>17rFuvxx9WYuCR9eKn4qh3TwH1uWvrSmd5</li>
+                                <li>52.05333868</li>
+                            </ul> -->
+                        </div>
+                    </div>      
+                </div>
+            </div>
+        </section>
+        <section class="theory rule-theory">
+		    <div class="intro_ret_house">
+		        <div class="margin">
+		            <dl>
+		                <dt>RET设计原则</dt>
+		                <dd>基于区块链的核心技术和地产行业应用局限性的各种问题，RET提出的解决方案如下：</dd>
+		                <dd>1.基于区块链技术提出地产行业资产数字化标准。引入全新设计的智能合约，通过链下数据与链上数据的共同输入作为触发条件，完成合约的执行。</dd>
+		                <dd>2.增加行业资产数字化合规性考虑，为地产行业增加新型商业模式。</dd>
+		            </dl>
+		            <dl>
+		                <dt>RET的愿景</dt>
+		                <dd>RET将致力于推广不动产行业资产数字化标准，通过区块链社区、第三方技术开发者和技术与模式上的创新，打造一个在全球极具影响力的开源地产行业社区生态，将区块链融入地产行业，并通过区块链技术架设跨行业交互的桥梁。</dd>
+		            </dl>
+		        </div>
+		    </div>
+		    <div class="rule_card margin">
+		        <h2>RET发行计划及退出机制</h2>
+		        <dl>
+		            <dt>RET发行计划</dt>
+		            <dd>RET生成后锁定在币池中，通过其他数字资产与RET置换完成币池释放。</dd>
+		            <dd>RET的用户可以通过消耗持有的RET来发行RET体系代币。</dd>
+		            <dd>RET币池恒定总量1000亿枚，根据资产互换决定释放量，首批置换总量5000万枚，随着美国、英国等区域房产资产的发行和市场需求，相继置换出币池内的RET。每一期置换后置换难度系数增加。</dd>
+		        </dl>
+		        <dl>
+		            <dt>退出机制</dt>
+		            <dd>消费者持有RET后可通过以下3种方式退出：</dd>
+		            <dd>1.RET在交易平台交易退出。</dd>
+		            <dd>2.RET置换其它数字货币。</dd>
+		            <dd>3.RET置换等价值房产项目行权或置换不动产产业链产品或服务。</dd>
+		            <dd>置换规则：</dd>
+		            <dd>行权置换规则，以各目的地房产价格或产业链相关服务以及产品作为兑换参考单位，以等值RET完成置换房产或或产业链相关服务以及产品。</dd>
+		        </dl>
+		        <dl  class="rule_time_type">
+		            <dd>ICO众筹标的：BTC 、ETH 、 ACC </dd>
+		            <!--<dd>ICO起止时间：7.25 0:00 — 7.28 24:00</dd>-->
+		        </dl>
+		    </div>
+		</section>        
+		<section class="ico_detail_part">
+		    <div class="margin">
+		        <h2>发起机构</h2>
+		        <p><img src="img/fqjg.png" alt=""/> </p>
+		        <p class="word">美国 PENCIL BLOCKCHAIN</p>
+		        <h2>合作单位</h2>
+		        <ul class="hzdw clearfix">
+		        	<li><img src="img/hzdw01.png"/>
+		        		<p>MGI （Meiyingju Group)</p>
+		        	</li>
+		        	<li><img src="img/hzdw02.png"/>
+		        		<p>SERENE COUNTRY HOMES</p>
+		        	</li>
+		        </ul>
+		    </div>
+		</section>
+		<section class="ret_process">
+		    <div class="margin">
+		        <h2>项目时间线</h2>
+		        <ul class="clearfix">
+		        	<li>
+		        		<img src="img/time01.png" alt=""/>
+		        		<p class="time">2017.7</p>
+		        		<p>RET项目正式启动，基于ACChain<br />完成底层技术搭建RET开始公示</p>
+		        	</li>
+		        	<li><img src="img/timeline.png" alt=""/></li>
+		        	<li>
+		        		<img src="img/time02.png" alt=""/>
+		        		<p class="time">2017.7.26 18:00-8.5 24:00</p>
+		        		<p>RET进行ICO</p>
+		        	</li>
+		        </ul>
+		    </div>
+		</section>
+		<section class="notice_part">
+		    <dl class="margin">
+		        <h2>RET资金分配计划</h2>
+		        <div class="notice_part_text">
+		            <p>PROPORTION</p>
+		            <div class="clearfix">
+		                <ul class="fl">
+		                    <li>Will be sold publicly</li>
+		                    <li>Will be used as incentives for working for the community</li>
+		                    <li>Will go to the founder team,private investors and technical team.</li>
+		                </ul>
+		                <img src="img/ypic.png" alt="" class="fl"/>
+		            </div>
+		        </div>
+		        <div class="notice_part_text notice_part_table">
+		            <table>
+		                <tr><th>比例</th><th>内容</th><th>备注</th></tr>
+		                <tr><td>85%</td><td>RET公开发行</td><td>公开发行获得的收入将投入至地产开发以及地产相关数字资产生态圈建设。</td></tr>
+		                <tr><td>10%</td><td>社区做工激励</td><td>将对RET在生成过程中做工奖励团队或个人作为回报。</td></tr>
+		                <tr><td>5%</td><td>创始团队、私募投资机构和技术团队</td><td>创始团队、私募投资人以及开发团队在RET的发展过程中做出了人力、资源以及技术支持，将给予RET作为回报。</td></tr>
+		            </table>
+		        </div>
+		    </dl>
+		</section>
+	</body>
+	<script src="static/goalProgress.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript"> 
+    //滚动条样式
+        (function($){
+            $(window).on("load",function(){
+                $("#bit_table .data_lists,#yitai_table .data_lists,#acc_table .data_lists").mCustomScrollbar({
+                    setHeight:580,
+                    theme:"dark-3"
+                });
+            });
+        })(jQuery);  
+
+     //  $(window).on("load",function(){
+	 //        $('.wrapper').perfectScrollbar({
+	 //          wheelSpeed: 10,
+	 //          wheelPropagation: true
+	 //        });
+	 //    });	
+	 //    $("div.rank_box").each(function(index) { 
+	 //    	var len = $(this).find("ul").length;
+	 //    	console.log($(this).data("index")+":"+len);
+		//     if(len == 0){       
+		//       $(this).removeClass("wrapper");
+		//     }
+		// });    
+	    
+
+        $(".find_style li").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+        $("#bit_coin").click(function(){
+            $("#bit_table").show();
+            $("#yitai_table,#acc_table").hide();
+        });
+        $("#yitai_coin").click(function(){
+            $("#yitai_table").show();
+            $("#bit_table,#acc_table").hide();
+        });
+        $("#acc_coin").click(function(){
+            $("#acc_table").show();
+            $("#bit_table,#yitai_table").hide();
+            
+        });
+    </script>
+	<script type="text/javascript">
+	    $('#invest_process').goalProgress({
+	        goalAmount: 100000000,
+	        currentAmount: 5000,
+	    });
+	    $(".progressBar").text(" ");
+	    $(".close_icon").click(function(){
+	        $(".address_dialog").hide();
+	        $(".dialog_init").hide();
+	        $(".mask").hide();
+	    });
+	    $(".login_close_icon").click(function(){
+	        $(".dialog_log,.mask").hide();
+	    });
+	    //进度条
+	    $('#sample_goal').goalProgress({
+	        goalAmount: 100,
+	        currentAmount: 0,
+	    });
+	    //提示语
+	    /*$('.involve_rightnow,.pro_btn').click(function(){
+	    	$('.dialog_init').show();
+	    	$('.mask').show();
+	    })*/
+	</script>
+	<script type="text/javascript" src="static/statics.js"></script>
+	<script src="js/language_select.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

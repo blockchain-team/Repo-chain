@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" content=""/>
+    <meta name="Description" content=""/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/personal_center.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="static/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="static/store.min.js"></script>
+    <script type="text/javascript" src="static/common.js"></script>
+    <script type="text/javascript" src="static/jQuery.md5.js"></script>
+    <title>Email verification</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+</head>
+<body>
+<!--通用提示弹窗-->
+<div class="mask" style="display: none;"></div>
+<div class="dialog dialog_init" style="display: none;width: 426px;height: 149px;">
+    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+    <p id="alert_info"></p>
+</div>
+<!-- 成功绑定邮箱弹框 -->
+<div class="vercode_dialog phone_auth" id="bindsuc_dialog" style="display: none; height: 207px;">
+    <p class="common_alert_title clearfix"><i class="iconfont close_icon">&#58962;</i></p>
+    <li class="relative">
+        <img src="img/email.jpg" alt="Binding complete"/><i class="iconfont alreay_bind">&#58982;</i>
+    </li>
+    <li>Binding complete</li>
+</div>
+<!-- 绑定邮箱失败弹框 -->
+<div class="vercode_dialog phone_auth" id="bindfail_dialog" style="display: none; height: 220px;">
+    <p class="common_alert_title clearfix"><i class="iconfont close_icon">&#58962;</i></p>
+    <li class="relative">
+        <img src="img/email.jpg" alt="You haven’t bind your Email"/><i class="iconfont no_bind">&#58900;</i>
+    </li>
+    <li>The information is INVALID, please confirm your information and try again</li>
+</div>
+<!-- 验证码发送提示弹框 -->
+<div class="vercode_dialog phone_auth" id="send_tip" style="display: none; height: 167px;">
+    <p class="common_alert_title clearfix"><i class="iconfont close_icon">&#58962;</i></p>
+    <li>The verification code has been sent to your Email</li>
+</div>
+<header class="header">
+
+</header>
+<div class="full nav_title">
+    <div class="margin title_link">
+        <p>Current location：<a href="index.html">Home</a>&nbsp;>&nbsp;<a href="javascript:void(0);">Account</a>&nbsp;>&nbsp;<a href="personal_info.html">Email verification</a></p>
+    </div>
+</div>
+<div class="main_level2 email_auth">
+    <section class="margin clearfix">
+        <ul class="fl verMenu">
+
+        </ul>
+        <div class="fl content">
+            <p class="current_subtit"><span class="link_menu">Email verification</span></p>
+            <div class="border_bg">
+                <div class="bind_state">
+                    <p class="no_bind_type" style="display:none;"><img src="img/email_icon.jpg" alt="" class="email_icon"></p>
+                    <li class="relative alreay_bind_type">
+                        <img src="img/email.jpg" alt="Binding complete"/><i class="iconfont alreay_bind">&#58982;</i>
+                    </li>
+                    <!-- 未绑定邮箱 -->
+                    <dl class="no_bind_type" style="display:none;">
+                        <dd class="warn_red">You haven’t bind your Email</dd>
+                    </dl>
+                    <!-- 已绑定邮箱 -->
+                    <dl class="alreay_bind_type">
+                        <dd><em>You have bound the Email：</em>&nbsp;<em class="main_yellow email_address" id="bind_email"></em></dd>
+                        <dd class="gray9">*You can enter the transaction password and new email to change the binding
+                            Email
+                        </dd>
+                    </dl>
+                </div>
+                <ul class="no_bind_type" style="display:none;">
+                    <li><input type="email" placeholder="Please enter your Email" id="email_text"/></li>
+                    <li class="clearfix"><input type="text" placeholder="Please enter the Email verification code" class="email_vercode fl" id="email_vercode" onkeyup="this.value=this.value.replace(/[^\d]/g,'')"/><span class="get_verCode fl" id="verification_code">Get verification code</span></li>
+                    <div class="next_step next_step_active" id="btn_confirm_bound">Binding</div>
+                </ul>
+                <ul class="alreay_bind_type">
+                    <li><input type="password" placeholder="Enter your transaction password" id="input_email_password" onkeyup="this.value=this.value.replace(/[^\d]/g,'')"/>
+                    </li>
+                    <li><input type="email" placeholder="Enter the new email" id="input_email_bind"/></li>
+                    <li class="clearfix"><input type="text" placeholder="Enter the email verification code" class="email_vercode fl" id="email_vercode_reset" onkeyup="this.value=this.value.replace(/[^\d]/g,'')"/><span class="get_verCode fl" id="update_verCode">Get verification code</span></li>
+                    <div class="next_step next_step_active" id="btn_confirm">Binding</div>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<footer class="footer">
+</footer>
+<div class="sidebar"></div>
+<script src="js/sidebar.js"></script>
+<script src="js/head_footer.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/add_verMenu.js"></script>
+</body>
+<script src="js/email_auth.js"></script>
+<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

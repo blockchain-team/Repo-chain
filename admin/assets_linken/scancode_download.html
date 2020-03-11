@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="Keywords" content="" />
+	<meta name="Description" content="" />
+	<title>download-ACChain-The tool of asset digitization for changing the world</title>
+	<link rel="stylesheet" type="text/css" href="css/scan_code.css" />
+	<script type="text/javascript" src="static/jquery-3.0.0.min.js" ></script>
+	<script>
+		$(function(){
+				function calFontSize(){
+				var _width = window.innerWidth;
+				var _height = window.innerHeight;
+				if(_width > 750){
+					_width = 750;
+				}
+				if (_width < 320) {  //设备最小320px  iphone4
+			        _width = 320;
+			    }
+				document.getElementsByTagName("html")[0].style.fontSize = _width/7.5 + "px";
+				if(_height <= 480){
+					_height = 540;
+				}
+				if(_height == 660){
+					_height = 700;
+				}
+				$('.download').css('height',_height);
+			};
+			
+			calFontSize();
+			
+			window.onresize = function(){
+				calFontSize();
+			};	
+			
+		});
+</script>
+</head>
+<body>
+	<div class="download newdown">
+		<div class="logo">	
+			<img src="img/acchain_logo.png" alt=""/>
+			<p><img src="img/down_acchain.png" alt=""/></p>
+		</div>
+		<img src="img/web_word1.png" alt="" class="word"/>
+		<div class="btns">
+			<a class="button ios" href="itms-services://?action=download-manifest&url=https://www.acchain.org/ACCWallet.plist"><img src="img/ios_pic.png" alt="ios"/>iPhone</a>
+			<a class="button android" href="https://app.acchain.org/app/ACCWallet_v1.9_2017-08-19.apk?auth_key=1510905069-0-0-549dbf5cd7d07481aa31f40b5ee52b88"><img src="img/web_android.png" alt="android"/>Andriod</a>
+		</div>
+		<p class="warn">To ensure that iOS client can be used regularly,<br />
+						please add trust in "Settings - General - Device Management" </p>
+	</div>
+</body>
+</html>

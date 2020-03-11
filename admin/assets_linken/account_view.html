@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/personal_center.css" />
+		<link rel="stylesheet" href="css/style.css"/>		
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script type="text/javascript" src="static/store.min.js"></script>
+		<script type="text/javascript" src="static/common.js"></script>
+		<title>My profile-ACChain-The tool of asset digitization for changing the world</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+	</head>
+	<body>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none;width: 426px;height: 149px;z-index: 41;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="common_close_icon personal_close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<!--设置安全问题和交易密码弹窗-->
+		<div class="dialog dialog_init1 dialog_dbtn " style="display: none;width: 478px;height:240px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="common_close_icon personal_close_icon"/></h5>
+			<p class="alert_info" id="error_msg"></p>
+			<p class="dbtn"> <span class="btn" id="toEdit">Go to set</span> <span class="btn cancel" >Cancel</span></p>
+		</div>
+		<!-- 设置安全问题和交易密码弹窗 -->
+		<!--<div class="dialog dialog_init1 dialog_dbtn" style="display: none;width: 478px;height:240px;">
+		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="common_close_icon personal_close_icon"/></h5>
+		    <p class="alert_info">You haven’t set your security questions and transaction password!</p>
+		    <p class="dbtn"> <span class="btn" id="">Go to set</span> <span class="btn cancel" id="">Cancel</span></p>
+		</div>-->
+		<header class="header">
+
+		</header>
+		<div class="full nav_title">
+		    <div class="margin title_link">
+		        <p>Current location : <a href="index.html">Home</a>&nbsp;>&nbsp;<a href="javascript:void(0);">Account</a>&nbsp;>&nbsp;<a href="account_view.html">My profile</a></p>
+		    </div>
+		</div>
+		<div class="main_level2 overview account">
+			<section class="margin clearfix">
+				<ul class="fl verMenu">
+					
+				</ul>
+				<div class="fl content member_center personal_info">
+					<p class="clearfix current_subtit" style="display: none;"><span class="link_menu fl">My profile</span><!--<span class="hor_line fl"></span><span class="fr">上次登录时间：<em>2016-11-22 19:13 </em></span>--></p>
+					<p class="pi_title">Welcome back, last time login <span id="nowDate">2017-02-02 10:10:10</span><span class="fr back_btn" onclick="store.clear();location.href='index.html'">Logout</span>
+					<div class="account_top clearfix">
+						<div class="fl">
+							<img id="img_avatar" src="img/user_icon.jpg" alt="" class="user_img fl"/>
+							<div class="fl bind">
+								<span class="userName" id="userName">AL-00011</span>
+								<dl class="clearfix">	
+									<dd id="icon_paypwd" class="iconfont">&#59046</dd>
+									<dd id="icon_mobile" class="iconfont">&#58881</dd>
+									<dd id="icon_email" class="iconfont">&#58882</dd>
+								</dl>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="fl acc">
+							<img id="img_avatar" src="img/acc.jpg" alt="" class="user_img fl"/>
+							<div class="fl">
+								<p class="zc_word">Asset currency<span class="accname ml20">ACC</span></p>
+								<p class="zc_word cyzl_word">Total holdings<span class="accnumber ml20" id="acc_amount">0</span>Coins</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<a class="account_btn fr error_pagr" href="javascript:void(0);">Assets transfer-out</a>
+					</div>
+					<div class="account_top acc_center">
+						<p class="act_title">Digital assets holdings<a href="asset_owned.html" class="fr">More>></a></p>
+						<div class="acc_box clearfix" id="clearfix_item">
+							<!--<div class="fl acc acc_type">
+								<img id="img_avatar" src="img/npc_coin.jpg" alt="" class="user_img fl"/>
+								<div class="fl">
+									<p class="zc_word"><span class="accname ml20">NPC</span></p>
+									<p class="zc_word cyzl_word"><span class="accnumber ml20">46145.0000</span>Coins</p>
+								</div>
+								<div class="clear"></div>
+							</div>-->
+
+
+
+
+
+						</div>
+					</div>
+					<div class="acc_bottom">
+						<p class="act_title">Latest news</p>
+		            	<table id="ico_record">
+		            		<tr><th>Time</th><th>Events</th><th>Name</th><th>Note</th></tr>
+		            		<!--<tr><td>2017-02-20</td><td>Assets transfer</td><td>ACC</td><td>Transfer-out amounts2800.0000</td></tr>
+		            		<tr><td>2017-02-20</td><td>Participate in ICO</td><td>RET ICO</td><td>Participation amount2800.0000</td></tr>-->
+		            	</table>
+		            </div>
+				</div>
+			</section>			
+		</div>		
+		<footer class="footer"></footer>
+		<div class="sidebar"></div>
+	</body>		
+	<script src="js/sidebar.js"></script>
+	<script src="js/head_footer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/add_verMenu.js"></script>
+	<script src="js/account_view.js"></script>
+	<script>
+        $(".personal_close_icon").click(function(){
+            $(".mask").hide();
+            $(".dialog_init").hide();
+            $(".dialog_init1").hide();
+        });
+        $(".cancel").on("click",function () {
+            $(".dialog_init1,.mask").hide();
+        })
+        //	   $(".mine").css("margin-right","86px").after($language_choose);
+	</script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>资产数字化问答-ACChain（资产链)-改变世界的资产数字化工具</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+	</head>
+	<body class="npcPage">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>登录</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+					<input type="password" class="input_paw" id="password" placeholder="密码"/>
+					<span class="btn" id="login">登录</span>
+					<p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+				</div>				
+			</div>
+		</div>
+		<section class="qa_sec1">
+			<div class="margin clearfix">
+				<img src="img/qa_title1.png" alt="资产数字化问答"/>
+				<a href="asset_publish_1.html" class="btn">一键发行</a>
+			</div>
+		</section>
+		<section class="qa_sec qa_sec2">
+			<div class="margin clearfix">
+				<p class="title"></p>
+				<p class="pd100">答： 资产数字化就是将实物资产按照一定的环节整理背书文件，再将这些资料按照规则整理上传，形成区块链上的封装区块，最终形成数字资产的过程。</p>
+			</div>
+		</section>
+		<section class="qa_sec qa_sec3">
+			<div class="margin clearfix">
+				<p class="title"></p>
+				<p class="pd100">答：数字资产具有流动性强、溯源性强、高诚信背书、交易简便等优势，能够为企业带来更高效的资金融通和销售效益，为投资人带来简便易行的投资产品和操作模式，为产品发行人带来更快捷、更广泛的销售市场。</p>
+			</div>
+		</section>
+		<section class="qa_sec qa_sec4">
+			<div class="margin clearfix">
+				<p class="title"></p>
+				<p class="pd100">答：严格地说，需要资产有完整的信息和一系列的鉴定、评估、保险、确权等信任前置过程，然后将资产所有权托管到三方的登记结算中心，并经由保荐商保荐到正规运营数字资产交易所上进行交易。</p>
+			</div>
+		</section>
+		<section class="qa_sec qa_sec5">
+			<div class="margin clearfix">
+				<p class="title"></p>
+				<p class="pd100">答：目前应用ACChain来进行数字化的资产有百年老字号宁红柑红茶、华洋系茅台基酒，优质普洱茶大观金贡、大观千年雪山以及美国房地产项目SRT等。</p>
+			</div>
+		</section>
+		<section class="qa_sec qa_sec6">
+			<div class="margin clearfix">
+				<p class="title"></p>
+				<p class="pd100">答：可以。个人资产经正规的第三方评估认定后，由公证机构进行背书确定资产价值和产权隶属关系，即可通过ACCHAIN进行数字化处理，形成资产数字信息结算单元，并由保荐商保荐和经纪商维持市场的良性运作。</p>
+			</div>
+		</section>
+		<section class="qa_sec qa_sec7 relative">
+			<div class="margin clearfix">
+				<p class="title"></p>
+				<p class="pd100">答：ACChain从创立之初就是定位成为资产数字化工具，是专业服务数字资产的底层工具。其为数字资产构建的“3+1模式”是全面服务数字资产的生态体系。</p>
+				<a href="asset_publish_1.html" class="btn">一键发行</a>
+				<span class="back"><img src="img/icon_up.png" alt=""/></span>
+			</div>
+		</section>
+		<footer class="qa_footer">
+			<div class="margin">
+				<ul class="bt_link clearfix">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="digital_asset.html">数字资产</a></li>
+					<li><a href="assets_link.html">资产链</a></li>
+					<li><a href="/forum/index.html" target="_blank">社区</a></li>
+					<li><a href="newspaper.html">资讯</a></li>
+					<li><a href="https://market.acchain.org">集市</a></li>
+					<li><a href="account_view.html">我的</a></li>
+				</ul>
+				<p class="clearfix"><img src="img/bot_logo.png" alt="" class="fl"><span class="fl">Copyright © 2017-2019 ｜ACChain<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">.黔ICP备17004079号-1</a>.all rights reserved.</span></p>
+			</div>
+		</footer>
+	</body>	
+	<script type="text/javascript">
+        $(".close_icon").click(function(){
+			$(".address_dialog").hide();
+			$(".dialog_init").hide();
+			$(".mask").hide();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});
+		
+		//返回顶部
+		$('.back').click(function(){
+			$("html,body").animate({
+		 		scrollTop:0
+		 	},1000);
+		});
+	</script>
+</html>

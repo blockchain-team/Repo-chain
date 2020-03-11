@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>Registered successfully-ACChain-The tool of asset digitization for changing the world</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>	
+	</head>
+	<body>		
+		<header class="header">
+			
+		</header>
+		<section class="reg_success">
+			<div class="margin">				
+				<ul>
+					<li><img src="img/reg_success.png" class="margin"/></li>
+					<li class="font_size18">Congratulations! You have registered successfully!</li>
+					<li class="line_dash"></li>
+					<li class="count_down"><em class="count_time" id="timing">5</em>&nbsp;seconds to the home page…</li>
+					<li><a class="back_index" href="index.html">Return to the home page>></a></li>
+				</ul>
+			</div>
+		</section>
+		<footer>
+			
+		</footer>
+	</body>
+	<script src="js/head_footer.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="static/statics.js"></script>
+	<script type="text/javascript">
+		$(".close_icon,.btn").click(function(){
+			$(".dialog,.mask").hide();
+		});
+		//注册成功定时5秒跳转页面
+        var interval = 5;
+        window.setInterval(function(){
+            interval --;
+            if(interval == 0){
+                location.href = "index.html";
+			}else {
+                $("#timing").text(interval);
+			}
+        }, 1000);
+	</script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>ICO专题-ACChain（资产链)-改变世界的资产数字化工具</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/share.min.css">
+		<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script type="text/javascript" src="static/jQuery.md5.js"></script>
+		<script type="text/javascript" src="static/store.min.js"></script>
+		<script type="text/javascript" src="static/common.js"></script>
+		<script type="text/javascript" src="static/qrcode.min.js"></script>
+		<script type="text/javascript" src="js/ico.js"></script>
+	</head>
+	<body>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<div class="dialog address_dialog" style="display: none;">
+			 <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			 <div class="code" id="address_code">
+			 	<!--<img src="img/contact_code.png" alt="" />-->
+			 </div>
+			 <ul>
+			 	<li class="tit">请向如下地址转入<sapn id="currency"></sapn>参与ICO</li>
+			 	<li class="tip_txt">本次 ICO 众筹1000 枚ACC起投，低于 1000枚视为无效</li>
+			 	<li><input type="text" disabled="disabled" id="address_input"/></li>
+			 </ul>
+			 <a class="btn" href="acc_ico.html">进入您的ICO专属页面</a>
+		</div>
+		<div class="ico_bg">
+			<header>
+				<div class="margin clearfix">				
+					<div class="fr menu color-black">					
+						<div class="language_choose">
+							<div class="language_box">
+								<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+								<ul id="language_gather" style="display: none;">
+									<li class="language_option"><a href="/en/ico.html"><img src="img/flag_usa.png" alt="" /></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<a href="index.html" class="ico_logo"><img src="img/ico_logo.png" alt="logo"/></a>
+			<div class="margin">
+				<section class="ico">
+					<div class="process_part">
+						<div class="gather_amount">ICO进度<span>0.0%</span></div>
+						<div id="sample_goal"></div>
+						<div class="clearfix">
+							<dl class="fl">
+								<dt><span>100000000.00</span>&nbsp;&nbsp;枚ACC</dt>
+								<dd>目标数量</dd>
+							</dl>
+							<dl class="fr">
+								<dt><span id="remaining">0</span></dt>
+								<dd>剩余天数</dd>
+							</dl>
+						</div>
+						<!--<h3>ICO已结束</h3>-->
+					</div>
+					<h4 class="tit">ICO 最新数据</h4>
+					<div class="data_box" style="padding-top: 10px;">
+						<ol class="involvement clearfix">
+							<li class="fl"><img src="img/bitecoin.png" alt="比特币" /><span>BTC</span><!--<a id="join_btc" href="javascript:void(0);">立即参与</a>--></li>
+							<li class="fl"><img src="img/ytf.png" alt="以太坊" /><span>ETH</span><!--<a id="join_etc" href="javascript:void(0);">立即参与</a>--></li>
+						</ol>
+						<ul class="clearfix">
+							<li>
+								<dl class="clearfix">
+									<dt><span id="btc_amount">0</span><em>BTC</em></dt>
+									<dd>筹集总额</dd>
+								</dl>
+								<dl class="clearfix">
+									<dt><span id="btc_join_count">0</span><em>人</em></dt>
+									<dd>参与人数</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clearfix">
+									<dt><span id="etc_amount">0</span><em>ETH</em></dt>
+									<dd>筹集总额</dd>
+								</dl>
+								<dl class="clearfix">
+									<dt><span id="etc_join_count">0</span><em>人</em></dt>
+									<dd>参与人数</dd>
+								</dl>
+							</li>
+						</ul>
+						<ol class="involvement clearfix">
+							<li class="fl clearfix"><img src="img/gold_coin.png" alt="比特币"  style="display: inline-block; width: 42px; height: 43px;"/><span>ETF基金</span><!--<a id="join_btc" href="javascript:void(0);">立即参与</a>--></li>
+						</ol>
+						<ul class="clearfix">
+							<li  style="width: 100%; border-right: 0;">
+								<dl class="clearfix fl" style="text-align: left; text-indent: 92px; width: 40%; margin-left: 0;">
+									<dt style=""><span id="btc_amount">40000000</span><em>USD</em></dt>
+									<dd>筹集总额</dd>
+								</dl>
+								<!--<dl class="clearfix">
+									<dt><span id="btc_join_count">0</span><em>人</em></dt>
+									<dd>当前人数</dd>
+								</dl>-->
+								<div class="fl"  style="text-align: left; line-height: 34px;">
+									<p>数字资产ETF基金，由基金机构、ACChain DAO组织成员、基金经理人共同发起，</p>
+									<p>是以等量价值的ACC领投的数字资产指数型基金。于2017年6月6日完成领投。</p>
+								</div>
+							</li>
+						</ul>
+						<div class="see_btns">
+							<a href="ico_acc_record.html" class="see_record">查看记录</a>
+							<a href="ico_detail.html" target="_blank" class="see_record see_detail">众筹细则</a>
+							<a href="https://eyun.baidu.com/s/3c2nb46O" target="_blank" class="see_record see_detail">ETF基金公示信息</a>
+						</div>
+						<!--<div class="investment_way">
+							<p class="invw_tit">ETF基金投资方式：</p>
+							<p class="invw_txt">ETF基金按照发行总价值$40,000,000.0，将与其价值相对应的ACC将自动发给基金公司托管钱包账户，按照发行时与比特币的对等价格，约折合1.5万枚比特币，可置换ACC 1.125亿枚，待ETF发售完成，由基金托管钱包统一向用户钱包进行ACC的分发。</p>
+							<table>
+								<tr><th>基金认购单价</th><th>折合比特币数量</th><th>ICO规则</th><th>折合ACC数量</th></tr>
+								<tr><td>$ 150,000</td><td>56.6枚</td><td>1BTC=7500ACC</td><td>424603枚</td></tr>
+							</table>
+							<p class="pay_type">支付方式 ：<span>PayPal</span></p>
+							<p class="team"><span class="fr">ACC发起团队 2017.6.5</span></p>
+						</div>-->
+					</div>					
+				</section>
+				<section class="ico">
+					<h4 class="tit">ACC排行榜</h4>
+					<div class="data_box1">						
+						<ol class="find_style coin_type clearfix" style="display: block;">
+							<li class="active" id="bit_coin">BTC</li>
+							<li class="fr" id="yitai_coin">ETH</li>
+						</ol>
+						<div class="data_table" id="bit_table">
+							<ul class="data_top">
+								<li><img src="img/ranking.png"/></li>
+								<li><img src="img/link.png"/></li>
+								<li><img src="img/cash.png"/></li>
+							</ul>
+							<ul class="color81 data_top">
+								<li>当前排名</li>
+								<li>参与地址</li>
+								<li>金额</li>
+							</ul>
+							<div class="data_lists" id="btc_ranking">
+								<!--动态添加数据ul-->
+								<!--<ul>
+									<li>1</li>
+									<li>17rFuvxx9WYuCR9eKn4qh3TwH1uWvrSmd5</li>
+									<li>52.05333868</li>
+								</ul>-->
+							</div>
+						</div>
+						<div class="data_table" id="yitai_table" style="display: none;">
+							<ul class="data_top">
+								<li><img src="img/ranking.png"/></li>
+								<li><img src="img/link.png"/></li>
+								<li><img src="img/cash.png"/></li>
+							</ul>
+							<ul class="color81 data_top">
+								<li>当前排名</li>
+								<li>参与地址</li>
+								<li>金额</li>
+							</ul>
+							<div class="data_lists" id="etc_ranking">
+								<!--动态添加数据ul-->
+								<!--<ul>
+									<li>1</li>
+									<li>17rFuvxx9WYuCR9eKn4qh3TwH1uWvrSmd5</li>
+									<li>52.05333868</li>
+								</ul>-->
+							</div>
+						</div>
+						<!--<a href="javascript:void(0);" style="color: #ffffff;"><li>显示全部</li><li style="margin-top: 8px;"><img src="img/see_more.png" /></li></a>-->
+						<!--<p>平均每10分钟排名更新一次，上次更新时间： <span id="update_time">2017/5/9 09:00:18 GMT+8</span></p>-->
+					</div>
+					
+				</section>
+				<section class="rule">
+					<h5 class="rule_tit"><span>ACC首期ICO众筹规则</span></h5>
+					<ul class="rule_content">
+						<!--<span>资产链社区，是由国内外区块链爱好者联合发起的资产数字化社区，是资产数字化平台和工具。用以实现全球资产的数字化流通。伴随项目的深入推进，这一理念的可行性得到全面验证，为根本上解决价值交换与资产流通中存在的诸多问题，并迅速开启全球募集，现拟定ICO项目书，计划于5月9日面向国内外平台展开ACC首期众筹。</span>-->
+						<li><i>ICO众筹标的:</i>众筹方式：支持BTC、ETH</li>
+						<li><i>ICO起止时间：</i>2017年5月9号-6月6号，持续28天。</li>
+						<li><i>众筹规则：</i>本次ICO众筹数量为1亿枚ACC，1000枚起投（声明：众筹低于1000枚视为无效，所投BTC/ETH将不予退回）。</li>
+						<li class="clearfix"><i class="fl">众筹资金分配规则：</i><p class="fl">本次ICO共众筹11111枚BTC，所得数字资产，将通过链层智能合约，其中20%数字资产为做功奖励，80%为进入资产池锁定。此次ICO，将形成去中心化动态管理组织DAO并管理众筹资金。众筹资金由DAO全体爵共同维护，任何资金的移动都必须通过51%以上的爵审核。随着资产链的增值，ACC的价值将随之攀升。</p>																							
+						</li>
+						<li class="clearfix"><i>资产链DAO组织：</i><p class="fl">资产链DAO是基于区块链生态的全球性分布式自治组织。资产链DAO由“爵”（peerage）成员组成，参与资产链社区的决策、公投等行为。随着全球节点的建立，资产链社区DAO将成为全球性自治组织。资产链社区DAO由全体爵共同维护，并以DAO的形式实施开放式管理。通过DAO的激励机制，不断吸引爵加入DAO组织，对资产链进行维护。在整个社区里面通过做功的形式维护应用，获取激励。</p></li>
+						<li class="clearfix"><i>爵的规则：</i>
+							<dl class="fl">
+								<dd>1.持有10000枚以上ACC可以申请成为爵，爵由社区公民投票产生，所有资产持有者都可参与爵的投票，成为爵即可进入DAO组织。</dd>
+								<dd>2.后期新成员申请成为爵需要50%以上现有爵同意（首批爵由此次ICO产生）。</dd>
+								<dd>3.奖惩：按照自治运行规则有贡献DAO的做功，奖励ACC，如违背公约，则自动扣除ACC。</dd>
+								<dd>4.退出：DAO中某名爵严重不符合自治公约，2/3会员发起投票可以解除爵资格。</dd>
+							</dl>
+						</li>
+						<li><i>爵的等级划分：</i>首批爵产生后，爵的晋级规则由首批DAO组织成员共同确定。</li>
+						<a href="ico_detail.html" class="see_record see_all" style="width: 537px; margin-bottom: 0; padding-bottom: 5px;" target="_blank">点击阅读《资产链ICO众筹细则》全文</a>
+					</ul>
+				</section>
+				<div class="share_grp clearfix">
+					<span>分享到</span>
+					<div class="social-share fl" data-sites="facebook,twitter,qzone,weibo,wechat">
+					    
+					</div>
+				</div>				
+			</div>
+			<footer>
+				<div class="margin">
+					<p class="clearfix"><img src="img/bot_logo.png" alt="" class="fl"><span class="fl">Copyright © 2017-2019 ｜ACChain<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">.黔ICP备17004079号-1</a>.all rights reserved.</span></p>
+				</div>
+			</footer>
+		</div>
+	</body>
+	<script src="js/language_select.js" type="text/javascript" charset="utf-8"></script>
+	<script src="static/goalProgress.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="static/statics.js"></script>
+	<script src="static/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript">	
+	//滚动条样式
+		(function($){
+			$(window).on("load",function(){
+				$("#bit_table .data_lists").mCustomScrollbar({
+					setHeight:580,
+					theme:"dark-3"
+				});
+				$("#yitai_table .data_lists").mCustomScrollbar({
+					setHeight:580,
+					theme:"dark-3"
+				});
+			});
+		})(jQuery);
+		
+		$(".find_style li").click(function(){
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+		$("#bit_coin").click(function(){
+			$("#bit_table").show();
+			$("#yitai_table").hide();
+		});
+		$("#yitai_coin").click(function(){
+			$("#yitai_table").show();
+			$("#bit_table").hide();
+		});
+		$(".close_icon,.btn").click(function(){
+			$(".address_dialog").hide();
+			$(".dialog_init").hide();
+			$(".mask").hide();
+		});
+	</script>
+	<script src="static/jquery.share.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

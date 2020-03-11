@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>RET-ACChain-The tool of asset digitization for changing the world</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script src="static/qrcode.min.js"></script>
+		<script src="static/store.min.js"></script>
+		<script type="text/javascript" src="static/jQuery.md5.js"></script>
+		<script type="text/javascript" src="static/common.js"></script>
+		<script src="js/ret_ico.js"></script>
+		<style type="text/css">
+			*{font-family:  Helvetica, Arial, sans-serif;}
+			.house_developer h2,.theory h2,.guaranteer h2,.news_part h2{ color: #252c5b; padding: 40px 0;}
+			.house_developer h2,.theory h2,.ret_team_intro h2,.guaranteer h2,.ico_detail_part h2,.ret_process h2,.news_part h2{ font-size: 30px;  font-weight: 700; text-align: center;}
+			.ico_detail_part h2{ color: #ffffff; margin-bottom: 70px;}
+			.guaranteer h2{ padding: 80px 0;}
+			.ret_team_intro h2{ padding: 86px 0 82px;}
+			.news_part h2{ padding: 100px 0 74px;}
+			.news_part{ padding-bottom: 164px;}
+			.theory{ margin-bottom:94px;}
+			.theory dl dt{ font-size: 18px;}
+			.theory dl dd{ color: #777777;}
+			.theory dl dd,.top_intro li,.notice_part .margin dd{ line-height: 45px; font-size: 16px;}
+			.top_intro{ margin-top: 60px;width: 100%;}
+			.top_intro li{ color: #ffffff; list-style: inside;}
+			.companyInfor dl dt{ font-size: 18px;}
+			.ret_team_intro dl img{ display: block; width: 145px; height: 145px; margin: 0 auto; border: 2px solid #ffffff; border-radius: 50%;} 
+			.jump_btns{ display: block; margin: 70px auto;}
+			.rule_card{ padding: 53px 67px; border: 1px solid #e2e3ea; position: relative;}
+			.involve_style h3{ position: relative; width: 608px; border-bottom: 1px solid #e2e3ea; margin:84px auto 63px;}
+			.theory .rule_card h2,.involve_style p{ padding: 0 20px; background: #ffffff; position: absolute; left:232px; top: -22px;}
+			.involve_style p{ top: -10px; left:210px;color: #8e939f;font-size: 18px;}
+			.theory .intro_ret_house dl dt{ font-size: 30px;font-weight: 500;margin-bottom: 20px;color: #252c5b;}
+			.intro_ret_house{ background: #e5e5e5; padding: 65px 0 70px; margin-bottom:114px;}
+			.ico_detail_part{ height: 550px; background: url(img/ico_detail_bg.png) no-repeat center center; background-size: cover;}
+			.ico_detail_part .margin{ padding: 72px 44px 61px; color: #ffffff;}
+			.ico_detail_part .margin  p,.ico_detail_part .margin li{ line-height: 38px;}
+			.ico_detail_part .margin  p,.ico_detail_part .margin li,.organ_grp dl dt,.seedetail_btn a{ font-size: 16px;}
+			.ico_detail_part .margin  p{ margin-bottom: 40px;}
+			.involve_grp dl{ width: 20%;}
+			.organ_grp dl{ height: 270px;}
+			.involve_grp dl{ height: 170px; margin-left: 0;}
+			.involve_grp dd img{ display: block; width: 64px; height: 64px; margin: 0px auto;}
+			.theory dl dd.involve_subtit{ color: #303543; font-size: 16px; margin-bottom: 8px;}
+			.organ_grp dl,.involve_grp dl{ float: left;}
+			.organ_grp dl{ width: 25%;}			
+			.organ_grp dl dd{ color: #8e939f;}
+			.organ_grp dl dt,.involve_grp dl dt{ color: #2c3249; margin: 12px 0 8px;}
+			.organ_grp dl dt,.organ_grp dl dd,.involve_grp dl dt,.involve_grp dd{ text-align: center;}
+			.organ_grp dd img{ display: block; width: 200px; height: 158px; margin: 0px auto;}
+			.theory .involve_grp dd{ line-height: 14px;}
+			.seedetail_btn a{ display: inline-block; width: 160px; height: 53px; line-height: 53px; text-align: center;color: #ffffff; background: #252c5b;}
+			.seedetail_btn .instruction_btn{float: right; display: inline-block; width: 160px; height: 53px; line-height: 53px; text-align: center;color: #252c5b; background: #ffffff; border: 1px solid #252c5b;}
+			.seedetail_btn{width: 390px;margin: 90px auto 50px;}
+			.remark{ width: 625px; text-align: center; font-size: 16px; margin:0 auto 70px;}
+			.involve_rightnow{font-weight: 600; display: block; width: 92px; height: 35px; line-height:35px; text-align: center; color: #252c5b; border: 1px solid  #252c5b; margin: 10px auto; border-radius: 3px;}
+			.newr_bg{ height: 694px; background: url(img/ret_banner.png); background-size: cover; background-repeat: no-repeat; background-position: center center;padding-top: 230px;}
+			.newr_bg dl,.newr_bg .fr{color: white;}
+			.newr_bg dl dt{font-size: 36px;font-weight: 600;font-style: italic;}
+			.newr_bg dl dd{ line-height: 28px;margin-top: 28px;font-size: 16px;}
+			/*.newr_bg dl dd:last-child{margin: 178px 0 0 80px;}*/
+			.newr_bg dl dd a{ display: inline-block; font-size: 16px; width: 140px; height: 52px; line-height: 52px; text-align: center; color: white; float: left;} 
+			.newr_bg dl dd a:first-child{background: #2d3670;}
+			.newr_bg dl dd a:last-child{background: #282c39;margin-left: 60px;width: 148px;}
+			.newr_bg dl dd a img{position: relative;top: 7px;left: -8px;}
+			.newr_bg .fr p{text-align: center;margin-top:28px;}
+			.newr_bg .fr p a{color: white;}
+			.project{height: 594px;position: relative;}
+			.pro_int{height: 654px;background: url(img/pro_int_bg.png);width: 1171px;background-size: cover; background-repeat: no-repeat; background-position: center center;border-radius: 9px;padding: 30px 85px 156px;color: white;position: absolute;top: -62px;left: 50%;margin-left: -585.5px;}
+			.pro_int h2{font-size:28px;font-weight: 600;margin: 60px 0;}
+			.pro_int p{line-height: 35px;font-size: 16px;}
+			.raise_det{padding: 76px 0 12px;}
+			.raise_det ul{ width: 33.333%;color: #3e4558;}
+			.raise_det ul li{ text-align: center;}
+			.raise_det div.raise_detbg{width: 600px; height: 276px; background: url(img/rd_l.png) no-repeat; position: absolute; top: 6px;}
+			.raise_det ul.rd_l li:nth-child(1){font-size: 16px;font-weight: 600;}
+			.raise_det ul.rd_l:nth-child(2) li:nth-child(2){border-right: 1px solid #dde6ec; border-left: 1px solid #dde6ec;}
+			.raise_det ul.rd_r{ width: 550px;}
+			.raise_det ul.rd_r li{ text-align: left;}
+			.raise_det ul.rd_r li:nth-child(1){margin-left:50px;}
+			.raise_det ul li:nth-child(2){margin-top: 24px;}
+			.raise_det ul .rd_lcion{font-size: 32px;}
+			.raise_det ul .lcion_type{font-size: 16px;color: #8e939f;margin-left: 14px;}
+			.raise_det ul .rdr_txt{margin-top: 129px;}
+			.raise_det ul .rdr_txt p:first-child{font-size: 20px;font-weight: 600;}
+			.raise_det ul .rdr_txt p:last-child{font-size: 16px;line-height: 32px;margin-top: 42px;}
+			.ret_process{ background: #ffffff; padding: 80px 0 160px;}
+			.ret_process h2{ margin-bottom: 118px;}
+			.ret_team_intro dl{ width: 317px;}
+			.ret_team_intro dl:nth-child(2), .ret_team_intro dl:nth-child(5){ margin: 0 110px;}
+			.notice_part .margin{ padding: 67px 63px;}
+			.notice_part .margin dt{ font-weight: 700; font-size: 16px; margin-bottom: 5px; margin-bottom: 22px;}
+			.notice_part .margin{ border: 1px solid #a6abbb; border-radius: 2px; background: #f8f9fa;}
+			.news_part dl{ float: left; width: 227px; margin-right: 9px;}
+			.news_part dl:last-child{ margin-right: 0px;}
+			.news_part dl dd img{ display: block; width: 220px; height: 148px;}
+			.news_part dl dt{ font-size: 14px; margin: 16px 0 10px; width: 227px; /*overflow: hidden; text-overflow: ellipsis; white-space: nowrap;*/}
+			.news_part dl dd{ color: #8e939f;}
+			.jump_btns a:first-child { width: 230px; background: #252c5b; font-size: 16px;}
+			.Digital_btn{width: 156px;}
+			.ret_process dl:nth-child(1){margin: 0 0 0 118px;width: 348px;}
+			.ret_process dl:nth-child(1) dt,.ret_process dl:nth-child(2) dt{text-align: center;}
+			.ret_process dl:nth-child(2){width: 222px;margin-left: 108px;margin-right: 0;}
+			.ret_process dl:nth-child(3){width: 240px;margin-left: 126px;}
+			.ret_process dl:nth-child(6){margin: 0 74px 0 55px;}
+			.ret_process dl:nth-child(7){margin-right: 50px;text-align: center;}
+			.ret_process dl:nth-child(8) {width: 412px;text-align: center;}
+			.ret_team_intro dl{height: 596px;}
+			.ret_team_intro dl dd{text-align: left;}
+			.ret_team_intro dl dd.team_tit{text-align: center;}
+			.ret_process dl dt{color: #252c5b;}
+			.news_part dl a{color: #2c3249;}
+			.news_part dl a:hover{color: #2c3249;}
+			.news_part dl a dt:hover{color: #2c3249;text-decoration: underline;}
+			.news_part dl a dt{line-height: 24px;}		
+			.inform{ font-size: 15px; margin-bottom: 70px; line-height: 24px; color: #fd1e1e;}	
+			.inform ul{ margin-bottom: 40px;}
+			.last_inform li{ margin-top: 20px;}
+		</style>
+	</head>
+	<body class="retPage">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<!--ICO正式开始时间提示弹窗-->
+		<div class="dialog time_tip_dialog" style="display: none; width: 702px;height: 255px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<dl>
+				<dd>The official launching time of ICO is <strong>18:00, 9th June 2017 </strong>(Beijing time)</dd>
+				<dd><strong>stay tuned!</strong></dd>
+			</dl>
+		</div>
+		<!--登录-->
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>Login</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="Nickname/Email"/>
+					<input type="password" class="input_paw" id="password" placeholder="Password"/>
+					<span class="btn" id="login">Login</span>
+					<p class="clearfix"><span class="fl">Account does not exist？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">Register now>></a></span></p>
+					<p class="clearfix"><a href="find_password.html" class="find_password fl">Forgot password？</a></p>
+				</div>				
+			</div>
+		</div>
+		<!--ICO地址弹框-->
+		<div class="dialog address_dialog" style="display: none;">
+			 <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			 <div class="code" id="address_code">
+			 	<!--<img src="img/contact_code.png" alt="" />-->
+			 </div>
+			 <ul>
+			 	<li class="tit">Please transfer<sapn id="currency"></sapn>into below address to join ICO</li>
+			 	<li class="tip_txt">1 units of RET is the minimum investing number in the ICO.Otherwise, this operation will be considered as invalid.</li>
+			 	<li><input type="text" disabled="disabled" id="address_input"/></li>
+			 </ul>
+			 <a class="btn" href="ret_record_detail.html">Start Your ICO Now</a>
+		</div>
+		<!--通用提示弹窗-->
+		<!--<div class="dialog dialog_init ret_dialog" style="display:none;width:645px;height: 332px;">
+		    <h5 class="clearfix dialog_tit">&lt;!&ndash;<img src="img/close_icon.png" class="close_icon"/>&ndash;&gt;</h5>
+		    <p class="ret_txt">
+                &nbsp; &nbsp;The investment offerings listed on this trading platform are being offered exclusively to persons outside of the United States, and may not be purchased by any US citizen or resident of the US.  Any person desiring to invest in the offerings on this site must verify that they are not a US citizen or resident and must provide documentation of nationality and residence. Nationality and residence of all investors will be independently verified and if it is determined that an investor is a US citizen or resident, the investment will be revoked and all money will be refunded to the Investor.
+		    </p>
+		    <div class="btns">
+		    	<span class="button" id="agree">I have been notified</span>
+		    	&lt;!&ndash;<span class="button" id="noagree">No,  I don't agree</span>&ndash;&gt;
+		    </div>
+		</div-->
+		<header>
+			<div class="header_margin clearfix">
+				<a href="#" class="logo fl" style="margin-top: 27px;"><img src="img/nret_logo.png" alt="Logo" class="fl"></a>
+				<div class="fr menu">
+					<div class="language_choose">
+						<div class="language_box">
+							<p class="language_text"><img src="img/flag_usa.png" alt=""/></p><em class="down_icon"></em>
+							<ul id="language_gather" style="display: none;">
+								<li class="language_option"><a href="/ret_ico.html"><img src="img/flag_china.png" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="newr_bg">
+			<div class="margin clearfix">
+				<dl class="fl">
+					<dt>The first global digital asset that backed by real estate</dt>		
+					<div class="clearfix">
+						<ul class="top_intro fl">
+							<li>Public and transparent asset digitization process；</li>
+							<li>Unique, stable and creative blockchain product；</li>
+							<li>Development of brand new business model, operation model and sales model；</li>
+							<li>Establishment of digital asset ecosystem based on blockchain.</li>
+						</ul>
+						<dd class="fl">
+							<a href="/whitePaper/Serene_Sendera_Ranch_LP_Project_Plan_En.pdf" target="_blank">Business plan</a>
+							<a href="https://youtu.be/bw5TcVwZx3A" target="_blank"><img src="img/ret_video.png" alt=""/>Watch Video</a>
+						</dd>
+					</div>
+				</dl>
+				<div class="fr relative">
+					<img src="img/ret_book.jpg" alt="" />
+					<p><a href="/whitePaper/RET_whitepaper_En.pdf" target="_blank">Download Whitepaper</a></p>
+				</div>
+			</div>
+		</section>
+		<section class="project">
+			<div class="pro_int">
+			    <h2>Project Introduction</h2>
+			    <p>Real Estate Token or RET is an encrypted digital token that represents digitized real estate assets, generated based on ACChain open source blockchain technology.  Through RET, property owners and real estate developers can widen the reach of their distribution and provide a hassle-free experience to investors across the globe. </p>
+				<p>RET can significantly reduce the development costs and construction time for developers, helping the company to grow and expand faster. </p>
+				<p>For buyers, RET provides participant greater transparency as relevant project information such as cost performance, content authenticity and asset status are readily available in the platform. This also helps buyers to make an informed decision at the shortest time possible.  Moreover, RET offers better liquidity for real estate assets. </p>
+				<p>RET is issued base on the real estate and ACChain. Sendera Ranch community is the real estate which is located in the thriving Dallas-Fort Worth metropolitan area, the 889.53-acre development will add 2385 homes in the beautiful community of Sendera Ranch. The development is divided into 10 phases and based on current market valuation, the average price for house is US$270,000 and total worth approximately USD655 million.</p>
+			</div>
+		</section>
+		<section class="raise_det">
+			<div class="margin">
+				<ul class="fl rd_l">
+					<li>TOTAL RAISED：</li>
+					<li><span class="rd_lcion" id="totleAmount">0</span><span class="lcion_type">USD</span></li>
+				</ul>
+				<ul class="fl rd_l">
+					<li>TOTAL INVESTORS：</li>
+					<li><span class="rd_lcion" id="totleCount">0</span><span class="lcion_type"></span></li>
+				</ul>
+				<ul class="fl rd_l">
+					<li>ICO GOAL：</li>
+					<li><span class="rd_lcion">50,000,000</span><span class="lcion_type">RET</span></li>
+				</ul>
+				<div class="clear"></div>
+				<div class="clearfix relative">
+					<div class="raise_detbg"></div>
+					<ul class="fr rd_r">
+						<li class="rdr_txt">
+							<p>ICO Plan of The Phase</p>
+							<p>RET that equivalent to US$50mm will be issued in this phase, with each RET valued as USD $1. <br/>RET distribution channel: Primary Market, Digital Asset Fund and ICO. </p>
+						</li>
+					</ul>	
+				</div>
+			</div>
+		</section>
+		<section class="theory">							
+			<div class="involve_style margin">				
+				<h3><p>Participation Way</p></h3>				
+				<div class="involve_grp clearfix">
+					<dl>						
+						<dd><img src="img/involve_type0.png" alt="" /></dd>
+						<dt id="btcJoinCount">0</dt>
+						<dd class="involve_subtit">BITCOIN</dd>
+						<dd>2800RET/1BTC</dd>
+						<!--<dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="btc_join">Join Now</a></dd>-->
+					</dl>
+					<dl>						
+						<dd><img src="img/involve_type1.png" alt="" /></dd>
+						<dt id="ethJoinCount">0</dt>
+						<dd class="involve_subtit">ETHEREUM</dd>
+						<dd>330RET/1ETH</dd>
+						<!--<dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="eth_join">Join Now</a></dd>-->
+					</dl>
+					<dl>						
+						<dd><img src="img/involve_type2.png" alt="" /></dd>
+						<dt id="accJoinCount">0</dt>
+						<dd class="involve_subtit">ACC</dd>
+						<dd>0.5RET/1ACC</dd>
+						<!--<dd><a href="javascript:void(0);" class="involve_rightnow" data-login="false" data-value="" id="acc_join">Join Now</a></dd>-->
+					</dl>
+					<dl>						
+						<dd><img src="img/involve_type3.jpg" alt="" /></dd>
+						<dt id="USDJoinCount">super nodes</dt>
+						<dd class="involve_subtit">Supernodes USD</dd>
+						<dd>1RET/1USD</dd>
+						<!--<dd><a href="http://www.pencilblockchain.com/" target="_blank" class="involve_rightnow">Join Now</a></dd>-->
+					</dl>
+					<dl>						
+						<dd><img src="img/involve_type4.jpg" alt="" /></dd>
+						<dt style="margin-bottom: 6px;">COLLINS</dt>
+						<dt style="margin:0 0 3px 0">BARROW</dt>
+						<dd class="involve_subtit">Invest in Fund</dd>						
+						<!--<dd><a href="http://www.collinsbarrow.com/en/toronto-ontario/professionals/ben-gibbons" target="_blank" class="involve_rightnow Digital_btn">Digital Asset Fund</a></dd>-->
+					</dl>
+				</div>
+				<div class="seedetail_btn"><a href="ico_record.html" target="_blank">View Record</a><a href="ret_operation.html" target="_blank" class="instruction_btn">Participant Guide</a></div>
+				<div class="remark">During the period of ICO, 1 RET- SCHSR has 1 USD value.The exchange rate to BTC and ETH will be dynamical adjusted in weighted average method every 3 to 5 days.</div>
+				<!--<div class="inform">
+					<ul>
+						<li><strong>RET ICO Announcement:</strong></li>
+						<li>As requested by the Sponsor company, RET's ICO will continue for its underlying asset, the residential real estate properties, will be successively built and sold, which promotes stabilized and fixed returns for RET investors.</li>
+					</ul>
+					<ol> 
+						<strong>Ways to participate:</strong>
+						<li>•Exchange for RET with other forms of digital assets;</li>
+						<li>•Purchase from Super-nodes companies; </li>
+						<li>•Invest in the Digital Assets Fund.</li>
+					</ol>
+					<ul class="last_inform">
+						<li>There will be no set timetable for each sales cycle. Two natural days after the previous sales complete, the next shall begin. </li>
+						<li>RET's market price will be fluctuating along with the local real estate market ( Market index as reference). </li>
+					</ul>
+				</div>-->
+			</div>
+			<div class="intro_ret_house">
+				<div class="margin">
+					<dl>
+						<dt>What’s RET SCH-SR?</dt>
+						<dd>RET, or Real Estate Token, is an encrypted digital token that represents a digitized real estate asset, generated on ACChain using the open-source blockchain technology. RETs are issued by MGI (Meiyingju Group International Company Limited), a Hong Kong-based company.</dd>
+					</dl>
+					<dl>
+						<dt>Real Estate Developer</dt>
+						<dd>Serene Country Homes is an up-and-coming American property developer based in Dallas- Fort Worth, Texas. One of their major residential project, Serene Sendera Ranch, serves as the underlying asset behind RET. The 889.53-acre project will be developed in 10 phases, and will deliver 2385 homes with a total value of approximately USD $655mm. </dd>
+					</dl>
+				</div>
+			</div>
+			<div class="rule_card margin">
+				<h2>RET Distribution Mechanism & Exit Mechanism</h2>
+				<dl>
+					<dt>Distribution Mechanism:</dt>
+					<dd>1.Total Volume : </dd>
+					<dd>With 2385 houses valued at an average of USD$275,000 each, the total value of the development is approximately USD$655mm.  </dd>
+					<dd>2.ICO project:</dd>
+					<dd>Based on the approximate value of the development, 655,875,000tokens will be issued in 2017, with each token valued as USD $ 1. Two days after the RET sales period, the next phase will starts.</dd>
+					<dd>3.RET distribution channel：Primary Market、Digital Asset Fund and ICO</dd>
+				</dl>
+				<dl>
+					<dt>Exit Mechanism</dt>
+					<dd>There will be a fixed number of RET issued for each property.  For Sendera Ranch, a total of 655,875 ,000 SR-RET were issued based on the current home valuation of 2385 homes in Sendera Ranch. <br/>RET Holders will be able to use the tokens in the following ways: </dd>
+					<dd>1-	Hold it as an investment – Real Estate is still one of the best investment classes in the world. As the value of the token is linked to the value of the property, token holders directly benefit from the appreciation of the property without the hassle of maintaining one. </dd>
+					<dd>2-	Purchase of a home – Token holders opt to purchase a home in Sendera Ranch using their SR-RETs once they have accumulated enough tokens equivalent to the value of a home. </dd>
+					<dd>3-	Trading – Token holders can also exchange their RETs for other tokens or sell it on trading platforms</dd>
+					<dd>4- 	Purchase of other RETs – Token holders can also use their RETs to pay for RETs of other properties within the ACChain’s real estate asset community. </dd>
+					<dd>5- 	Other Purchase Transactions -  An ecosystem for RET is currently being planned. Once established, there will be infinite application scenarios that would allow RET holders to use their tokens to pay for goods and services from various merchants and retailers. </dd>
+				</dl>
+			</div>			
+		</section>
+		<section class="ico_detail_part">
+			<div class="margin">
+				<h2>ICO Policy</h2>
+				<p>The assets behind RET is using USD as payment unit, therefore, ICO’s goal will also use USD as reference value. All digital assets that participated in the ICO will be converted to equivalent RET using JUBI platform’s real time exchange rate between the digital asset used and the USD, based on the participating time, type of the digital asset, and amount. When RET is released, which occurs upon the closing of the ICO, and corresponding quantity of RET will be transferred to the participator’s ACChain digital wallet. The minimum “buy-in” is 1 RET during the ICO period, lower than 1 RET will be considered as invalid operation.</p>
+				<ol>
+					<li>Available Coin For RET ICO: BTC、ETH、ACC</li>
+					<li>ICO Period : The first Phase: 18:00 9th June 2017-18:00 24th June 2017 (Beijing time) (Has been extended on request of issuer)</li>
+				</ol>
+			</div>
+		</section>
+		<section class="ret_process">				
+			<div class="margin">
+				<h2>Timeline</h2>
+				<div class="relative clearfix">
+					<dl>
+						<dd>Due Diligence Title Deed Submitted to MGI</dd>
+						<dt>Apr 3, 2017</dt>
+					</dl>
+					<dl>
+						<dd>Start of Digitization Process</dd>
+						<dt>Mar 2017</dt>
+					</dl>
+					<dl>
+						<dd>Marketing and Construction of The Homes </dd>
+						<dt> 2019 </dt>
+					</dl>
+					<div class="clear"></div>
+					<img src="img/hor_processbar.jpg" alt="进度条" class="hor_processbar"/>					
+					<dl>
+						<dt>Mar 2017</dt>
+						<dd>Start of Digitization Process</dd>
+					</dl>
+					<dl>
+						<dt>May 2017</dt>
+						<dd>Start RET Pre-selling</dd>
+					</dl>
+					<dl>
+						<dt>July 2017</dt>
+						<dd>Start of Infrastructure Development of The Project </dd>
+					</dl>
+				</div>
+				<!--<img src="img/redDown_icon.png" alt="" class="redDown_icon"/>-->
+				<!--
+				<div class="process_content clearfix">
+					<ol class="fl">
+						<li class="clearfix"><em class="process_tit fl">投资进程:</em><div id="invest_process" class="fl"></div></li>
+						<li><em>募集总量:</em><span class="collect_amount">99999999</span></li>
+						<li><em>总参与者:</em><span class="participator_amount">15455</span>人</li>						
+					</ol>
+					<ul class="fr">
+						<a href="javascript:void(0);">
+							<li>参与</li>
+							<li>RET ICO</li>
+						</a>
+					</ul>
+				</div>
+				-->
+			</div>
+		</section>
+		<section class="ret_team_intro">
+			<div class="margin">
+				<h2>Leadership</h2>
+				<div class="clearfix">
+					<dl>
+						<img src="img/drik.png" alt="" />
+						<dt>Dirk Foo</dt>
+						<dd class="team_tit">President and Chief Executive Officer</dd><br/><br/>
+						<dd>Dirk is the President and Chief Executive Officer of the Serene Country Homes Group. In 1999, he acquired a real estate company, Multi-Match Pte Ltd, focusing on the property market in Singapore. In 2000, he was offered the sales distribution rights to market undeveloped land in Canada from a then little known international company, Walton. Under Dirk’s direction, Multi-Match proved to be prolific in sales and within a year, in 2001, Walton International offered Dirk the opportunity to lead their Singapore sales division as its first Vice President of Sales. Inevitably, given Dirk’s perennial outstanding performances, he was elevated to the position of Senior Vice President of Asia Sales.</dd>
+					</dl>
+					<dl>
+						<img src="img/joe2.png" alt="" />
+						<dt>Joe F. Attrux</dt>
+						<dd class="team_tit">Chief Operating Officer and Chief Financial Officer</dd>
+						<dd class="team_tit"></dd>
+						<dd>Joe is the Chief Operating Officer and Chief Financial Officer of Serene Country Homes Group, joining the firm in 2014. Joe holds a Master of Business Administration Degree from the Richard Ivey School of Business, University of Western Ontario, Canada. Joe is a Chartered Professional Accountant with the Chartered Professional Accountants of Ontario, Canada and a Certified Public Accountant with the Hong Kong Institute of Certified Public Accountants.</dd>
+					</dl>
+					<dl>
+						<img src="img/allan.png" alt="" />
+						<dt>Allan Lind</dt>
+						<dd class="team_tit">Executive Vice President for Corporate Affairs & Services</dd>
+						<dd>Allan is the Executive Vice President for Serene Country Homes Group and a director of all operating companies within the group. He holds a Bachelor’s degree in Business & Marketing from Edith Cowan University and brings over 30 years of experience in corporate fiscal planning and policy, accounting, auditing and marketing practice with global organizations such as BHP Billiton, the world’s largest mining operator and Gillette Industries of Europe.</dd>
+					</dl>
+					
+					<dl>
+						<img src="img/ron.png" alt="" />
+						<dt>Ron Ramirez, P.E.</dt>
+						<dd class="team_tit">Executive Vice President of Engineering and Construction</dd>
+						<dd>Ron came to Serene Country Homes from Wier & Associates, Inc. with 18 years of tenure, where he operated as Vice-President and Principal for the last 10 years. His duties included Director of Engineering, Treasurer, and he was the risk manager for the firm. Ron supervised design teams that developed plans and specifications for private development and public sector projects. He was responsible for the design, plan production, budget, client contact, billing, and construction administration/observation. Ron also assists the management and ownership team evaluate potential sites for land acquisition. </dd>
+					</dl>
+					<dl>
+						<img src="img/rob.png" alt="" />
+						<dt>Rob Snelus</dt>
+						<dd class="team_tit">Executive Vice President of Operations – Sales and Construction</dd>
+						<dd>Rob is a graduate of the University of Texas at Arlington with a B.A. in Communications. Rob has over 25 years of Operations Management experience, not to mention a great wealth of knowledge in the Construction Industry. Prior to joining Serene Country Homes, he was a Regional Field Operations Manager for Progress Residential. He has also held the positions of Regional Manager and V.P. of Operations with Choice Homes of Texas and KB Home, a top 5 national builder. Collectively, Rob has been involved in the building and selling of over 4000 homes in the Texas over the past 25 years. Rob also oversees the design and costing of the homes for Serene Country Homes to ensure they are both built to specification and according to the set budget for the particular house model and lot.</dd>
+					</dl>
+					<!--<dl>
+						<img src="img/rob.jpg" alt="" />
+						<dt>Rob Snelus</dt>
+						<dd class="team_tit">運營-銷售和建築執行副總裁</dd>
+						<dd>畢業於德州大學阿靈頓分校，擁有通訊專業學士學位。 Rob擁有超過25年的運營管理經驗，在建築行業擁有豐富的知識。在加入Serene Homes集團之前，他是Progress Residential的區域性實地運營經理。他還擔任區域經理和V.P. 德州的Choice Home和KB Home的業務前5名 國家建築師。 Rob總共在過去25年裡一直參與德州4000多所房屋的建設和銷售。 Rob還監督Serene Homes的房屋的設計和成本核算，以 確保它們都按規定建造，並根據特定房屋模型和地塊制定預算。</dd>
+					</dl>-->
+				</div>
+			</div>
+		</section>
+		<section class="guaranteer">
+			<div class="margin">
+				<h2>Third Party Agencies</h2>
+				<div class="organ_grp clearfix">
+					<dl>
+						<a href="http://www.us.jll.com/united-states/en-us" target="_blank">
+							<dd><img src="img/organ_grp_pic1.jpg" alt="" /></dd>
+							<dt>JLL</dt>
+							<dd>Assets Valuation and Appraisal</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://www.metrostudy.com/" target="_blank">
+							<dd><img src="img/organ_grp_pic2.jpg" alt="" /></dd>
+							<dt>Metrostudy</dt>
+							<dd>Market Study and Analysis</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="https://www.weaver.com/" target="_blank">
+							<dd><img src="img/organ_grp_pic3.jpg" alt="" /></dd>
+							<dt>Weaver LLP</dt>
+							<dd>Financial Audit </dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://www.pelotonland.com" target="_blank">
+							<dd><img src="img/organ_grp_pic4.jpg" alt="" /></dd>
+							<dt>Peloton</dt>
+							<dd>Project Planning and Design</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="https://www.planfactory.com" target="_blank">
+							<dd><img src="img/organ_grp_pic5.jpg" alt="" /></dd>
+							<dt>The Plan Factory</dt>
+							<dd>Project Planning and Design</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://www.collinsbarrow.com/en/cbn/news/collins-barrow-toronto-partner-interviewed-by-tmx-tsx-private-markets" target="_blank">
+							<dd><img src="img/organ_grp_pic6.jpg" alt="" /></dd>
+							<dt>Collins Barrow</dt>
+							<dd>Financial Advisory</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://www.johnworleyattorney.com/" target="_blank">
+							<dd><img src="img/organ_grp_pic7.jpg" alt="" /></dd>
+							<dt>John Worley</dt>
+							<dd>Legal Advisory</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="https://www.bankofamerica.com/" target="_blank">
+							<dd><img src="img/organ_grp_pic8.jpg" alt="" /></dd>
+							<dt>Bank of American</dt>
+							<dd>Deed of Trust</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="https://www.stewart.com/en.html" target="_blank">
+							<dd><img src="img/organ_grp_pic9.jpg" alt="" /></dd>
+							<dt>Stewart Title</dt>
+							<dd>Deed of Trust</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="javascript:void(0);" target="_blank">
+							<dd><img src="img/organ_grp_pic10.jpg" alt="" /></dd>
+							<dt>MGI [Meiyingju Group]</dt>
+							<dd>Digital Assets Sponsor</dd>
+						</a>
+					</dl>
+					<dl>
+						<a href="http://pencilblockchain.com" target="_blank">
+							<dd><img src="img/organ_grp_pic11.jpg" alt="" /></dd>
+							<dt>Pencil Blockchain Company Inc</dt>
+							<dd>Asset Digitization </dd>
+						</a>
+					</dl>
+				</div>					
+				<div class="jump_btns"><!--<a href="javascript:void(0);" disabled="disabled" target="_blank">相关新闻</a>--><a href="https://eyun.baidu.com/s/3nuESeP7#sharelink/path=%252F" target="_blank">Learn More</a></div>				
+			</div>
+		</section>
+		<section class="notice_part">
+			<dl class="margin">
+				<dt>I Notice : </dt>
+				<dd>The RET offering listed on this trading platform is being offered exclusively to persons outside of the United States, and may not be purchased by any US citizen or resident of the US.  Any person desiring to invest in the RET offering must verify that they are not a US citizen or resident and must provide documentation of nationality and residence. Nationality and residence of all investors will be independently verified and if it is determined that an investor is a US citizen or resident, the investment will be revoked and all money will be refunded to the Investor.</dd>
+			</dl>
+		</section>
+		<section>
+			<div class="margin news_part clearfix">
+				<h2>News</h2>
+				<dl>
+					<a href="http://www.prnewswire.com/news-releases/655-million-worth-of-homes-to-be-built-using-the-first-real-estate-token-on-blockchain-300463865.html?tc=eml_cleartime" target="_blank">
+						<dd><img src="img/news_pic1.png" alt="" /></dd>
+						<dt>$655 Million Worth of Homes to be Built Using the First Real Estate Token on Blockchain</dt>
+						<!--<dd>2017-06-06 12:00:00</dd>-->	
+					</a>
+				</dl>
+				<dl>	
+					<a href="http://www.reuters.com/brandfeatures/venture-capital/article?id=6210" target="_blank">
+						<dd><img src="img/news_pic2.png" alt="" /></dd>
+						<dt>Digital Asset SDR System: Establishing New Order Of Blockchain Finance</dt>
+					</a>
+				</dl>
+				<dl>	
+					<a href="https://www.dallasnews.com/business/real-estate/2017/05/23/fort-worth-builder-using-digital-fund-platform-finance-community" target="_blank">
+						<dd><img src="img/news_pic3.png" alt="" /></dd>
+						<dt>Fort Worth builder using digital funding platform to finance community</dt>
+					</a>
+				</dl>
+				<dl>	
+					<a href="https://www.dallasinnovates.com/blockchain-to-fund-655m-residential-community-in-dfw/" target="_blank">
+						<dd><img src="img/news_pic4.png" alt="" /></dd>
+						<dt>Blockchain to Fund $655M Residential Community in DFW</dt>
+					</a>
+				</dl>
+				<dl>	
+					<a href="http://www.reuters.com/brandfeatures/venture-capital/article?id=10715" target="_blank">
+						<dd><img src="img/news_pic5.png" alt="" /></dd>
+						<dt>Collins Barrow To Advise On The Creation Of A Digital Asset Fund Utilizing ACChain Blockchain Technology</dt>
+					</a>
+				</dl>
+			</div>
+		</section>
+	</body>	
+	<script src="static/goalProgress.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('#invest_process').goalProgress({
+            goalAmount: 100000000,
+            currentAmount: 5000,
+        });
+        $(".progressBar").text(" ");
+        $(".close_icon").click(function(){
+			$(".address_dialog").hide();
+			$(".time_tip_dialog").hide();
+			$(".mask").hide();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});
+	</script>
+	<script src="js/language_select.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>PEB-ACChain-The tool of asset digitization for changing the world</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+	</head>
+	<body class="npcPage">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<!--ICO正式开始时间提示弹窗-->
+		<div class="dialog time_tip_dialog" style="display: none; width: 702px;height: 255px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<dl>
+				<dd>The official launching time of ICO is <strong>18:00, 9th June 2017 </strong>(Beijing time)</dd>
+				<dd><strong>stay tuned!</strong></dd>
+			</dl>
+		</div>
+		<!--登录-->
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>Login</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="Nickname/Email"/>
+					<input type="password" class="input_paw" id="password" placeholder="Password"/>
+					<span class="btn" id="login">Login</span>
+					<p class="clearfix"><span class="fl">Account does not exist？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">Register now>></a></span></p>
+					<p class="clearfix"><a href="find_password.html" class="find_password fl">Forgot password？</a></p>
+				</div>				
+			</div>
+		</div>
+		<!--ICO地址弹框-->
+		<div class="dialog address_dialog" style="display: none;">
+			 <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			 <div class="code" id="address_code">
+			 	<!--<img src="img/contact_code.png" alt="" />-->
+			 </div>
+			 <ul>
+			 	<li class="tit">Please transfer<sapn id="currency"></sapn>into below address to join ICO</li>
+			 	<li class="tip_txt">1 units of RET is the minimum investing number in the ICO.Otherwise, this operation will be considered as invalid.</li>
+			 	<li><input type="text" disabled="disabled" id="address_input"/></li>
+			 </ul>
+			 <a class="btn" href="ret_record_detail.html">Start Your ICO Now</a>
+		</div>
+		<header>
+			<div class="header_margin clearfix pnc_pad54">
+				<a href="#" class="logo fl" style="margin-top: 27px;"><img src="img/peb_logo.png" alt="Logo" class="fl"></a>
+				<div class="fr menu">
+					<div class="language_choose">
+						<div class="language_box">
+							<p class="language_text"><img src="img/flag_usa.png" alt=""/></p><em class="down_icon"></em>
+							<ul id="language_gather" style="display: none;">
+								<li class="language_option"><a href="/peb_public.html"><img src="img/flag_china.png" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="npc_sec1 peb_sec1">
+			<div class="margin clearfix pnc_pad54">
+				<dl class="fl">
+					<img src="img/sec1_info.png"/>
+				</dl>
+				<div class="fr sec1_right">
+					<img src="img/peb_book.png" alt="" />
+					<p><a href="https://download.acchain.org/whitePaper/PEB_white_paper.pdf?auth_key=1510553876-0-0-ada050e474af6595c753eb458620bcce" target="_blank">Download</a></p>
+				</div>
+			</div>
+		</section>
+		<section class="peb_sec2">
+			<div class="margin">
+				<div class="sec2_top">
+					<img src="img/peb_title01.png" alt="What is PEB"/>
+					<p class="subtitle">PEB——China's First Standard Digital Token Anchoring Physical Asset</p>
+					<p class="particulars">The issue idea of PEB is to change the traditional finance system which takes currency as its core into the Barter time, digital asset circulates by exchanging without the media of fiat.The operation and development of PEB draw attention of all parties since it was issued.In accordance with the established direction of development, PEB will use ACChain underlying technology to plan new chain functions, which remains the PEB name, amount and the listing in the trade platform, achieving the promotion in function and value, so as to promote the construction of digital asset circulating ecosystem in the blockchain scene implementation.</p>
+				</div>
+				<div class="sec2_bot">
+					<img src="img/peb_title02.png" alt="PEB Operation Plan"/>
+					<ol>
+						<li>PEB original assets transfer to the ACChain for publicity, meanwhile, supply 1 billion assets and confirm that the biggest circulation is 1 billion coins. There will be no increase in the circulation amount in the market before the value of PEB returns to 1 RMB.</li>
+						<li>After the completion of layer technology, PEB will finish the replacement of the Wallet and allows redemption of the collected tea by 1 coin/ 1 RMB.</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<section class="peb_sec3">
+			<div class="margin">
+				<p class="sec3_title">PUBLISHED INFORMATION</p>
+				<table>
+					<tr><th>Serial No.</th><th>Name of Collected Tea</th><th>Production Time</th><th>Stock Quantity(Pcs)</th><th>Grams of Each Piece</th><th>Evaluated Price<br>(Piece)</th><th>Redemption Unit<br>(gram/piece)</th><th>PEB<br>Redemption(coin/piece)</th><th>Total Value</th></tr>
+					<tr><td>1</td><td>Da'guan bai'gu 2005</td><td>Apr,2010</td><td>1848</td><td>400</td><td>20000</td><td>400</td><td>20000</td><td>36960000</td></tr>
+					<tr><td>2</td><td>Da'guan yuan'shu 2007</td><td>2007</td><td>1932</td><td>400</td><td>22000</td><td>400</td><td>22000</td><td>42504000</td></tr>
+					<tr><td>3</td><td>Da'guan qian'nian 2008</td><td>20th,Apr,2008</td><td>670</td><td>1000</td><td>85000</td><td>1000</td><td>85000</td><td>56950000</td></tr>
+					<tr><td>4</td><td>Da'guan shou'sheng 2010</td><td>8th,Aug,2010</td><td>162</td><td>100</td><td>11700</td><td>100</td><td>11700</td><td>1895400</td></tr>
+					<tr><td>5</td><td>Da'guan 1974 sheng'bing</td><td>9th,Oct,2007</td><td>7264</td><td>500</td><td>26000</td><td>500</td><td>26000</td><td>188864000</td></tr>
+					<tr><td>6</td><td>Da'guan mu'shu 2007</td><td>18th,Aug,2007</td><td>6550</td><td>500</td><td>34560</td><td>500</td><td>34560</td><td>226368000</td></tr>
+					<tr><td>7</td><td>Da'guan meng'cha 2009</td><td>2009</td><td>4206</td><td>400</td><td>25760</td><td>400</td><td>25760</td><td>108346560</td></tr>
+					<tr><td>8</td><td>Da'guan qi'zi 2006</td><td>2006</td><td>3190</td><td>357</td><td>42510</td><td>357</td><td>42510</td><td>135606900</td></tr>
+					<tr><td>9</td><td>Da'guan meng'qiao 2007</td><td>30th,Sep,2007</td><td>2014</td><td>500</td><td>37100</td><td>500</td><td>37100</td><td>74719400</td></tr>
+					<tr><td>10</td><td>Da'guan qing'tuo 2008</td><td>20th,Apr,2010</td><td>17760</td><td>100</td><td>5000</td><td>100</td><td>5000</td><td>88800000</td></tr>
+					<tr><td>11</td><td>Da'guan jin'gua 2008</td><td>2008</td><td>770</td><td>1000</td><td>41800</td><td>1000</td><td>41800</td><td>32186000</td></tr>
+					<tr><td>12</td><td>Da'guan shou'shu 2010</td><td>8th,Aug,2010</td><td>824</td><td>100</td><td>9360</td><td>100</td><td>9360</td><td>7712640</td></tr>
+					<tr><td>13</td><td>Da'guan nv'gong 2010</td><td>8th,Jan,2010</td><td>568</td><td>300</td><td>28000</td><td>300</td><td>28000</td><td>15904000</td></tr>
+					<tr class="add_br"><td class="no_br" colspan="7"></td><td class="no_br">Tea Value In Total:</td><td class="no_br add_br">1016816900</td></tr>
+				</table>
+				<p class="sec3_bot">
+					<a href="https://eyun.baidu.com/s/3eSkWAYY" target="_blank">A.Company asset quality report</a>
+					<a href="https://eyun.baidu.com/s/3bBmZlc" target="_blank">B.Main asset situation</a>
+					<a href="https://eyun.baidu.com/s/3cvUgzk" target="_blank">C.Identification report</a>
+					<a href="https://eyun.baidu.com/s/3i5Ia5nf" target="_blank">D.Insurance information</a>
+				</p>
+			</div>
+		</section>
+	</body>	
+	<script type="text/javascript">
+        $(".close_icon").click(function(){
+			$(".address_dialog").hide();
+			$(".dialog_init").hide();
+			$(".mask").hide();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});
+		
+	</script>
+	<script src="js/language_select.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

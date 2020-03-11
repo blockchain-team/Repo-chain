@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>ICO-ACChain-The tool of asset digitization for changing the world</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script src="static/qrcode.min.js"></script>
+		<script src="static/store.min.js"></script>
+		<script type="text/javascript" src="static/jQuery.md5.js"></script>
+		<script type="text/javascript" src="static/common.js"></script>
+	</head>
+	<body class="guan_ico">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>登录</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+					<input type="password" class="input_paw" id="password" placeholder="密码"/>
+					<span class="btn" id="login">登录</span>
+					<p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+				</div>				
+			</div>
+		</div>
+		<header>
+			<div class="header_margin clearfix pnc_pad54">
+				<a href="http://www.fh-intl.com/" class="logo fl" style="margin-top: 27px;"><img src="img/fh_logo.png" alt="Logo" class="fl"></a>
+				<div class="fr menu">
+					<div class="language_choose">
+						<div class="language_box">
+							<p class="language_text"><img src="img/flag_usa.png" alt=""/></p><em class="down_icon"></em>
+							<ul id="language_gather" style="display: none;">
+								<li class="language_option"><a href="/daguan_public.html"><img src="img/flag_china.png" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="guan_sec1">
+			<div class="margin clearfix">
+			<h3 class="npc_title">Series Token</h3>
+				<div class="fl">
+					<img src="img/qx_tea.png" alt="">
+					<img src="img/qm_tea.png" alt="">
+					<img src="img/jg_tea.png" alt="">					
+				</div>
+				<div class="fr">
+					<img src="img/guan_ver.png" alt="" />					
+				</div>
+			</div>
+		</section>
+		<section class="guan_sec2">
+			<div class="margin">
+				<ol>
+					<li class="clearfix"><img src="img/yz1.png" alt="" class="yz1"><img src="img/tea_icon.png" alt="" class="tea_icon"></li>
+					<li><img src="img/guan_tit.png" alt="" class="guan_tit"></li>
+				</ol>
+				<ul>
+					<li>
+						<img src="img/qx_ver.png" alt="" class="qx_ver">
+						<span>Whenever a product's name is connected with “Millennium”, the product instantly becomes rare and precious in the eyes of people. Pu'er Qian'xue raw tea was produced in 2008 from Yunnan province. Fresh leaves of the most original and wild trees were taken as the material of Qian'xue, Qian'xue is completely pure because of the raw and quintessential material. It gives best flavor and fragrance of the original tea.</span>
+						<img src="img/qianx_tea.png" alt="">
+					</li>
+					<li>
+						<img src="img/qiaom_tea.png" alt="">
+						<span>“I've never set foot in Simao, the best Pu'er tea is my best friend”. The “best Pu'er tea” in this Chinese poem refers to Qiao'mu (Arbor tree). As an representative tea in big leaf category, Qiao'mu King gained great popularity upon its arrival in the market due to its dominant spirit and lofty conception. Qiao'mu King is produced from tea leaves of big leaf ancient trees in Dongban mountain, Bingdao Laozhai village, Yunnan Province. It is a gift from mother nature. The taste and flavor are characterized by the bold, wild and plump style and royal demeanor of big leaf tea from Meng'ku town.</span>
+						<img src="img/qm_ver.png" alt="">
+					</li>
+					<li class="relative">
+						<img src="img/jg_ver.png" alt="" class="jg_ver">
+						<img src="img/yz2.png" alt="" class="yz2">
+						<span>Made from Pu'er raw tea of Da'guan Jin'gong 2009,the  tea is brightly yellow. It leaves sweetness after tasting. Shape of tea leaves is nicely preserved, the color of tea leaves is yellowish green. Fragrance of tea is light, but it lingers. The scent of cake-shaped tea is strong, the tea tastes great and has high value in collection.</span>
+						<img src="img/puer_tea.png" alt="">
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="tea_ico_intro">
+			<div class="margin">
+				<div>
+					<div class="sec2_top">
+						<h3 class="npc_title"><p class="relative">Tea asset digitalization</p></h3>
+						<p class="top_text">Qiannian xueshan， Da'guan qiao'mu， Da'guan jin'gong are stored， authenticated, estimated and confirmed by the third parties. It digitized the tea asset based on ACChain and it is a digital asset token generated by combining the blockchain underlying technology and digital encryption.</p>
+					</div>
+					<div class="public_auth">
+						<h3 class="npc_title"><p class="relative">Da'guan series token issuer</p></h3>
+						<dl>
+							<dt class="top_text">SHENZHEN FENGHUI COLORFUL STONE CO.,LTD</dt>
+							<dd class="top_text">SHENZHEN FENGHUI COLORFUL STONE Limited Company set up at 2000, located in the Shenzhen, Nanshan district, Zhiyuan buiding. The company has been developing steadily and quickly for decades, the branches and market channel internet of the company was built orderly in Shenzhen, Guangzhou, and Hainan, etc. The businesses spread all over in South China, Southwest, North China, Northeast, and now reaching Hongkong and abroad countries like UK, US etc.</dd>
+						</dl>
+					</div>					
+				</div>
+			</div>
+		</section>
+		<section class="npc_sec2 guan_sec4">
+			<div class="margin relative">
+				<div class="sec2_bot">
+					<h3 class="npc_title"><p class="relative">Issue rules and exit mechanism of Da'guan series token</p></h3>
+					<div class="bot_text">
+						<h4>Issue rules</h4>
+							<dl>
+								<dt>1.Total issue values：</dt>
+								<dd class="lineH27">The total value of Da'guan qianxue asset which has finished the identification, estimation, insurance, and managed in this publicity is 249,369,000 RMB. The total asset value of Da'guan qiao'mu is 183,526,200 RMB.</dd>
+							</dl>
+							<dl>
+								<dt>2.Exit mechanism：</dt>
+								<dd>1）.Da'guan series token holders can pay for the equal price of Da'guan series token redemption according to the demands.</dd>
+								<dd>2）.Da'guan series token can exchange with the China region digital token NPC, realizing the circulation and exchange of assets based on the NPC.</dd>
+						</div>
+						<div class="sec3_bot">
+							<h4>Published information</h4>
+							<a href="http://pan.baidu.com/s/1dFznp5Z" target="_blank" class="aptitude">Company asset quality report</a>
+							<a href="http://pan.baidu.com/s/1jIQhyXS" target="_blank">Main asset situation</a>
+							<a href="http://pan.baidu.com/s/1hsaKDpU" target="_blank">Identification report</a>
+							<a href="http://pan.baidu.com/s/1c21rjKc" target="_blank">Insurance information</a>
+						</div>
+					</div>
+			</div>
+		</section>
+	</body>	
+	<script type="text/javascript">
+        $(".close_icon").click(function(){
+			$(".dialog_init").hide();
+			$(".mask").hide();
+		});
+		$('.pebCoin').mouseenter(function(){
+			$(".mask").show();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});
+	</script>
+	<script src="js/language_select.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

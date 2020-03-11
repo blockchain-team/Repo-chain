@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>NPC-ACChain（资产链)-改变世界的资产数字化工具</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script src="static/store.min.js"></script>
+		<script src="static/qrcode.min.js"></script>
+		<script type="text/javascript" src="static/jQuery.md5.js"></script>
+		<script type="text/javascript" src="static/common.js"></script>
+	</head>
+	<body class="nh_ico">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>登录</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+					<input type="password" class="input_paw" id="password" placeholder="密码"/>
+					<span class="btn" id="login">登录</span>
+					<p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+				</div>				
+			</div>
+		</div>
+		<header>
+			<div class="header_margin clearfix pnc_pad54">
+				<a href="javascript:void(0);" class="logo fl" style="margin-top: 27px;" target="_blank"><img src="img/jcoin_logo.png" alt="Logo" class="fl"></a>
+				<div class="fr menu">
+					<div class="language_choose">
+						<div class="language_box">
+							<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+							<ul id="language_gather" style="display: none;">
+								<li class="language_option"><a href="/en/jiang_public.html"><img src="img/flag_usa.png" alt="" /></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="jc_sec1">
+			<div class="margin clearfix">
+				<img src="img/jcoin_word.png" class="fl jcoin_word" alt=""/>
+				<img src="img/jcoin_fly.png" class="fl jcoin_fly" alt=""/>
+				<img src="img/jcoin_wine.png" class="fl jcoin_wine" alt=""/>
+				<div class="fl jcoin-sy" id="jcoin-sy"></div>
+			</div>
+		</section>
+		<section class="jc_sec2">
+			<div class="margin text_center">
+				<img src="img/jcs2_title.png" alt="" class="jcs2_title"/>
+				<div class="jcs2_text">
+					华洋小红梁捆子原浆以本地优糯高粱为原料，用小麦制成高温曲，而用曲量多于原料。用曲多，发酵期长，多次发酵，多次取酒等独特工艺，这是华洋酱香酒风格独特、品质优异的重要原因。酿制过程要经过两次下料、九次蒸煮、八次摊晾加曲（发酵七次）、七次取酒，生产周期长达一年，再陈贮三年以上，勾兑调配，然后再贮存一年，使酒质更加和谐醇香，绵软柔和，方准装瓶出厂，全部生产过程近五年之久。<br/>
+					建国以来，无数次重大活动，酱香酒都被当做国礼，赠送给外国领导人。自古至今，向往酱香、赞美酱香的文人墨客不计其数。毫不夸张地说，酱香酒的每一个细小的“侧面”都有着丰富的人文历史故事，有着深厚的文化积淀与人文价值。
+				</div>
+			</div>
+		</section>
+		<section class="jc_sec3">
+			<div class="margin">
+				<div class="jcs3_top">
+					<img src="img/jcoin_z1.png" alt="资产数字化"/>
+					<p class="jcs3_text">中国酱香币（Jiangcoin）是依托资产链（ACChain）和资产交易平台流通的一款酱香白酒代币，利用区块链可追溯、不可篡改等优势，清晰记录每一笔权属登记、交易、流通，从而奠定权属资产化交易与可信任的资产大数据基础。</p>
+				</div>
+				<div class="jcs3_bot">
+					<img src="img/jcoin_z2.png" alt="酱子代币发行商"/>
+					<p class="jcs3_text">华洋系是中国式投行全链条解决方案提供商，下属包含华洋资本、华洋区块链、华洋创投基金、华洋创投孵化中心、华洋产业引导基金等。业务涵盖投资、金融、实业等多个领域，华洋作为前海股权交易中心战略合作伙伴，与多家券商、投资机构保持良好的业务联动关系。
+华洋系诞生于深圳，并在这里收获了全球领先的视野与思想。目前项目库的重要板块有：大健康产业、资产证券及数字化、大数据产业、农业流通产业等。</p>
+				</div>
+			</div>
+		</section>
+		<section class="npc_sec2 guan_sec4 nh_sec4 jc_sec4">
+			<div class="margin relative">
+				<div class="sec2_bot">
+					<h3><img src="img/jcs4_title.png" class="jcs4_title"/></h3>
+					<div class="bot_text">
+						    <dl>
+								<dd class="lineH27">发行规则</dd>
+							</dl>
+							<dl>
+								<dt>1.发行总价值：</dt>
+								<dd class="lineH27">此次公示的华洋小红梁捆子原浆资产总价值为1亿元人民币。 </dd>
+							</dl>
+							<dl>
+								<dt>2.退出机制：</dt>
+								<dd>1）.中国酱香币持有者，可根据需求支付对应价格的中国酱香币行权。</dd>
+								<dd>2）.中国酱香币可置换中国区数字本币NPC，实现以NPC为媒介的更多资产互换流通需求。</dd>
+							</dl>
+						</div>
+						<div class="sec3_bot clearfix">
+							<h4>公示信息</h4>
+							<a href="http://pan.baidu.com/s/1qX8e6Eo" target="_blank">A.公司资质报告</a>
+							<a href="http://pan.baidu.com/s/1i5kSzg5" target="_blank">B.主要资产情况</a>
+							<a href="http://pan.baidu.com/s/1bpMsyOf" target="_blank">C.鉴定报告</a>
+						</div>
+					</div>
+			</div>
+		</section>
+	</body>	
+	<script type="text/javascript">
+        $(".close_icon").click(function(){
+			$(".dialog_init").hide();
+			$(".mask").hide();
+		});
+		$('.pebCoin').mouseenter(function(){
+			$(".mask").show();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});
+		new QRCode(document.getElementById("jcoin-sy"),"http://www.huayanghui.net/hysjdzzx.html");
+	</script>
+	<script src="js/language_select.js"></script>
+	<script type="text/javascript" src="static/statics.js"></script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

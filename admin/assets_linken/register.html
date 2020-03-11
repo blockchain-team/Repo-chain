@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content=""/>
+    <meta name="Description" content=""/>
+    <title>Register-ACChain-The tool of asset digitization for changing the world</title>
+    <link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="static/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="static/jQuery.md5.js"></script>
+    <script type="text/javascript" src="static/store.min.js"></script>
+    <script type="text/javascript" src="static/common.js"></script>
+</head>
+<body>
+<div class="mask" style="display: none;"></div>
+<!--通用提示弹窗-->
+<div class="dialog dialog_init" style="display: none;width: 426px;height: 149px;">
+    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+    <p id="alert_info"></p>
+</div>
+<div class="mask" style="display: none;"></div>
+<div class="dialog" style="display: none;">
+    <h5 class="dialog_tit clearfix"><img src="img/close_icon.png" class="close_icon fr"/></h5>
+    <p class="text">Verification code sent to<em class="PhoneOrEmail">sh****@foxmail.com</em>.Enter it to complete registration!</p>
+    <span class="btn">Send again</span>
+</div>
+<header class="header">
+    <div class="margin clearfix">
+        <a href="index.html" class="logo fl"><img src="img/white_logo.png" alt="logo"/></a>
+        <span class="fl tit_find">Welcome to register</span>
+        <div class="fr menu color-black">
+			<div class="language_choose">
+				<div class="language_box">
+					<p class="language_text"><img src="img/flag_usa.png" alt=""/></p><em class="down_icon"></em>
+					<ul id="language_gather" style="display: none;">
+						<li class="language_option"><a href="/register.html"><img src="img/flag_china.png" alt="" /></a></li>
+					</ul>
+				</div>
+			</div>
+        </div>
+    </div>
+</header>
+<section class="register">
+    <div class="margin">
+        <ul class="input_grp">
+            <li><span>Account </span><input type="text" id="username" placeholder="Please enter email"/><i class="iconfont"></i></li>
+            <li>
+                <span class="randomCode_tit">Verification code</span>
+                <input type="text" id="imgCode" placeholder="Please enter verification code"/>
+                <i class="random_img fl" id="randomImg"/>Send verification code</i>
+            </li>
+            <li><span>Set password </span><input type="password" id="password" placeholder="Please enter password"/><em id="pwdMassage"></em>
+            </li>
+            <li><span>Confirm password </span><input type="password" id="confirmPwd" placeholder="Please confirm password"/><em id="conPwd"></em>
+            </li>
+        </ul>
+        <div class="submit" id="submit">Submit</div>
+    </div>
+</section>
+<footer>
+    <div class="margin">
+        <p class="clearfix"><img src="img/bot_logo.png" alt="" class="fl"><span class="fl">Copyright 2017-2019 | ACChain .all rights reserved</span></p>
+	</div>
+</footer>
+</body>
+<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/language_select.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="static/statics.js"></script>
+<script type="text/javascript">
+    $(".close_icon").click(function () {
+        $(".dialog,.mask").hide();
+    });
+</script>
+<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

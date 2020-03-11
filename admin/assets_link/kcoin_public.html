@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>K币-ACChain（资产链)-改变世界的资产数字化工具</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>		
+		<link rel="stylesheet" href="css/videoplayer.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+	</head>
+	<body class="kiconPage">
+		<div class="dialog_init_mask" style="display: none;"></div>
+		<div class="mask" style="display: none;"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none; width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<!--ICO正式开始时间提示弹窗-->
+		<div class="dialog time_tip_dialog" style="display: none; width: 646px;height: 255px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<dl>
+				<dd>ICO正式开始时间为北京时间<strong>2017</strong>年<strong>6</strong>月<strong>9</strong>日 <strong>18：00</strong></dd>
+				<dd><strong>敬请期待！</strong></dd>
+			</dl>
+		</div>
+		<div class="dialog dialog_log" style="display: none;">			
+			<h5 class="clearfix dialog_tit">
+				<span>登录</span>
+				<img src="img/close_icon.png" class="login_close_icon"/>
+			</h5>
+			<div class="pad30">
+				<div class="inputGrp">
+					<input type="text" class="login_username" id="username" placeholder="昵称/邮箱/手机号"/>
+					<input type="password" class="input_paw" id="password" placeholder="密码"/>
+					<span class="btn" id="login">登录</span>
+					<p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
+				</div>				
+			</div>
+		</div>
+		<!--ICO地址弹框-->
+		<div class="dialog address_dialog" style="display: none;">
+			 <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			 <div class="code" id="address_code">
+			 	<!--<img src="img/contact_code.png" alt="" />-->
+			 </div>
+			 <ul>
+			 	<li class="tit">请向如下地址转入<sapn id="currency"></sapn>参与ICO</li>
+			 	<li class="tip_txt">本次 ICO 众筹1枚RET起投，低于1枚视为无效</li>
+			 	<li><input type="text" disabled="disabled" id="address_input"/></li>
+			 </ul>
+			 <a class="btn" href="ret_record_detail.html">进入您的ICO专属页面</a>
+		</div>
+		<section class="section1">
+			<header>
+				<div class="header_margin clearfix pnc_pad54">
+					<a href="#" class="logo fl" style="margin-top: 27px;"><img src="img/k_logo.png" alt="Logo" class="fl"></a>
+					<div class="fr menu">
+						<div class="language_choose">
+							<div class="language_box">
+								<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+								<ul id="language_gather" style="display: none;">
+									<li class="language_option"><a href="/en/kcoin_public.html"><img src="img/flag_usa.png" alt="" /></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="margin">
+				<dl>
+					<h4>K币</h4>
+					<dt class="k_tit">柬埔寨国家级代币</dt>
+					<dd>K币是基于ACChain底层架构发行锚定柬埔寨名优特农品的柬埔寨国家级代币，由柬埔寨自主研发，既符合柬埔寨国情，又具有国际化发展趋势的数字货币。K币通过与ACC互换实现流通；ACC与中国数字本币普银（NPC）互换，实现K币与中国市场的资产交易流通。</dd>
+				</dl>
+			</div>
+		</section>
+		<section class="section2">
+			<div class="margin">
+				<dl>
+					<dt class="k_tit">K币与ACC</dt>					
+				</dl>
+				<div class="clearfix">
+					<li>
+						<span class="k1_pic"></span>
+						<p>与国际总账代币ACC互换</p>
+					</li>
+					<li>
+						<span class="k2_pic"></span>
+						<p>建立全新行业规则 规范产业良性发展</p>
+					</li>
+					<li>
+						<span class="k3_pic"></span>
+						<p>在柬埔寨乃至东南亚作为交易本币实现资产互换流通</p>
+					</li>
+					<li>
+						<span class="k4_pic"></span>
+						<p>加速资产流通 促进经济发展</p>
+					</li>
+				</div>
+			</div>
+		</section>	
+		<section class="section3">
+			<div class="margin">
+				<dl>
+					<dt class="k_tit">K币与数字化农业交易所</dt>					
+				</dl>
+				<ul>
+					<li><h4>柬埔寨王国数字化农业交易所（以下简称“交易所”）是由柬埔寨王国政府和柬埔寨国家银行认可发行数字货币的交易所。</h4></li>
+					<li>让柬埔寨农业产品交易不再困难、让柬埔寨农业资产数字货币K币持续增值！交易所按照“高标准、稳起步”的原则，积极推动农业产品新品种的上市，努力完善权益、
+利率、线上交易三条产品线，满足参与者多样化风险管理需求。采取全数字货币化（K币）交易方式，以高效安全的技术系统为强大后盾，在借鉴国内外先进技术成果和
+设计理念的基础上，建立了一个结构合理、功能完善、运行稳定的数字化农业交易平台。</li>
+				</ul>
+				<img src="img/earth.png">
+			</div>
+		</section>	
+		<section class="section4">
+			<div class="margin">
+				<!-- <video preload="auto" autoplay="autoplay" loop="loop" width:1048; height="509">
+					<source src="https://video.acchain.org/upload/video/k_video.mp4?auth_key=1506493769-0-0-e44ff2e7ce3879185dd5d521f03ef569" type="video/mp4">
+				</video> -->
+				<div class="mod-yivideo-warp" id="mod_player"></div>
+			</div>
+		</section>
+		<section class="section5">
+			<div class="margin">
+				<dl>
+					<dt class="k_tit">K币发行意义</dt>					
+				</dl>
+				<ul>
+					<li>随着互联网的发展，网络世界正在突破国家地域边界，成为新的规则和治理竞争的焦点。电子货币，数字货币的骤然兴起，并将成为主要国家竞争的焦点。柬埔寨王国也顺
+应世界地缘经济的形式，柬埔寨中央银行，柬埔寨国家银行联合数字化交易所发行了在基于区块链技术的新支付基础设施具有国家级代表性的数字货币/K币<br>(K COIN）。
+K币的发行既体现出国家对数字货币的战略考虑，也反映出国家对这一战略紧迫性的高度重视。K币首期发行问世，这标志着柬埔寨国家区块链技术，数字货币交易平台研究
+走入正规！柬埔寨数字货币的发展迈入新篇章。</li>
+				</ul>
+			</div>
+		</section>
+		<section class="section6">
+			<div class="margin">
+				<dl>
+					<dt class="k_tit">合作公司协会</dt>					
+				</dl>
+				<div class="clearfix">
+					<ul>
+						<li>柬中国际联合发展促进会</li>
+						<li>美国扶持中小企业国际联盟</li>
+						<li>柬埔寨王国Cambo公司</li>
+						<li>中国香港对外经济贸易发展促进会</li>
+						<li>中国香港对俄经济贸易发展促进会</li>
+					</ul>
+					<ul>						
+						<li>香港龙港汇实业有限公司</li>
+						<li>中国茶叶国际联盟</li>
+						<li>中国广西三泰会展服务有限公司</li>
+						<li>中国六堡茶交易中心</li>
+						<li>广西六堡茶协会深圳分会</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</body>	
+	<script type="text/javascript">
+        $(".close_icon").click(function(){
+			$(".address_dialog").hide();
+			$(".dialog_init").hide();
+			$(".mask").hide();
+		});
+		$(".login_close_icon").click(function(){
+			$(".dialog_log,.mask").hide();
+		});		
+	</script>
+	<script src="js/language_select.js"></script>
+	<script type="text/javascript" src="js/videoplayer.js"></script>
+	<script type="text/javascript">
+        var videoplayer=videoPlayer('mod_player',{        	
+            continuousPlay:true,
+            canfast:true,
+            setSource:function(canplayType){
+				if(canplayType == 'mp4'){
+                    return 'https://voa.acchain.org/video/k_video.mp4?auth_key=1508990023-0-0-d20b780d42914c8f832466514cdb7f25'
+                }
+            },
+            nextSource:function(canplayType){
+
+            },
+            success:function(video,node,videoObj){
+              
+               videoObj.timeupdate(function(currentTime){
+                   
+                }); 
+            }
+        }); 
+       $("#video").attr("poster","img/kvideo.png")    
+    </script>
+    <script type="text/javascript" src="static/statics.js"></script>
+    <script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

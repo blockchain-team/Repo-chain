@@ -1,0 +1,37 @@
+html, body, div,iframe666, p, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    text-indent: 0;
+}
+html{ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: 'Arial Normal', 'Arial';}
+body{ -webkit-touch-callout: none; font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: .26rem; overflow-y: scroll; margin: 0;}
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+button,button:focus,button.active:focus {
+    outline: none;
+    outline-offset: 0;
+}
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.download{background: url(../img/webbg.png) no-repeat;background-size: 100% 100%;text-align: center;}
+.logo{padding-top:.84rem;}
+.logo img{width: 1.88rem;}
+.logo p{color: #d1d1d6;font-size: .32rem;margin-top: .24rem;}
+.word{width: 5.6rem;margin-top:1.8rem}
+.btns{width: 100%;height: 2rem;padding-top: 3rem;}
+.btns a.button{display: inline-block;line-height: .8rem;text-decoration: none;}
+.btns a.button,.download .subimtButton{width: 3.9rem;height: .8rem;border: none;position: relative;border: 1px solid white;font-size: .24rem;border-radius: 50px;}
+.btns a.button img{position: absolute;top: 26%;}
+.btns a.ios{background: #4098f3;padding-left: .1rem;color: white;border: 1px solid #4098f3;}
+.btns a.android{background: #1c2742;color: white;margin-top: .32rem;padding-left: .12rem;}
+.ios img{width: .32rem;left: .8rem;}
+.android img{width: .38rem;left: .76rem;}
+/*ios—download*/
+.iosload .subimtButton{height: .82rem;line-height: .82rem;background: white;margin-left: 1.8rem;}
+.iosload a{text-decoration: none;color: #151822;}
+.iosload .btns{padding-top: 2.6rem;}
+.download p.warn{color: #a8aab1;width: 5.8rem;margin: 1.4rem auto 0;}
+/*newdown*/
+.newdown .btns{padding-top: 1.2rem;height: 3.4rem;}
+.newdown p.warn{margin: .6rem auto 0;}

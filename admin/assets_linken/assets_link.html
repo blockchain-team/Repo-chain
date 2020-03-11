@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<title>ACChain-The tool of asset digitization for changing the world</title>
+		<link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />		
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/blocks_data.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script src="static/jquery.page.js"></script>
+		<script src="static/store.min.js"></script>
+		<script src="static/common.js"></script>
+		<script src="js/browserify_asch.js"></script>
+		<script src="js/blocks_data.js"></script>
+	</head>
+	<body >
+		<!--通用提示弹窗-->
+		<div class="mask" style="display: none;"></div>
+		<div class="dialog dialog_init" style="display: none;width: 426px;height: 149px;">
+			<h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+			<p id="alert_info"></p>
+		</div>
+		<!--交易信息弹框-->
+		<div class="dialog dialog_blocks" id="block_transaction" style="display: none;width: 916px;height: 472px;">
+			<h5 class="clearfix dialog_tit">
+				<span>Trading information(<em id="count">0</em>)</span>
+				<img src="img/close_icon.png" class="close_icon" id="trans_close"/>
+			</h5>
+			<div class="dialog_cot"> 
+				<ul><li>ID</li><li>confirmations</li><li>Amount</li><li>Fee</li><li>Date</li></ul>
+				<!--动态添加交易列表-->
+				<div class="deal_list">
+					<!--<ul>
+						<li>182645206776067182645206776067182645206776067182645206776067</li>
+						<li>76067</li>
+						<li>76067</li>
+						<li>76067</li>
+						<li>2017/06/03 15:00:00</li>
+					</ul>-->
+				</div>
+
+			</div>
+		</div>
+		<!--区块详情弹框-->
+		<div class="dialog dialog_data" id="block_detail" style="display: none;width: 757px;height: 720px;">
+			<h5 class="clearfix dialog_tit">
+				<span>Block detail</span>
+				<img src="img/close_icon.png" class="close_icon" id="block_detail_close"/>
+			</h5>
+			<div class="dialog_cot"> 
+				<p>ID<span id="block_detail_id"><!--fe3f31c0c95d487fca0d7c27f0996cfb1a2c5a34b15b1521c208156cff6946b3--></span></p>
+				<p>Version<span>1.0</span></p>
+				<p>Time<span id="block_detail_time"><!--2017/04/29 15:36:00--></span></p>
+				<p>Block Height<span id="block_detail_height"><!--476012--></span></p>
+				<p>Last block<span id="block_detail_preblock"><!--fe3f31c0c95d487fca0d7c27f0996cfb1a2c5a34b15b1521c208156cff6946b3--></span></p>
+				<p>Transaction amount<span id="block_detail_trans_num"><!--0--></span></p>
+				<!--<p>交易总额<span id="block_detail_trans_total">&lt;!&ndash;0&ndash;&gt;</span></p>-->
+				<p>Award<span id="block_detail_reward"><!--3561230--></span></p>
+				<p>Abstract<span id="block_detail_summary"><!--fe3f31c0c95d487fca0d7c27f0996cfb1a2c5a34b15b1521c208156cff6946b3--></span></p>
+				<p>Producer<span id="block_detail_generator"><!--356123023123123123--></span></p>
+				<p>Creator public key<span id="block_detail_generatorkey"><!--fe3f31c0c95d487fca0d7c27f0996cfb1a2c5a34b15b1521c208156cff6946b3--></span></p>
+			</div>
+		</div>
+		<!--账户详情弹框-->
+		<div class="dialog dialog_data" id="accout_info" style="display: none;width: 757px;height: 280px;">
+			<h5 class="clearfix dialog_tit">
+				<span>Account detail</span>
+				<img src="img/close_icon.png" class="close_icon" id="account_close"/>
+			</h5>
+			<div class="dialog_cot"> 
+				<p>Address<span id="account_address"><!--11232131231531251231--></span></p>
+				<p>Public key<span id="account_key"><!--fe3f31c0c95d487fca0d7c27f0996cfb1a2c5a34b15b1521c208156cff6946b3--></span></p>
+				<p>Balance<span id="account_balance"><!--168213981.00--></span></p>
+			</div>
+		</div>
+		<header>
+			<div class="header_margin clearfix">				
+				<a href="index.html" class="logo fl"><img src="img/logo.png" alt="logo" style="display: block;" class="b_logo"/><img src="img/white_logo.png" alt="logo" style="display: none;" class="w_logo"/></a>
+				<div class="fr menu">
+					<a href="index.html" class="index_page">Home</a>   
+					<a href="digital_asset.html" class="ico_public">Digital Asset</a>
+					<a href="assets_link.html" class="asset_link active">ACChain</a>
+					<a href="/forum/index.html" target="_blank" class="block_datas">Community</a>
+					<a href="newspaper.html" class="news">News</a>
+					<a href="https://market.acchain.org" class="market_page"  target="_blank">Market</a>
+					<a href="account_view.html" class="mine">Account</a>
+					<!-- <div class="language_choose">
+						<div class="language_box">
+							<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+							<ul id="language_gather" style="display: none;">
+								<li class="language_option"><a href="/en/index.html"><img src="img/flag_usa.png" alt="" /></a></li>
+							</ul>
+						</div>
+					</div> -->
+				</div>
+			</div>			
+		</header>
+		<section class="AssetsLink_tit">								
+			<div class="margin clearfix">
+				<div class="fl">				
+					<ul class="tit">
+						<li>ACChain is a global open common community and a decentralized asset digitization platform and tool</li>	
+						<li>Based on ACChain, we can fulfil asset digitization and build a brand new concept and system for wealth accumulation and assets circulation</li>
+					</ul>
+					<div class="golink">
+						<a href="https://mainnet.acchain.org" target="_blank" class="go_publicLink"><span>Public Chain Access(online)</span></a>
+						<a href="https://testnet.acchain.org" target="_blank" class="go_publicLink"><span>Test Chain Access(online)</span></a>
+					</div>
+				</div>	
+				<div class="down_grp fr">
+					<a href="download.html" target="_blank" class="down_part">
+						<div class="clearfix">
+							<p></p>
+							<dl>
+								<dt class="tit">ACC Wallet</dt>
+								<dd>V1.9.0</dd>
+							</dl>
+						</div>
+					</a>
+					<a href="https://download.acchain.org/download/package/acchain-linux-1.0.3-mainnet.tar.gz?auth_key=1511256743-0-0-adf35608dbb98bfcce130e4680d66c39" class="down_part">
+						<div class="clearfix">
+							<p></p>
+							<dl>
+								<dt class="tit">Trustee Server Version</dt>
+								<dd>V1.0.3</dd>
+							</dl>
+						</div>
+					</a>
+					<a href="https://github.com/sxmz/acchain.git" target="_blank" class="down_part">
+						<div class="clearfix">
+							<p></p>
+							<dl>
+								<dt class="tit">Source Code</dt>
+								<dd>V1.0.2</dd>
+							</dl>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="ball_grp">
+			<div class="margin clearfix">
+				<dl>
+					<img src="img/data_img1.png" alt="" />
+					<dt>Block Height</dt>
+					<dd class="datas" id="block_height" data-to="0" data-speed="1500"></dd>
+				</dl>
+				<dl>
+					<img src="img/data_img2.png" alt="" />
+					<dt>Nodes</dt>
+					<dd class="datas" id="nodes"  data-to="0" data-speed="1500"></dd>
+				</dl>
+				<!--<ul>
+					<img src="img/data_img3.png" alt="" />
+					<li>用户</li>
+					<li class="datas" id="users" data-to="0" data-speed="1500"></li>
+				</ul>-->
+				<dl>
+					<img src="img/data_img4.png" alt="" />
+					<dt>Transactions</dt>
+					<dd class="datas" id="transactions" data-to="0"  data-speed="1500"></dd>
+				</dl>
+			</div>
+		</section>
+		<section class="blocksData">
+			<div class="margin">			
+				<div class="blocksData-box1">
+					<div class="bD_top">
+						<span>Latest Block</span><input type="text" placeholder="Block Height/Transaction ID/Account Address " id="search_content" class="fr"/><img src="img/search.png" alt="" id="search" class="search"/>
+					</div>
+					<div class="bD_text">
+						<table class="blocks_list">
+							<tr><th>Block Height</th><th>Date</th><th>ID</th><th>Producer</th><th>Trade</th><!--<th>总金额</th>--><th>Total Fee</th><th>Award</th></tr>
+						<!--<tr>
+								<td>123456</td>
+								<td>2017/04/26 17:19:20</td>
+								<td>fe3f31c0c95d487fca0d7c27f0996cfb1a2c5a34b15b1521c208156cff6946b3</td>
+								<td>4892706860070124498</td>
+								<td>21616</td>
+								<td>21616</td>
+								<td>21616</td>
+								<td>0.0</td>
+							</tr>-->
+						</table>
+					</div>
+					<!--分页-->
+					<div class="order_pages">
+					    <div class="tcdPageCode">
+	
+	                    </div>
+					</div>
+				</div>
+				<!--<section class="blocksData-box2">
+					<div class="bD_top">
+						<span><em></em>每日交易数量</span>
+					</div>
+					<div class="bD_NumForm relative">
+						<div class="bD_num fl">
+							<div id="retroclockbox_counter"></div>
+							<p class="bD_numTime">2017-01-08</p>
+							<p class="bD_numinfo">市值 : <span>$0.512</span> &nbsp;&nbsp;&nbsp;哈希率 : <span>$0.512</span></p>
+						</div>
+						<div class="bD_form">
+							<div id="container" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+						</div>
+					</div>
+				</section>-->			
+			</div>
+		</section>
+		<footer>
+			<div class="margin">
+				<p class="clearfix"><img src="img/bot_logo.png" alt="" class="fl"><span class="fl">Copyright 2017-2019 | ACChain .all rights reserved</span></p>
+			</div>
+		</footer>
+		<div class="sidebar"></div> 
+	</body>
+	<script src="js/sidebar.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/blocks_data_en.js"></script>
+	<!--<script type="text/javascript" src="static/jquery.flipcountdown.js"></script>
+	<script src="static/exporting.js" type="text/javascript"></script>-->
+	<script type="text/javascript" src="static/statics.js"></script>
+    <script>
+	//当滑动时
+	var toTop = $('.AssetsLink_tit').offset().top;	
+	$(window).scroll(function(){	
+		if($(document).scrollTop()>=toTop/3){
+			$('.ball_grp').addClass('current');					
+		}
+	});		  	
+	</script>
+	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

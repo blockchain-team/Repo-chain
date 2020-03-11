@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/personal_center.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<script src="static/jquery-3.0.0.min.js"></script>
+		<script type="text/javascript" src="static/store.min.js"></script>
+		 <script type="text/javascript" src="static/common.js"></script>
+		<script type="text/javascript" src="static/jQuery.md5.js"></script>
+		<title>交易密码-ACChain（资产链)-改变世界的资产数字化工具</title>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
+	</head>
+	<body>
+		<div class="common_mask" style="display: none;z-index: 40"></div>
+		<!--通用提示弹窗-->
+		<div class="dialog dialog_init" style="display: none;width: 426px;height: 149px;z-index: 41;">
+		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="common_close_icon"/></h5>
+		    <p id="alert_info">您还没设置安全问题</p>
+		</div>
+		<!--绑定成功弹窗-->
+		<div class="dialog" style="display: none;width: 440px;height: 188px;z-index: 41;">
+		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
+		    <img class="success_icon fl" src="img/bind_success.png" alt="绑定成功"/>
+		    <p class="fl bchangePwd">您已成功修改交易密码！</p>
+		</div>
+
+		<div class="mask" style="display: none;"></div>
+		<!--设置安全问题和交易密码弹窗-->
+		<div class="dialog dialog_init1 dialog_dbtn" style="display: none;width: 404px;height:237px;">
+		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="common_close_icon personal_close_icon"/></h5>
+		    <p class="alert_info">您还没有设置安全问题!</p>
+		    <p class="dbtn"> <span class="btn" onclick="window.location.href='safety_problem.html'">去设置</span> <span class="btn cancel">取消</span></p>
+		</div>
+		<!--设置安全问题弹窗-->
+		<div class="dialog dialog_set" id="askquestion" style="display: none;width: 440px;height: 520px;">
+		    <h5 class="clearfix dialog_tit">
+		        <span>安全问题</span>
+		        <img src="img/close_icon.png" class="personal_close_icon"/>
+		    </h5>
+		    <div class="dialog_name">
+		        <ul class="select_questions">
+		        	<li class="questionLi">
+		        		<span>问题一</span>
+		        		<div class="select_box question1-wrap">
+							<p class="select_text question1-txt" id="select_question1" data-value="">请选择安全问题</p>
+							<em class="down_icon"></em>
+							<ul class="select_gather question1-choose" style="display: none;">
+								<!--<li class="question1-item" data-value="1">你第一次坐飞机是去哪里？</li>-->
+							</ul>
+						</div>
+		        	</li>
+		        	<li class="questionLi">
+		        		<span>答案</span><input type="text"  value="" class="answer_input" id="answer1" placeholder="请输入答案"/>
+		        	</li>
+		        	<li class="questionLi">
+		        		<span>问题二</span>
+		        		<div class="select_box question2-wrap">
+							<p class="select_text question2-txt" id="select_question2" data-value="">请选择安全问题</p>
+							<em class="down_icon"></em>
+							<ul class="select_gather question2-choose" style="display: none;">
+								<!--<li class="question2-item" data-value="1">你第一次坐飞机是去哪里？</li>-->
+							</ul>
+						</div>
+		        	</li>
+		        	<li class="questionLi">
+		        		<span>答案</span><input type="text"  value="" class="answer_input" id="answer2" placeholder="请输入答案"/>
+		        	</li>
+		        	<li class="questionLi">
+		        		<span>问题三</span>
+		        		<div class="select_box question3-wrap">
+							<p class="select_text question3-txt" id="select_question3" data-value="">请选择安全问题</p>
+							<em class="down_icon"></em>
+							<ul class="select_gather question3-choose" style="display: none;">
+								<!--<li class="question3-item" data-value="1">你第一次坐飞机是去哪里？</li>-->
+							</ul>
+						</div>
+		        	</li>
+		        	<li class="questionLi">
+		        		<span>答案</span><input type="text"  value="" class="answer_input" id="answer3" placeholder="请输入答案"/>
+		        	</li>
+		        </ul>
+		        <span class="btn" id="answerConfirm">确定</span>
+		    </div>
+		</div>
+		<!--重置交易密码-->
+		<div class="dialog dialog_set dialog_doReset" id="doResetPwd" style="display: none;width: 440px;height: 438px;">
+		    <h5 class="clearfix dialog_tit">
+		        <span>安全问题验证</span>
+		        <img src="img/close_icon.png" class="personal_close_icon"/>
+		    </h5>
+		    <div class="dialog_name">
+		        <ul class="select_questions">
+		        	<li class="questionLi checkquestions">
+		        		<div class="select_box checkquestions-wrap">
+							<p class="select_text checkquestions-txt" id="security" data-value="">请选择安全问题1</p>
+							<input type="hidden" class="security" />
+							<em class="down_icon"></em>
+							<ul class="select_gather checkquestions-choose" style="display: none;">
+								<!--<li class="checkquestions-item" data-value="1">你第一次坐飞机是去哪里？</li>-->
+							</ul>
+						</div>
+		        	</li>
+		        	<li class="questionLi">
+		        		<input type="text"  value="" class="answer_input" id="answers" placeholder="请输入答案"/>
+		        	</li>
+		        	<li class="questionLi checkquestions">
+		        		<div class="select_box checkquestionstwo-wrap">
+							<p class="select_text checkquestionstwo-txt" id="security1" data-value="">请选择安全问题2</p>
+							<input type="hidden" class="security1" />
+							<em class="down_icon"></em>
+							<ul class="select_gather checkquestionstwo-choose" style="display: none;">
+								<!--<li class="checkquestions-item" data-value="1">你第一次坐飞机是去哪里？</li>-->
+							</ul>
+						</div>
+		        	</li>
+		        	<li class="questionLi">
+		        		<input type="text"  value="" class="answer_input" id="answers1" placeholder="请输入答案"/>
+		        	</li>
+		        </ul>
+		        <span class="btn" id="doResetConfirm">提交</span>
+		    </div>
+		</div>
+		<header class="header">
+
+		</header>
+		<div class="full nav_title">
+		    <div class="margin title_link">
+		        <p>当前位置：<a href="index.html">首页</a>&nbsp;>&nbsp;<a href="/personal_data.html">我的</a>&nbsp;>&nbsp;<a href="change_login_pwd.html">交易密码</a></p>
+		    </div>
+		</div>
+		<div class="main_level2 overview">
+			<section class="margin clearfix">
+				<ul class="fl verMenu">
+
+				</ul>
+				<div class="fl content member_center reset_tradepwd">
+					<p class="clearfix current_subtit top_ico_title"><span class="link_menu fl">交易密码</span><!--<span class="hor_line fl"></span><span class="fr">上次登录时间：<em>2016-11-22 19:13 </em></span>--></p>
+					<p>交易密码是在进行转出资产时需要输入的密码，不同于登录密码为确保您的财产安全，请牢记交易密码，防止丢失!</p>
+					<!--未设置交易密码后显示内容-->
+		        	<div class="rtpwd" id="setPwd" style="display: none;">
+			        	<ul>
+			        		<li>
+			        			<span>设置交易密码</span>
+			        			<input type="password" id="payPwd" placeholder="请输入交易密码" onkeyup="this.value=this.value.replace(/[^\d]/g,'')"/>
+			        		</li>
+			        		<li>
+			        			<span>确认交易密码</span>
+			        			<input type="password" id="confirmPwd" placeholder="请确认交易密码" onkeyup="this.value=this.value.replace(/[^\d]/g,'')"/>
+			        		</li>
+			        	</ul>
+			        	<p class="clickbtn"><span class="btn" id="set_pay_pwd">提交</span></p>
+			        	<p class="set_sq">设置交易密码前请先<span class="main_blue" onclick="window.location.href='safety_problem.html'">设置安全问题</span></p>
+		        	</div>
+		        	<!--已设置交易密码后显示内容-->
+		        	<div class="rtpwd alreadysetpwd" id="resetPwd" style="display: none;">
+			        	<p class="reset_warn">您已设置交易密码,是否需要重置?</p>
+			        	<p class="clickbtn"><span class="btn" id="doReset">重置</span></p>
+		        	</div>
+				</div>
+			</section>
+		</div>
+		<footer class="footer"></footer>
+		<div class="sidebar"></div>
+	</body>		
+	<script src="js/sidebar.js"></script>
+	<script src="js/head_footer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/add_verMenu.js"></script>
+	 <script src="js/set_pay_pwd.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/transaction_password.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$('.cancel,.personal_close_icon').click(function () {
+            $('.dialog_dbtn,.mask').hide();
+        });
+		$(".common_close_icon").click(function () {
+	        $(".dialog_init,.common_mask").hide();
+	    });
+	    $(".personal_close_icon").click(function () {
+	        $("#askquestion,.mask").hide();
+	        $("#doResetPwd,.mask").hide();
+	    });
+
+		/*下拉框*/
+        function hideSel(selector){
+            if($(selector).css("display")){
+                $(window).click(function(){
+                    $(selector).hide();
+                });
+            }
+        }
+        function selectClick(str){
+            $("."+str+"-wrap").unbind("click").on("click", function(event){
+                $(".select_gather").hide().filter("."+str+"-choose").show();
+                event.stopPropagation();
+                $("."+str+"-item").unbind("click").on("click", function(event){
+                    event.stopPropagation();
+                    $("."+str+"-txt").text($(this).text());
+                    $("."+str+"-txt").data("value", $(this).data("value"));
+                    $("."+str+"-choose").hide();
+				});
+                hideSel("."+str+"-choose");
+            });
+        }
+        selectClick("question1");
+        selectClick("question2");
+        selectClick("question3");
+        selectClick("checkquestions");
+        selectClick("checkquestionstwo");
+    </script>
+    <script type="text/javascript" src="static/statics.js"></script>
+    <script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>

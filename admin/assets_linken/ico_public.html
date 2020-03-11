@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content=""/>
+    <meta name="Description" content=""/>
+    <title>ICO-ACChain（资产链)-改变世界的资产数字化工具</title>
+    <link rel="shortcut icon" type="img/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/blocks_data.css"/>
+    <script src="static/jquery-3.0.0.min.js"></script>
+    <script src="js/ico_public.js"></script>
+</head>
+<body >
+<header>
+    <div class="header_margin clearfix">
+        <a href="index.html" class="logo fl"><img src="img/logo.png" alt="logo" style="display: block;" class="b_logo"/><img src="img/white_logo.png" alt="logo" style="display: none;" class="w_logo"/></a>
+        <div class="fr menu">
+            <a href="index.html" class="index_page">Home</a>
+            <a href="ico_public.html" class="ico_public">Digital Asset</a>
+            <a href="assets_link.html" class="asset_link">ACChain</a>
+            <a href="blocks_data.html" class="block_datas">Blocks</a>
+            <a href="newspaper.html" class="news">News</a>
+            <a href="about_us.html" class="about">About</a>
+            <a href="account_view.html" class="mine">Account</a>
+			<!--<div class="language_choose">
+				<div class="language_box">
+					<p class="language_text"><img src="img/flag_usa.png" alt=""/></p><em class="down_icon"></em>
+					<ul id="language_gather" style="display: none;">
+						<li class="language_option"><a href="/ico_public.html"><img src="img/flag_china.png" alt="" /></a></li>
+					</ul>
+				</div>
+			</div>-->
+        </div>
+    </div>
+</header>
+<div class="ico_banners full"></div>
+<section class="full">
+    <div class="margin ico">
+        <ul>
+            <li class="active">Publicity</li>
+            <!-- <li>Start</li> -->
+            <li>End</li>
+        </ul>
+        <section class="ico_tab" style="display: block;" id="public">
+        <!--<div class="icobox">
+                <a href="/en/ret.html" target="_blank"><img src="img/RET.png" alt="RET"></a>
+                <dl>
+                    <dt>RET-SCHSR<span class="fr blue_warn">In Publicity Process</span></dt>
+                    <dd>ICO Launching Countdown</dd>
+                    <dd class="downCount1">
+                    	<span><em class="days">00</em><em>days</em></span><span><em class="hours">00</em><em>hours</em></span>
+                    	<span><em class="minutes">00</em><em>minutes</em></span><span><em class="seconds">00</em><em>seconds</em></span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="icobox">
+                <a href=""><img src="img/PEB.png" alt="PEB"></a>
+                <dl>
+                    <dt>PEB<span class="fr blue_warn"> To Be Confirmed</span></dt>
+                    <dd>ICO Launching Countdown</dd>
+                   <dd class="downCount2">
+                    	<span><em class="days">00</em><em>days</em></span><span><em class="hours">00</em><em>hours</em></span>
+                    	<span><em class="minutes">00</em><em>minutes</em></span><span><em class="seconds">00</em><em>seconds</em></span>
+                    </dd>
+                </dl>
+            </div>-->
+        </section>
+        <!-- <section class="ico_tab" style="display: none;" id="process">
+        <div class="icobox">
+                <a href="/en/ico.html" target="_blank"><img src="img/ico_start.png" alt="ico_start"></a>
+                <dl>
+                    <dt>ACChain<span class="fr blue_warn">In Process</span></dt>
+                    &lt;!&ndash;<dd>ICO Remaining Time</dd>
+                    <dd class="downCount3">
+                    	<span><em class="days">00</em><em>days</em></span><span><em class="hours">00</em><em>hours</em></span>
+                    	<span><em class="minutes">00</em><em>minutes</em></span><span><em class="seconds">00</em><em>seconds</em></span>
+                    </dd>&ndash;&gt;
+                </dl>
+            </div>
+        </section> -->
+        <section class="ico_tab" style="display: none;" id="over">
+        </section>
+    </div>
+</section>
+<footer>
+    <div class="margin">
+        <p class="clearfix"><img src="img/bot_logo.png" alt="" class="fl"><span class="fl">Copyright 2017-2019 | ACChain .all rights reserved</span></p>
+    </div>
+</footer>
+<div class="sidebar"></div> 
+</body>
+<script src="js/sidebar.js"></script>
+<script type="text/javascript" src="static/statics.js"></script>
+<script type="text/javascript" src="js/time_count.js"></script>
+<script>
+    //时间
+//	$(".downCount1").downCount({
+//		startTime:"12/24/2012 12:00:00",
+//		endTime:"12/24/2013 12:00:00"
+//	});
+    $('.ico li').click(function () {
+        var index=$(this).index();
+        $('.ico_tab').eq(index).show().siblings('.ico_tab').hide();
+        $(this).addClass('active').siblings().removeClass('active');
+    })
+</script>
+<script src="js/language_select.js"></script>
+<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>
+</html>
