@@ -24,47 +24,29 @@
         }(document);
     </script>
     <noscript><img src="//stats.ipinyou.com/adv.gif?a=Qi84T..ugZe19GGBGio2eH9CnS5y_&e=" style="display:none;"/></noscript>
-		<div class="common_mask" style="display: none;z-index: 40"></div>
-		<!--通用提示弹窗-->
-		<div class="dialog dialog_init" style="display: none;width: 426px;height: 149px;z-index: 41">
-		    <h5 class="clearfix dialog_tit"><img src="img/close_icon.png" class="close_icon"/></h5>
-		    <p id="alert_info"></p>
-		</div>
-		<div class="mask" style="display: none;"></div>
-		<div class="dialog dialog_log" style="display: none;">			
-			<h5 class="clearfix dialog_tit">
-				<span>登录</span>
-				<img src="img/close_icon.png" class="login_close_icon"/>
-			</h5>
-			<div class="pad30">
-				<div class="inputGrp">
-					<input type="text" class="login_username" placeholder="昵称/邮箱/手机号"/>
-					<input type="password" class="input_paw" placeholder="密码"/>
-					<span class="btn">登录</span>
-					<p class="clearfix"><span class="fl">没有账号？<a href="javascript:void(0);" class="go_login" onclick="location.href='register.html'">立即注册>></a></span><a href="find_password.html" class="find_password fr">忘记密码？</a></p>
-				</div>				
-			</div>
-		</div>
 		<header>
 			<div class="header_margin clearfix">
 				<a href="index.html" class="logo fl"><img src="images/logo_top_left.png" alt="logo" style="display: block;" class="b_logo"/></a>
 				<div class="fr menu">
-					<a href="index.html" class="index_page active">首页</a>
-					<a href="digital_asset.html" class="ico_public">token经济模型</a>
-					<a href="assets_link.html" class="asset_link">团队介绍</a>
-					<a href="/forum/index.html" target="_blank" class="block_datas" style="margin-right: 80px;">未来规划</a>
+					<a href="#index" class="index_page active">首页</a>
+					<a href="#token" class="ico_public">token经济模型</a>
+					<a href="#team" class="asset_link">团队介绍</a>
+					<a href="#future" class="block_datas" style="margin-right: 80px;">未来规划</a>
 					<div class="language_choose">
 						<div class="language_box">
-							<p class="language_text"><img src="img/flag_china.png" alt=""/></p><em class="down_icon"></em>
+							<p class="language_text">
+								<img src="images/flag_china.png" alt=""/>
+							</p>
+							<em class="down_icon"></em>
 							<ul id="language_gather" style="display: none;">
-								<li class="language_option"><a href="/en/index.html"><img src="img/flag_usa.png" alt="" /></a></li>
+								<li class="language_option"><a href="/en/index.html"><img src="images/flag_usa.png" alt="" /></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</header>		
-		<section class="section1 relative">
+		<section class="section1 relative" id="index">
 			<div id="canv_box" class="digi_canvas">
 				<canvas id="canv"></canvas>
 			</div>
@@ -83,16 +65,16 @@
 				</dl>
 			</div>
 			<div class="margin relative">
-				<img src="img/down.gif" alt="向下" style="position: absolute; top:25vh; left: 589px; z-index: 99;"/>
+				<img src="images/down.gif" alt="向下" style="position: absolute; top:25vh; left: 589px; z-index: 99;"/>
 			</div>
 		</section>
 		<section class="section2">
 			<div class="margin relative">
 				<p>FLW拥有全球最先进前沿的区块链技术以及创新的挖矿模式，未来价值前景不可估量。结合IPFS分布式技术研发的分布式流量（FLOWCOIN）速度更快，价格更便宜,FLW是基于IPFS底层开发的去中心化的分布式流量网络系统的激励层，参与者将贡献自己的闲置的硬盘空间和网络带宽资源从而获得通证FLW。让全平台实现收入共享、社区共治以及平台共享。</p>
-				<a href="https://download.acchain.org/whitePaper/Acchain_whitepaper_Chinese.pdf?auth_key=1508987881-0-0-7958e9bc3a75087c425df9aed2d4bddc" target="_blank"><img src="images/white paper.png" alt=""></a>
+				<a href="#" target="_blank"><img src="images/white_paper.png" alt=""></a>
 			</div>
 		</section>
-		<section class="section3">
+		<section class="section3" id="token">
 			<div class="margin clearfix relative">
 				<dl class="section_tit">
 					<dt>TOKEN经济模型</dt>
@@ -102,7 +84,7 @@
 				<div id="pie" style="height: 550px"></div>
 			</div>
 		</section>
-		<section class="section4">
+		<section class="section4" id="team">
 			<div class="margin">
 				<dl class="section_tit">
 					<dt>项目团队</dt>
@@ -125,31 +107,108 @@
 						<img src="images/people3.png" alt="" />
 						<dt>Joachim Dsouza Sagacito  </dt>
 						<dt>首席架构师</dt>
-						<dd>MIT 博士后研究员，数据科学家，联合创建了印度知名的云计算公司，主打移动端的企业解决方案的 Sagacito ，目标是通过数据分析处理和云计算技术，帮助企业做出科学的决策，从而实现市场份额和营业收益的最大化。Joachim Dsouza 作为 Sagacito首席架构师主导了整个Sagacito的技术架构研发工作，是数据挖掘和应用领域的资深专家。 </dd>
+						<dd>MIT 博士后研究员，数据科学家，联合创建了印度知名的云计算公司，主打移动端的企业解决方案的 Sagacito ，目标是通过数据分析处理和云计算技术，帮助企业做出科学的决策，从而实现市场份额和营业收益的最大化。Joachim Dsouza 作为 Sagacito首席架构师主导了整个Sagacito的技术架构研发工作，是数据挖掘和应用领域的资深专家。</dd>
 					</dl>
 					<dl>
 						<img src="images/people4.png" alt="" />
 						<dt>Ravi Ruia</dt>
 						<dt>基金会主席</dt>
-						<dd>曾 供 职 于 GIC Special Investments Pte Ltd 担 任 投 资 总 监 ， GIC Special Investments Pte Ltd 属于新加坡政府投资集团旗下三个核心子公司之一，主要负责不动产和另类项目领域的投资。Ravi 先生在2012年投身加密货币浪潮，并成立区块链投资基金参与了SC、StorJ、Taste Analytics 等区块链存储、大数据分析行业项目的早期投资。2018年创立 FLW基金会，致力于建立一个去中心化、普惠公众的大数据生态联盟。</dd>
+						<dd>曾 供 职 于 GIC Special Investments Pte Ltd 担 任 投 资 总 监 ， GIC Special Investments Pte Ltd 属于新加坡政府投资集团旗下三个核心子公司之一，主要负责不动产和另类项目领域的投资。Ravi 先生在2012年投身加密货币浪潮，并成立区块链投资基金参与了SC、StorJ、Taste Analytics 等区块链存储、大数据分析行业项目的早期投资。2018年创立 FLW基金会，致力于建立一个去中心化、普惠公众的大数据生态联盟。 </dd>
 					</dl>
 				</div>
 			</div>
 		</section>
-		<section class="section5">
+		<section class="section5" id="future">
 			<div class="margin">
 				<dl class="section_tit">
 					<dt>未来规划 </dt>
 					<div class="bot_line"></div>
 				</dl>
-				<img src="images/time_axis.png" alt="">
+				<ul class="future-box relative">
+					<li class="up clearfix">
+						<img src="images/time1.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>FLW项目启动</dd>
+							<dd class="color-blue">2019年3月19日</dd>
+						</dl>
+					</li>
+					<li class="down clearfix">
+						<img src="images/time2.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>主网开发</dd>
+							<dd class="color-blue">2019年4月17日</dd>
+						</dl>
+					</li>
+					<li class="up clearfix">
+						<img src="images/time1.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>项目ICO</dd>
+							<dd class="color-blue">2020年3月19日</dd>
+						</dl>
+					</li>
+					<li class="down clearfix">
+						<img src="images/time2.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>硬件规格</dd>
+							<dd class="color-blue">2020年5月27日</dd>
+						</dl>
+					</li>
+					<li class="up clearfix">
+						<img src="images/time1.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>经济模型</dd>
+							<dd class="color-blue">2020年6月8日</dd>
+						</dl>
+					</li>
+					<li class="down clearfix">
+						<img src="images/time2.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>开源测试网启动</dd>
+							<dd class="color-blue">2020年6月1日-16日</dd>
+						</dl>
+					</li>
+					<li class="up clearfix">
+						<img src="images/time1.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>存储授权</dd>
+							<dd class="color-blue">2020年6月20日</dd>
+						</dl>
+					</li>
+					<li class="down clearfix">
+						<img src="images/time2.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>代码冻结</dd>
+							<dd class="color-blue">2020年6月28日</dd>
+						</dl>
+					</li>
+					<li class="up clearfix">
+						<img src="images/time1.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>安全审计</dd>
+							<dd class="color-blue">2020年7月 1日</dd>
+						</dl>
+					</li>
+					<li class="down clearfix">
+						<img src="images/time2.png" alt="" class="fl"/>
+						<dl class="fl">
+							<dd>主网上线</dd>
+							<dd class="color-blue">2020年7月16日</dd>
+						</dl>
+					</li>
+				</ul>
 			</div>
 		</section>
-		<footer>
+		<!--<footer>
 			<div class="margin">
-				<p class="clearfix"><img src="img/bot_logo.png" alt="" class="fl"><span class="fl">Copyright © 2017-2019 ｜ACChain<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">.黔ICP备17004079号-1</a>.all rights reserved.</span></p>
+				<p class="clearfix"><img src="images/logo_top_left.png" alt="" class="fl"><span class="fl">Copyright ©xxxxx<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">xxxxx</span></p>
 			</div>
-		</footer>
+		</footer>-->
+		<!--置顶-->
+		<div id="mysidebar" class="sidebar">
+			<div class="icon_item back" onclick="back()">
+				<img src="images/back_icon.png" alt="置顶"/>
+			</div>
+		</div>
 	</body>	
 	<script src="static/jquery-3.0.0.min.js"></script>
   	<script type="text/javascript" src="js/canvas_dots.js"></script>
@@ -175,6 +234,11 @@
 				$("header .b_logo").show();
 				$("header .menu").removeClass("color-black");
 			}
+			if($(this).scrollTop() > 100){
+		        $('.back').fadeIn();
+		    }else{
+		        $('.back').fadeOut();
+		    }
 		});	
 	    $(".close_icon").click(function () {
 	        $(".dialog_init,.common_mask").hide();
@@ -212,7 +276,26 @@
         var myChart = echarts.init(document.getElementById('pie'));
         // 指定图表的配置项和数据
         var option = {
+//      	tooltip: {
+//		        trigger: 'item',
+//		        formatter: '{a} <br/>{b}: {c} ({d}%)'
+//		    },
             color: ['#62c3cc', '#4c9cd1', '#1e6f9a', '#385957'],
+            graphic: [{　　　　　　　　　　　　　　　　//环形图中间添加文字
+                    type: 'text',　　　　　　　　　　　　//通过不同top值可以设置上下显示
+                    left: 'center',　　　　　　　　　　
+                    top: '44%',
+                    style: {　　　　　　　　　　　　　　　　
+                        text: "FLOWCOIN（流量币）\n\n发行总量3.1亿枚",
+                        textAlign: 'center',
+                        fill: '#ffffff',　　　　　　　　//文字的颜色
+                        width: 30,
+                        height: 30,
+                        fontSize: 24,
+                        color: "#ffffff",
+                        fontFamily: "Microsoft YaHei"
+                    }
+            }],
             series: [
                 {
                     name: '访问来源',
@@ -221,19 +304,10 @@
                     avoidLabelOverlap: false,
                     label: {
                         normal: {
-                            show: false,
-                            position: 'center',
-							formatter:'{b}\r\n\r\n\r\n {c}万枚',
-                        },
-                        emphasis: {
                             show: true,
-                            textStyle: {
-                                fontSize: '30',
-                                fontWeight: 'bold',
-                                align: 'center',
-								color: '#fff'
-                            }
-                        }
+                            position: 'center',
+							formatter:'',
+                        },
                     },
                     labelLine: {
                         normal: {
@@ -251,6 +325,12 @@
         };
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        
+
+		function back(){
+		    $('html ,body').animate({scrollTop: 0}, 300);
+		    return false;
+		}
 	</script>
 	<script src="https://s22.cnzz.com/z_stat.php?id=1263912836&async=1" type="text/javascript" charset="utf-8" async="async"></script>	
 </html>
